@@ -1,0 +1,16 @@
+app:
+  name: "YAWatch Luna Stories"
+  version: "2.0.0"
+
+content:
+  script_duration: 35
+  words_per_second: 2.3
+
+paths:
+  lore_dir: "content/lore"
+  stories_dir: "content/stories"
+  scripts_dir: "content/scripts"
+  audio_dir: "content/audio"
+  subtitles_dir: "content/subtitles"
+  images_dir: "content/images"
+  videos_dir: "content/videos"
