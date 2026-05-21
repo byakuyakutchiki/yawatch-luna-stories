@@ -98,21 +98,34 @@ class VideoBuilder:
         prev = "v0"
         for i in range(1, n):
             offset = seg * i - 0.5
-            nxt = f"vx{i}" if i < n - 1 else "outv"
-            filters.append(f"[{prev}][v{i}]xfade=transition=fade:duration=0.5:offset={offset:.2f}[{nxt}]")
+            last = i == n - 1
+            nxt = "prevout" if not last else "outv"
+            if n == 1:
+                filters[0] = filters[0].replace(f"[v0]", "[outv]")
+            else:
+                filters.append(
+                    f"[{prev}][v{i}]xfade=transition=fade:duration=0.5:offset={offset:.2f}[{nxt}]"
+                )
             prev = nxt
+
+        # Les sous-titres sont intégrés dans filter_complex pour éviter le conflit -vf/-filter_complex
+        if subs and subs.exists():
+            subs_escaped = str(subs).replace(":", "\\:")
+            filters.append(
+                f"[outv]subtitles={subs_escaped}:force_style="
+                f"'FontName=Arial,FontSize=24,Bold=1,PrimaryColour=&H00FFFFFF,"
+                f"OutlineColour=&H00000000,Outline=3,MarginV=60'[finalv]"
+            )
+            video_out = "[finalv]"
+        else:
+            video_out = "[outv]"
 
         filter_str = ";".join(filters)
 
-        sub_filter = ""
-        if subs and subs.exists():
-            sub_filter = f",subtitles={subs}:force_style='FontName=Arial,FontSize=24,Bold=1,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,Outline=3,MarginV=60'"
-
         cmd += [
             "-filter_complex", filter_str,
-            "-map", "[outv]",
+            "-map", video_out,
             "-map", f"{n}:a",
-            "-vf", f"scale={w}:{h}{sub_filter}",
             "-c:v", "libx264", "-preset", "medium", "-crf", "23",
             "-c:a", "aac", "-b:a", "128k",
             "-shortest", "-movflags", "+faststart",
