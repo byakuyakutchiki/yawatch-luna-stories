@@ -59,3 +59,8 @@ def timestamp() -> str:
 
 def clean_text(text: str) -> str:
     return text.strip().replace("\n\n\n", "\n\n")
+
+
+def get_logger(name: str) -> logging.Logger:
+    """Alias pratique pour les modules DeepSeek."""
+    return logging.getLogger(name)

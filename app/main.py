@@ -14,6 +14,11 @@ from app.image_prompt_generator import ImagePromptGenerator
 from app.voice_generator import VoiceGenerator
 from app.subtitle_generator import SubtitleGenerator
 from app.video_builder import VideoBuilder
+from app.audio_mixer import AudioMixer
+from app.scene_composer import SceneComposer
+from app.thumbnail_builder import ThumbnailBuilder
+from app.export_manager import ExportManager
+from app.batch_processor import BatchProcessor
 from app.utils import timestamp
 
 
@@ -47,6 +52,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--verbose", action="store_true", help="Logs détaillés")
     parser.add_argument("--status", action="store_true", help="Afficher l'état de l'univers et quitter")
+    parser.add_argument("--export", action="store_true", help="Créer un package export après génération")
     return parser.parse_args()
 
 
