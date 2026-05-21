@@ -1,0 +1,54 @@
+==============================================================
+LUNA ADULTE — MASTER PROMPT OFFICIEL
+Source: docs/CHARACTER_BIBLE.md
+==============================================================
+
+--- POSITIVE PROMPT ---
+
+woman in her early 30s, long wavy brown hair, dark brown eyes, mediterranean skin tone,
+serious and empathetic expression, dark professional attire (charcoal blazer or black turtleneck),
+holding or near a small violet-dressed handmade doll,
+determined but emotionally tired gaze, cinematic portrait lighting,
+photorealistic, 4k, 35mm lens, shallow depth of field,
+cinematic framing, dramatic volumetric light, emotional atmosphere,
+9:16 vertical format, award-winning photography
+
+--- NEGATIVE PROMPT ---
+
+superhero, armor, cape, weapon, uniform, cartoon, anime, illustration,
+blonde hair, old woman, child, teenager, excessive makeup, glamour,
+too smiling (she rarely smiles), red lips stereotype, fashion model pose,
+low quality, blurry, watermark, text, deformed, ugly,
+generic stock photo look, AI art generic style
+
+==============================================================
+VARIANTES PAR TYPE DE SCÈNE
+==============================================================
+
+[BUREAU — quotidien YAWatch]
+woman in her 30s with long brown hair, dark turtleneck, sitting at high-tech desk,
+small violet doll visible on desk, multiple monitors in background,
+blue-tinted surveillance room, concentrated expression, cinematic side lighting
+
+[PORTRAIT ÉMOTIONNEL — flashback / souvenir]
+warm portrait of woman in her 30s with brown hair,
+gentle soft lighting, nostalgic expression, holding small violet handmade doll,
+slightly out of focus background, golden hour, intimate, 50mm lens
+
+[FACE CAMÉRA — autorité]
+serious woman in her 30s, dark professional attire, direct camera gaze,
+confident posture, cinematic lighting, charcoal background,
+small violet doll visible in frame, dramatic shadows, film still quality
+
+[DE DOS — face aux écrans]
+woman with long brown hair seen from behind,
+facing wall of surveillance monitors showing camera feeds,
+blue-green cold light, isolated silhouette, atmospheric, cinematic
+
+==============================================================
+COULEURS EXACTES
+==============================================================
+Vêtements  : #2C2C2C (anthracite)
+Cheveux    : #3D2B1F (brun foncé)
+Peau       : #C8956C (méditerranéen)
+Yeux       : #2D1B0E (brun profond)

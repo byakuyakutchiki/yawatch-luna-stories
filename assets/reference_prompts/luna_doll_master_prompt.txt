@@ -1,0 +1,55 @@
+==============================================================
+LUNA DOLL — MASTER PROMPT OFFICIEL
+Source: docs/CHARACTER_BIBLE.md
+==============================================================
+
+--- POSITIVE PROMPT ---
+
+small handmade fabric doll, short brown hair, violet velvet dress with round collar,
+soft round face, dark embroidered eyes with gentle melancholic expression,
+small mouth slightly smiling, cloth hands, visible hand-sewn stitching,
+slightly worn and loved appearance, warm soft lighting from single source,
+emotional symbolism, intimate atmosphere, cinematic depth of field,
+9:16 vertical format, photorealistic fabric texture, golden hour ambiance,
+nostalgic mood, detailed close-up, 4k, award-winning photography
+
+--- NEGATIVE PROMPT ---
+
+robot, android, cyborg, mechanical, metal, plastic, LED, circuits, screen face,
+digital eyes, holographic, futuristic doll, sci-fi doll, articulated joints,
+blonde hair, red dress, blue dress, green dress, large size, tall,
+realistic human face, horror doll, uncanny valley, cheap CGI, 3D render,
+blurry, low quality, watermark, text, signature, deformed, ugly,
+cyberpunk, neon lights, generic AI art
+
+==============================================================
+VARIANTES PAR TYPE DE SCÈNE
+==============================================================
+
+[ÉMOTIONNELLE — close up]
+small handmade fabric doll with brown hair and violet velvet dress,
+resting gently in warm hands, soft focus background, golden hour light,
+emotional intimacy, shallow depth of field, film grain, 50mm portrait lens
+
+[MYSTÉRIEUSE — seule dans le noir]
+small violet-dressed handmade doll alone on dark wooden desk,
+single dramatic spotlight from above, long shadow, mysterious atmosphere,
+blue monitor glow in background, cinematic tension, security camera style
+
+[YAWATCH — contraste chaud/froid]
+small handmade doll with violet dress as warm accent,
+cold blue surveillance room background, multiple screens visible,
+warm violet against cold steel blue palette, cinematic contrast lighting
+
+[MACRO — détail expressif]
+extreme macro close-up of dark embroidered doll eyes,
+fabric texture visible, single light source, cinematic depth,
+emotional, slightly mysterious, film grain
+
+==============================================================
+COULEURS EXACTES
+==============================================================
+Robe violet : #7B4FA6
+Cheveux brun : #3D2B1F
+Tissu peau  : #F2DEC4
+Yeux        : #1A1A1A

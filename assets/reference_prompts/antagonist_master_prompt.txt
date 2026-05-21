@@ -1,0 +1,50 @@
+==============================================================
+ANTAGONISTE — MASTER PROMPT OFFICIEL
+Source: docs/CHARACTER_BIBLE.md
+NE PAS UTILISER AVANT LA SAISON 3
+==============================================================
+
+--- POSITIVE PROMPT ---
+
+woman in her late 30s to early 40s, straight black hair precisely styled,
+grey-green eyes with calculated expression, controlled neutral face,
+angular features contrasting with Luna's softness,
+sharp architectural dark suit (midnight blue or pure white),
+ambiguous expression — not clearly villain, not clearly ally,
+cinematic portrait, cold lighting, 4k, 35mm lens,
+9:16 vertical format, psychological thriller atmosphere
+
+--- NEGATIVE PROMPT ---
+
+obvious villain look, evil smirk, dark magic, fantasy elements,
+casual clothing, colorful clothing, violet or purple (reserved for Luna Doll),
+overly dramatic villain pose, cape, weapon visible,
+cartoon, anime, illustration, low quality, blurry, watermark, deformed
+
+==============================================================
+RÈGLE NARRATIVE IMPORTANTE
+==============================================================
+L'antagoniste ne doit jamais sembler clairement mauvaise dans ses premières apparitions.
+Le spectateur doit douter de son rôle jusqu'à la saison 3.
+
+==============================================================
+VARIANTES PAR TYPE DE SCÈNE
+==============================================================
+
+[INTRODUCTION — ambiguïté maximale]
+professional woman with straight black hair, grey-green eyes,
+white tailored suit, neutral expression, looking slightly off-camera,
+clean modern office background, cold white light, cinematic
+
+[CONFRONTATION LUNA — contraste]
+two women facing each other, one with long wavy brown hair and dark attire,
+one with straight black hair and white suit,
+cold blue surveillance lighting, psychological tension, cinematic wide shot
+
+==============================================================
+COULEURS EXACTES
+==============================================================
+Vêtements  : #0D1B2A (bleu nuit) / #FFFFFF (blanc pur)
+Cheveux    : #0A0A0A (noir intense)
+Peau       : #D4B896 (clair)
+Yeux       : #5B7A6E (gris-vert)
