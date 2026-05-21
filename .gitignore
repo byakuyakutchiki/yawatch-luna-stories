@@ -5,7 +5,7 @@ __pycache__/
 venv/
 .venv/
 content/audio/*.mp3
-content/videos/*.mp4
+# content/videos/*.mp4
 content/luna_factory.log
 content/lore/*.json
 content/stories/*.json
