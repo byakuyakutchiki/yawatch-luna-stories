@@ -95,6 +95,33 @@ Types de mouvement par scène :
 | Twist — YAWatch room | Zoom arrière lent (isolation) |
 | CTA — poupée seule | Zoom avant très lent (mystère) |
 
+## Animation Premium Image-To-Video
+
+Le Ken Burns reste le fallback.
+
+Pour un rendu teaser/film, produire des clips courts de 3 a 5 secondes via une brique image-to-video :
+
+- camera push-in ;
+- micro-expression ;
+- respiration ;
+- regard ;
+- pluie, reflets, lumiere ;
+- mouvement tres retenu.
+
+Regles :
+
+- pas de lipsync par defaut ;
+- pas de gestes exageres ;
+- pas de transformation de visage ;
+- ne jamais demander une action complexe ;
+- garder le plan court.
+
+Voir :
+
+```text
+docs/IMAGE_TO_VIDEO_TEST_MATRIX.md
+```
+
 ---
 
 ## Sous-titres

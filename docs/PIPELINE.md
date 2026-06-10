@@ -9,6 +9,7 @@ Lore
       → Traduction (Phase 4)
         → Génération de prompts images
           → Génération de voix (TTS)
+            → Animation image-to-video courte
             → Génération de sous-titres
               → Rendu vidéo
                 → Thumbnail
@@ -88,8 +89,9 @@ STATUS: production_ready    ← passe le Quality Gate complet (voir VISUAL_DIREC
 |---|---|---|
 | 1 | Scripts + prompts + audio + SRT | ✅ Fait |
 | 2 | Génération images réelles (SDXL/Replicate) | 🔜 |
-| 3 | Assembly vidéo automatique (MoviePy) | 🔜 |
-| 4 | Traduction multilingue (OpenAI) | 🔜 |
-| 5 | Upload YouTube automatique | 🔜 |
-| 6 | Batch hebdomadaire + scheduler cron | 🔜 |
-| 7 | Intégration application Luna | 🔜 |
+| 3 | Animation image-to-video premium | 🔜 |
+| 4 | Assembly vidéo automatique (MoviePy/FFmpeg) | 🔜 |
+| 5 | Traduction multilingue (OpenAI) | 🔜 |
+| 6 | Upload YouTube automatique | 🔜 |
+| 7 | Batch hebdomadaire + scheduler cron | 🔜 |
+| 8 | Intégration application Luna | 🔜 |
