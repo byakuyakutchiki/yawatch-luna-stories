@@ -26,10 +26,10 @@ STYLE_PRESETS: Dict[str, Dict[str, str]] = {
         "camera": "50mm portrait lens, close-up",
     },
     "surveillance": {
-        "quality": "CCTV footage style, security camera, grainy",
-        "lighting": "harsh overhead fluorescent, cold blue-white",
-        "mood": "cold, clinical, unsettling",
-        "camera": "wide angle, fisheye distortion",
+        "quality": "premium corporate thriller footage, realistic cinematic photography",
+        "lighting": "natural Paris daylight with subtle cold reflections",
+        "mood": "controlled, ambiguous, quietly unsettling",
+        "camera": "35mm lens, slow observational framing",
     },
     "dreamlike": {
         "quality": "ethereal, soft glow, painterly",
@@ -119,27 +119,27 @@ class PromptStyleManager:
         scene_desc = (
             f"woman in her 30s with long brown hair and dark professional attire, "
             f"{emotion} expression, gently holding a small violet-dressed doll, "
-            f"standing in a dimly lit high-tech surveillance room"
+            f"standing in a bright La Defense office with Paris visible through glass"
         )
         return self.build_prompt(
             scene_description=scene_desc,
-            scene_type="emotionnelle",
-            characters=["Luna_adulte", "Luna_Doll", "YAWatch_AI"],
+            scene_type="present_paris",
+            characters=["Luna_adulte", "Luna_Doll", "Paris_reel"],
             style_preset="cinematic",
         )
 
     def build_yawatch_room(self, incident: str = "") -> Dict[str, str]:
         """Salle de contrôle YAWatch — ambiance froide."""
         scene_desc = (
-            "futuristic surveillance control room, multiple monitors showing camera feeds, "
-            "blue and cyan lighting, empty corridors on screens"
+            "premium YAWatch office at La Defense, glass walls, restrained monitoring screens, "
+            "Paris daylight, corporate thriller mood"
         )
         if incident:
             scene_desc += f", {incident}"
         return self.build_prompt(
             scene_description=scene_desc,
-            scene_type="mysterieuse",
-            characters=["YAWatch_AI"],
+            scene_type="la_defense",
+            characters=["YAWatch", "Paris_reel"],
             style_preset="surveillance",
         )
 

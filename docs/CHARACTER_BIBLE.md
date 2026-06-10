@@ -85,6 +85,7 @@ Yeux       : #1A1A1A (presque noir)
 > Femme humaine, 32 ans, fondatrice de YAWatch Industries.
 > Protectrice, intelligente, émotionnellement blessée.
 > Toujours associée à Luna Doll.
+> Saison 1 : fausse suspecte. Le public doit croire qu'elle cache ou provoque les événements sombres.
 
 ### Apparence physique
 
@@ -122,6 +123,8 @@ Yeux       : #2D1B0E (brun profond)
 - Assise au bureau, poupée dans le champ → quotidien
 - De dos, face aux écrans YAWatch → solitude
 - Mains sur la poupée → vulnérabilité
+- Face à Paris / La Défense en plein jour → réussite maîtrisée
+- Regard insomniaque de nuit → culpabilité et doute
 
 ### Cadrages recommandés
 
@@ -138,48 +141,105 @@ Yeux       : #2D1B0E (brun profond)
 - Cheveux blonds
 - Vieille femme, enfant
 - Expression trop souriante (elle ne sourit que dans les flashbacks)
+- Révéler qu'elle est innocente trop tôt dans la saison 1
 
 ---
 
-## ANTAGONISTE (révélée saison 3+)
+## ABY ADULTE
 
 ### Description officielle
 
-> Deuxième femme. Froide, calculatrice, intelligente.
-> Comprend le système émotionnel mieux que Luna.
-> Prend progressivement le contrôle de YAWatch.
+> Femme humaine, 28–32 ans, brillante, froide, élégante.
+> Miroir stratégique de Luna.
+> Saison 1 : manipulatrice cachée. Elle agit dans l'ombre, mais ne doit jamais être jouée comme une méchante classique.
 
 ### Apparence physique
 
 | Attribut | Description |
 |---|---|
-| Âge apparent | 35–42 ans |
-| Silhouette | Plus anguleuse que Luna — contraste intentionnel |
-| Cheveux | Noirs, lisses, coiffés avec précision |
-| Yeux | Gris-vert, regard calculateur |
-| Expression | Neutre, contrôlée — le sourire est rare et inquiétant |
+| Âge apparent | 28–32 ans |
+| Silhouette | Élancée, contrôlée, présence dominante |
+| Cheveux | Blonds, souvent relevés ou coiffés avec précision |
+| Yeux | Sombres ou très contrastés, regard calculateur |
+| Expression | Calme, froide, presque trop posée |
 
 ### Vêtements
 
 | Attribut | Description |
 |---|---|
-| Style | Tailleur strict, lignes nettes, coupes architecturales |
-| Couleurs | Bleu nuit, noir, blanc pur — jamais de violet |
-| Contraste avec Luna | Là où Luna est douce, elle est tranchante |
+| Style | Tailleur noir, lignes nettes, bijoux discrets mais coûteux |
+| Couleurs | Noir, anthracite, violet très discret, reflets froids |
+| Contraste avec Luna | Là où Luna protège, Aby contrôle |
 
 ### Palette couleur
 
 ```
-Vêtements  : #0D1B2A (bleu nuit) / #FFFFFF (blanc pur)
-Cheveux    : #0A0A0A (noir intense)
-Peau       : #D4B896 (plus clair que Luna)
-Yeux       : #5B7A6E (gris-vert)
+Vêtements  : #111111 (noir) / #2A2433 (violet noir discret)
+Cheveux    : #C9A66B (blond sombre)
+Peau       : #D4B896
+Yeux       : #1A1A1A
 ```
 
 ### Règle narrative
 
-Elle ne doit **jamais** apparaître comme clairement mauvaise dans les premières scènes.
-Le spectateur doit douter : est-elle l'ennemie ou l'alliée ?
+Elle ne doit **jamais** apparaître comme clairement mauvaise avant le final de saison 1.
+Le spectateur doit soupçonner Luna, pas Aby.
+Aby peut manipuler parce qu'elle pense protéger Luna, détruire l'héritage du père ou empêcher une vérité plus dangereuse.
+
+---
+
+## ABY ENFANT
+
+### Description officielle
+
+> Petite fille blonde canon APK, associée à la maquette de ville.
+> Elle ressemble à Luna par l'univers de chambre et de poupées, mais son énergie est différente : stratégie, contrôle, lucidité trop précoce.
+
+### Règle canon
+
+`assets/luna_stories_assets/00_assets_deja_dans_app/app_aby_enfant_current.png` est Aby enfant, pas Luna.
+
+### Expressions & postures
+
+- Regard fixe sur la maquette
+- Main proche d'un jeton noir
+- Silence, observation, contrôle
+- Jamais hystérique, jamais caricaturale
+
+---
+
+## PÈRE DE LUNA ET ABY
+
+### Description officielle
+
+> Homme adulte élégant, mafieux, puissant, nerveux sous la surface.
+> Blessure d'enfance centrale de Luna et Aby.
+> Respectable en public, terrifiant en privé.
+
+### Apparence physique
+
+| Attribut | Description |
+|---|---|
+| Âge apparent | 45–60 ans |
+| Cheveux | Gris/noirs, coiffés, barbe courte possible |
+| Tenue | Costume sombre, chemise noire ou blanche, montre discrète |
+| Expression | Calme, dominante, menace contenue |
+
+### Règle narrative
+
+Il ne doit pas être un méchant de dessin animé.
+Il croit sincèrement avoir préparé Luna et Aby à survivre.
+
+Phrase morale possible :
+
+> Je vous ai préparées à survivre.
+
+### Interdictions
+
+- Violence graphique
+- Cris permanents
+- Méchant caricatural
+- Arme mise en avant comme identité principale
 
 ---
 
@@ -187,8 +247,9 @@ Le spectateur doit douter : est-elle l'ennemie ou l'alliée ?
 
 ### Description officielle
 
-> Architecture froide, surveillance omniprésente, technologie clinique.
-> Contraste total avec la chaleur de Luna Doll.
+> Grande entreprise située à La Défense, Paris.
+> Conséquence du traumatisme familial : Luna a transformé une blessure en système de protection.
+> Doit rester crédible, premium, lumineux dans le présent, plus froid lors des bascules psychologiques.
 
 ### Éléments visuels
 
@@ -196,19 +257,35 @@ Le spectateur doit douter : est-elle l'ennemie ou l'alliée ?
 |---|---|
 | Architecture | Lignes épurées, verre et acier, couloirs longs |
 | Écrans | Multiples feeds caméra, données en temps réel, terminaux CLI |
-| Éclairage | Bleu-vert froid, néons distants, reflets sur surfaces métalliques |
-| Atmosphère | Surveillance, silence, efficacité clinique |
+| Éclairage | Jour clair de La Défense, reflets de verre, bascules bleu/violet seulement en tension |
+| Atmosphère | Réussite publique, protection ambiguë, contrôle sous-jacent |
 | Pluie | Souvent visible depuis les fenêtres |
 
 ### Palette couleur environnement
 
 ```
-Dominante  : #0A1628 (bleu nuit profond)
-Secondaire : #1E3A5F (bleu acier)
-Accent     : #00C8FF (cyan données)
-Neutre     : #C0C8D0 (gris métal)
-Alert      : #FF3A3A (rouge alarme)
+Présent    : #F4F1EA (lumière parisienne) / #C9D3DC (verre)
+Corporate  : #1E2A32 (anthracite) / #5C6670 (acier)
+Accent     : #7B4FA6 (violet Luna) / #00A8C8 (donnée discrète)
+Bascule    : #0A1628 (bleu nuit) / #1A0F24 (violet noir)
 ```
+
+---
+
+## PARIS RÉEL — DÉCOR PRINCIPAL
+
+### Description officielle
+
+> Paris est le terrain humain de la série : La Défense, appartements, rues, métro, quais, cafés, restaurants, passages, quartiers.
+> Les lieux doivent sembler vécus, pas carte postale publicitaire.
+
+### Règles
+
+- Présent lumineux, réaliste, quotidien.
+- La Défense = pouvoir, réussite, verre, hauteur.
+- Appartements = silence, intimité, blessures.
+- Métro/rues/quais = vie réelle et circulation du secret.
+- Violet/noir réservé aux souvenirs, bascules, manipulation d'Aby et traces du père.
 
 ---
 
@@ -216,12 +293,12 @@ Alert      : #FF3A3A (rouge alarme)
 
 ### Contraste visuel fondamental
 
-| Luna Doll / Luna enfant | Luna adulte / YAWatch |
+| Enfance / souvenirs | Présent Paris / YAWatch |
 |---|---|
-| Chaleur, teintes sépia | Froid, bleu acier |
-| Tissu, artisanal | Verre, métal |
-| Lumière douce | Éclairage clinique |
-| Violet | Bleu / gris |
+| Chaleur, teintes sépia, comptine | Lumière réelle, verre, bureaux, rues |
+| Poupée, maquette, porte entrouverte | Paris, La Défense, appartements |
+| Refuge de Luna | Contrôle hérité du père |
+| Indices Aby invisibles | Luna fausse suspecte |
 
 ### Règle de co-présence
 

@@ -2,6 +2,16 @@
 
 ## Identité visuelle
 
+## Vérité visuelle saison 1
+
+- Paris réel est le décor principal.
+- Luna est la fausse suspecte : l'image peut la rendre mystérieuse, mais pas coupable explicitement.
+- Aby est la manipulatrice cachée : ses indices doivent être subtils, souvent lisibles seulement après coup.
+- Le père mafieux est la blessure d'enfance : il apparaît comme présence, phrase, photo, ombre, souvenir.
+- YAWatch est la conséquence du traumatisme familial, pas un gadget technologique.
+- Le présent doit rester lumineux, crédible, habité.
+- Le violet/noir/bleu sombre est réservé aux souvenirs, secrets, bascules psychologiques et traces d'Aby ou du père.
+
 ### Luna Doll
 
 - Petite poupée brune
@@ -23,18 +33,39 @@
 
 ### YAWatch Industries
 
-- Architecture froide, épurée
-- Tons bleus et cyan dominants
-- Écrans de monitoring, pluie, surveillance
-- Ambiance science-fiction cinématique
+- Tour / bureaux à La Défense
+- Architecture premium, verre, hauteur, lumière parisienne
+- Tons clairs et réalistes en journée
+- Bascule bleu/violet uniquement quand le secret ou le système reprend le dessus
+- Ambiance thriller corporate parisien, pas cyberpunk générique
+
+### Aby
+
+- Femme blonde, élégante, froide, stratégique
+- Enfant : petite blonde canon APK avec maquette, regard dur
+- Indices visuels : reflet, jeton noir, dossier déjà ouvert, archive modifiée, présence hors champ
+- Ne jamais la présenter comme méchante évidente avant le final
+
+### Le père
+
+- Homme élégant, mafieux, sombre, calme
+- Bureau, dîner, appel nocturne, photo ancienne, porte entrouverte
+- Menace contenue : pas d'action graphique, pas de violence spectaculaire
+
+### Paris réel
+
+- La Défense, Quatre Temps, métro/RER, quais de Seine, Marais, cafés, appartements, rues
+- Lieux crédibles et vécus
+- Pas de carte postale permanente
+- Pas de New York
 
 ---
 
 ## Règle de contraste
 
-> Souvenirs d'enfance chaleureux / teintes sépia
+> Présent parisien lumineux et réel
 > **VS**
-> Présent technologique froid / bleu acier
+> Souvenirs, secrets et manipulations en bleu/violet sombre
 
 Ce contraste doit être visible dans chaque épisode.
 
@@ -67,6 +98,10 @@ Chaque vidéo générée doit passer cette checklist avant d'être considérée 
 - [ ] Éclairage directionnel (pas de lumière plate générique)
 - [ ] Luna Doll reconnaissable (brune, robe violette, douce, non-robotique)
 - [ ] Identité visuelle YAWatch présente
+- [ ] Paris réel ou La Défense crédible si scène au présent
+- [ ] Luna peut être suspecte, mais pas révélée coupable
+- [ ] Aby ne doit pas être révélée manipulatrice avant le final
+- [ ] Le père reste une blessure/ombre, pas un méchant caricatural
 
 ### Audio
 - [ ] Voix claire et cohérente
@@ -81,6 +116,7 @@ Chaque vidéo générée doit passer cette checklist avant d'être considérée 
 - [ ] Luna Doll n'est jamais décrite comme robot, androïde, métal ou circuits
 - [ ] Cohérence narrative avec les épisodes précédents
 - [ ] Arc narratif respecté
+- [ ] Vérité saison 1 respectée : Luna fausse suspecte, Aby cachée, père blessure d'enfance
 
 ---
 
@@ -114,3 +150,7 @@ STATUS: not_ready_for_upload
 - Absence de style de sous-titres
 - Absence de rythme cinématique
 - Visuels cyberpunk génériques déconnectés du lore
+- Paris remplacé par New York ou ville générique américaine
+- Présent constamment violet/noir sans raison narrative
+- Aby rendue coupable trop tôt
+- Père traité comme gangster cartoon

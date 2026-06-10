@@ -24,10 +24,13 @@ Cette question passe avant l'application, la technologie et YAWatch Industries. 
 
 L'histoire suit :
 
-- **YAWatch Industries** — entreprise de surveillance intelligente
-- **Luna** — sa fondatrice adulte, protectrice, émotionnellement blessée
+- **Paris réel** — La Défense, bureaux, appartements, rues, métro, quais, restaurants
+- **Luna** — fondatrice adulte brillante, protectrice, fausse suspecte de la saison 1
+- **Aby** — soeur de coeur / miroir stratégique de Luna, manipulatrice cachée de la saison 1
+- **Le père mafieux** — blessure d'enfance, figure respectable et terrifiante, origine du trauma familial
+- **YAWatch Industries** — conséquence du traumatisme familial, pas le sujet principal
 - **Luna Doll** — petite poupée brune à robe violette, symbole de l'enfance de Luna
-- **Un système émotionnel caché** influençant la réalité autour de Luna
+- **Un système émotionnel caché** qui semble accuser Luna, alors qu'Aby agit dans l'ombre
 
 ### Thèmes centraux
 
@@ -35,6 +38,9 @@ L'histoire suit :
 - équilibre émotionnel
 - instabilité de la vie
 - connexion humaine
+- héritage familial
+- fausse culpabilité
+- manipulation protectrice
 - paix malgré l'incertitude
 - acceptation plutôt que contrôle total
 
@@ -52,13 +58,15 @@ L'histoire suit :
 
 ## Règle fondatrice
 
-> La réalité reflète inconsciemment les jeux émotionnels que Luna inventait enfant avec ses poupées.
+> La saison 1 doit faire croire que Luna est la source des événements sombres, alors qu'Aby manipule dans l'ombre.
 
-Les personnages découvrent progressivement que les événements actuels correspondent aux histoires de l'enfance de Luna.
+Le public doit soupçonner Luna. Les indices contre Aby existent depuis le début, mais restent lisibles seulement après le final.
 
 Nouvelle colonne vertébrale :
 
 > Chaque épisode révèle un morceau du passé de Luna et d'Aby, jusqu'à comprendre ce que Luna essaie d'empêcher de recommencer.
+
+Le décor principal est Paris réel. YAWatch, La Défense et la technologie doivent rester ancrés dans des lieux crédibles, lumineux et quotidiens. Les scènes sombres appartiennent aux souvenirs, secrets, bascules psychologiques et traces du père.
 
 ---
 

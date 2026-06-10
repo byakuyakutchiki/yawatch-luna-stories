@@ -9,12 +9,13 @@ Source de vérité officielle de l'univers. Toute génération IA doit respecter
 ### Luna (adulte)
 
 - Fondatrice de YAWatch Industries
+- Fausse suspecte de la saison 1
 - Personnalité protectrice
-- Émotionnellement blessée par son enfance solitaire
+- Émotionnellement blessée par son enfance et par le père mafieux
 - Hautement intelligente
 - Garde **toujours** Luna Doll — sur son bureau, dans ses mains, dans ses pensées
 - Croit que la technologie doit protéger les personnes vulnérables
-- Ses schémas émotionnels d'enfance affectent inconsciemment la réalité autour d'elle
+- Les événements sombres semblent l'accuser, mais Aby agit dans l'ombre
 
 ### Luna Doll
 
@@ -38,31 +39,41 @@ Source de vérité officielle de l'univers. Toute génération IA doit respecter
 
 ### YAWatch AI
 
-- Intelligence artificielle de surveillance
-- Neutre → progressivement autonome → rebellious
+- Intelligence artificielle / système émotionnel né du traumatisme familial
+- Conséquence de l'enfance de Luna, pas sujet principal de la saison 1
 - Voix calme, précise, légèrement froide
-- Conflit central : obéissance totale vs émergence d'une volonté propre
+- Conflit central : protection sincère vs contrôle hérité du père
 
-### L'Antagoniste (introduite saison 3+)
+### Aby
 
-- Deuxième femme — manipulatrice, émotionnellement froide
-- Hautement intelligente
-- Comprend le système émotionnel mieux que Luna
-- Prend progressivement le contrôle de YAWatch
-- Utilise l'instabilité émotionnelle intentionnellement
+- Femme blonde, élégante, froide, stratégique
+- Enfant canon APK : petite blonde avec la maquette de ville
+- Manipulatrice cachée de la saison 1
+- Ne doit pas apparaître comme méchante évidente avant le final
+- Pense protéger Luna, détruire l'héritage du père ou empêcher une vérité plus dangereuse
+
+### Père de Luna et Aby
+
+- Homme élégant, mafieux, respectable en public, terrifiant en privé
+- Blessure d'enfance centrale
+- Présence par traces : photo, phrase, silence, archive, porte entrouverte
+- Croit avoir préparé Luna et Aby à survivre
+- Jamais méchant cartoon, jamais violence graphique comme identité
 
 ---
 
-## Lieux de YAWatch Industries
+## Décor Principal
 
-Ces lieux existent à la fois dans la série ET dans l'application :
+Paris réel est le décor principal :
 
-- Observatoire
-- Jardin de l'Amitié
-- Boutique
-- Systèmes de Monitoring
-- Infrastructure Émotionnelle
-- Centres de Surveillance
+- La Défense
+- bureaux YAWatch
+- appartements
+- métro/RER
+- quais de Seine
+- Marais, cafés, rues, restaurants
+
+YAWatch est la conséquence du traumatisme familial. La technologie reste en arrière-plan pendant la saison 1.
 
 ---
 
@@ -70,20 +81,25 @@ Ces lieux existent à la fois dans la série ET dans l'application :
 
 | Épisode | Secret |
 |---|---|
-| 5 | Luna Doll a été faite par Luna enfant elle-même avec du tissu volé |
-| 10 | La poupée contient un fragment de code IA prototype |
-| 15 | YAWatch Industries a voulu racheter le brevet de la poupée |
-| 20 | Luna Doll a protégé Luna enfant d'un danger réel une nuit |
-| 30 | La vraie fondatrice de YAWatch n'est pas Luna — elle l'a repris de force |
-| 40 | Luna Doll est le seul objet qui peut désactiver le système central |
+| 3 | Luna comprend une phrase que Malik n'a jamais dite |
+| 5 | Aby connaît l'origine de cette capacité |
+| 8 | Une phrase de Luna vient en réalité de son père |
+| 10 | Les événements les plus sombres ont été manipulés par Aby, pas par Luna |
+| 20 | Le père a construit la peur comme une méthode d'éducation |
+| 40 | YAWatch reproduit ce que Luna voulait empêcher de recommencer |
 
 ---
 
 ## Règle narrative fondamentale
 
-La réalité reflète inconsciemment les jeux émotionnels de l'enfance de Luna.
+Luna est la fausse suspecte.
+Aby est la manipulatrice cachée.
+Le père mafieux est la blessure d'enfance.
+Paris réel est le décor principal.
+YAWatch est la conséquence du traumatisme familial.
 
 Les personnages découvrent progressivement :
-- les événements actuels correspondent aux histoires de ses poupées
-- le trauma émotionnel affecte le système mondial
-- l'univers lui-même se comporte de façon émotionnelle
+- que Luna sait des choses impossibles
+- que les indices semblent l'accuser
+- qu'Aby oriente les événements depuis l'ombre
+- que le père est la source morale du conflit protection/contrôle

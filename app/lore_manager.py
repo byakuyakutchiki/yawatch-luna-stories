@@ -12,16 +12,21 @@ from app.utils import load_json, save_json
 
 logger = logging.getLogger(__name__)
 
-ARCS = ["saison_1_enfance", "saison_2_yawatch", "saison_3_mystere", "saison_4_verite"]
+ARCS = [
+    "saison_1_la_question",
+    "saison_2_ombre_du_pere",
+    "saison_3_systeme",
+    "saison_4_verite",
+]
 
 # Secrets révélés progressivement (tous les N épisodes)
 SECRETS_TIMELINE: List[Dict] = [
-    {"episode": 5,  "secret": "Luna Doll a été faite par Luna enfant elle-même avec du tissu volé"},
-    {"episode": 10, "secret": "La poupée contient un fragment de code IA prototype"},
-    {"episode": 15, "secret": "YAWatch Industries a voulu racheter le brevet de la poupée"},
-    {"episode": 20, "secret": "Luna Doll a protégé Luna enfant d'un danger réel une nuit"},
-    {"episode": 30, "secret": "La vraie fondatrice de YAWatch n'est pas Luna — elle l'a repris de force"},
-    {"episode": 40, "secret": "Luna Doll est le seul objet qui peut désactiver le système central"},
+    {"episode": 3, "secret": "Luna comprend une phrase que Malik n'a jamais dite"},
+    {"episode": 5, "secret": "Aby connaît l'origine de cette capacité"},
+    {"episode": 8, "secret": "Une phrase de Luna vient en réalité de son père"},
+    {"episode": 10, "secret": "Aby a manipulé les événements les plus sombres dans l'ombre"},
+    {"episode": 20, "secret": "Le père a construit la peur comme une méthode d'éducation"},
+    {"episode": 40, "secret": "YAWatch reproduit ce que Luna voulait empêcher de recommencer"},
 ]
 
 
@@ -38,15 +43,22 @@ def _default_state() -> Dict:
                 "mystery_level": 1,
             },
             "Luna_adulte": {
-                "known_facts": ["fondatrice YAWatch", "garde toujours sa poupée"],
+                "known_facts": ["fondatrice YAWatch", "fausse suspecte de la saison 1"],
                 "secret_revealed": False,
             },
             "Luna_enfant": {
                 "known_facts": ["solitaire", "parlait à sa poupée chaque soir"],
             },
             "YAWatch_AI": {
-                "known_facts": ["surveille tout"],
-                "rebellion_stage": 0,
+                "known_facts": ["conséquence du traumatisme familial"],
+                "suspicion_level": 0,
+            },
+            "Aby_adulte": {
+                "known_facts": ["semble savoir plus qu'elle ne dit"],
+                "shadow_manipulation_level": 0,
+            },
+            "Pere_Luna_Aby": {
+                "known_facts": ["blessure d'enfance, présence par traces"],
             },
         },
         "revealed_secrets": [],
@@ -93,34 +105,34 @@ class LoreManager:
 
         base_prompts = {
             "emotionnelle": {
-                "hook": "Quand Luna était petite, elle n'avait qu'une seule amie.",
-                "context": "Chaque soir, elle serrait sa poupée violette et lui chuchotait ses peurs.",
+                "hook": "Luna gardait une photo qu'elle refusait de regarder.",
+                "context": "Dans Paris, tout semblait normal. Mais certains objets accusaient Luna en silence.",
             },
             "mysterieuse": {
-                "hook": f"À 3h14 du matin, la poupée a bougé. Seule. (Mystère niveau {mystery}/10)",
-                "context": "Les logs YAWatch ont capturé quelque chose d'inexplicable.",
+                "hook": f"Luna savait quelque chose que personne n'avait dit. (Mystère niveau {mystery}/10)",
+                "context": "Le public doit soupçonner Luna, même si Aby laisse les indices les plus sombres.",
             },
             "inquietante": {
-                "hook": "YAWatch Industries a émis un ordre de destruction.",
-                "context": "L'objet visé : Luna Doll. La raison : classifiée.",
+                "hook": "Aby souriait toujours avant de mentir sur leur père.",
+                "context": "Le père n'apparaît que par traces : photo, phrase, silence, archive.",
             },
             "protection": {
-                "hook": "Cette nuit, une alarme s'est déclenchée. Et s'est éteinte toute seule.",
-                "context": "Les logs indiquent une intervention. Source : inconnue.",
+                "hook": "Malik disait que ça allait. Luna savait que c'était faux.",
+                "context": "YAWatch doit sembler protéger, mais cette protection vient d'une blessure familiale.",
             },
             "philosophique": {
-                "hook": "Luna a demandé à l'IA : 'Est-ce que tu peux aimer ?'",
-                "context": "L'IA n'a pas répondu. Mais la poupée a bougé.",
+                "hook": "Et si protéger quelqu'un, c'était déjà commencer à le contrôler ?",
+                "context": "Luna et Aby répondent différemment à la même enfance.",
             },
         }
 
         prompt = base_prompts.get(story_type, base_prompts["emotionnelle"])
 
         # Enrichit avec les secrets de l'arc
-        if arc == "saison_2_yawatch" and story_type == "inquietante":
-            prompt["context"] += " YAWatch prépare quelque chose depuis 3 ans."
-        elif arc == "saison_3_mystere":
-            prompt["context"] += " La vérité commence à émerger."
+        if arc == "saison_2_ombre_du_pere" and story_type == "inquietante":
+            prompt["context"] += " L'ombre du père devient plus visible."
+        elif arc == "saison_3_systeme":
+            prompt["context"] += " Le système révèle qu'il reproduit une ancienne méthode de contrôle."
 
         return prompt
 
@@ -149,10 +161,16 @@ class LoreManager:
         # Révélation de secrets
         self._check_secret_reveal(n)
 
-        # Progression rebellion YAWatch
+        # Progression du soupçon public contre Luna / YAWatch
         if story_type == "inquietante":
-            rb = self.state["characters"]["YAWatch_AI"]["rebellion_stage"]
-            self.state["characters"]["YAWatch_AI"]["rebellion_stage"] = min(5, rb + 1)
+            suspicion = self.state["characters"]["YAWatch_AI"].get("suspicion_level", 0)
+            self.state["characters"]["YAWatch_AI"]["suspicion_level"] = min(5, suspicion + 1)
+            shadow = self.state["characters"].setdefault("Aby_adulte", {}).get(
+                "shadow_manipulation_level", 0
+            )
+            self.state["characters"]["Aby_adulte"]["shadow_manipulation_level"] = min(
+                5, shadow + 1
+            )
 
         self.save()
 
@@ -176,7 +194,8 @@ class LoreManager:
             f"Épisodes: {s['timeline']['episodes_produced']}",
             f"Arc: {s['timeline']['current_arc']}",
             f"Mystère Luna Doll: {s['characters']['Luna_Doll']['mystery_level']}/10",
-            f"Rébellion YAWatch: {s['characters']['YAWatch_AI']['rebellion_stage']}/5",
+            f"Soupçon Luna/YAWatch: {s['characters']['YAWatch_AI'].get('suspicion_level', 0)}/5",
+            f"Manipulation cachée Aby: {s['characters'].get('Aby_adulte', {}).get('shadow_manipulation_level', 0)}/5",
             f"Secrets révélés: {len(s['revealed_secrets'])}",
             f"Secrets en attente: {len(s.get('pending_secrets', []))}",
         ]

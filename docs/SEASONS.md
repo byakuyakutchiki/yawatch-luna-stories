@@ -5,6 +5,10 @@
 ### Saison 1 — La Question (`saison_1_la_question`)
 *Épisodes 1–10*
 
+Vérité de production :
+
+> Luna est la fausse suspecte. Aby est la manipulatrice cachée. Le père mafieux est la blessure d'enfance. Paris réel est le décor principal. YAWatch est la conséquence du traumatisme familial.
+
 Question centrale :
 
 > Pourquoi Luna connaît-elle des choses qu'elle ne devrait pas connaître ?
@@ -15,6 +19,13 @@ Question centrale :
 - Le père de Luna et Aby existe d'abord comme absence, photo, phrase, silence
 - YAWatch reste en arrière-plan : conséquence du passé, pas sujet principal
 - Tons : Paris clair, présent réaliste, bascules plus sombres quand le passé remonte
+
+Règle de saison :
+
+- Ne jamais révéler trop tôt qu'Aby manipule.
+- Accuser visuellement Luna sans la rendre coupable explicitement.
+- Laisser le père exister par traces : photo, phrase, silence, archive, peur.
+- Utiliser Paris comme réalité quotidienne, pas seulement comme carte postale.
 
 Secrets révélés :
 - Épisode 3 : Luna comprend une phrase que Malik n'a jamais dite
@@ -47,7 +58,7 @@ Secrets révélés :
 - Luna découvre qu'elle a transformé une blessure en outil de protection, mais aussi de contrôle
 
 Secrets révélés :
-- Épisode 30 : la vraie fondatrice de YAWatch n'est pas Luna — elle l'a repris de force
+- Épisode 30 : Luna comprend que YAWatch reproduit une méthode de contrôle héritée du père
 
 ---
 
@@ -77,5 +88,5 @@ Chaque saison doit :
 
 1. Révéler un secret lore au moment prévu
 2. Faire évoluer le `mystery_level` de Luna Doll
-3. Faire progresser la `rebellion_stage` de YAWatch AI
+3. Faire progresser le soupçon public sans révéler trop tôt le vrai manipulateur
 4. Maintenir la cohérence visuelle de tous les personnages

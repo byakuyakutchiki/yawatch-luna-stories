@@ -5,7 +5,7 @@ from app.lore_manager import LoreManager
 def test_initial_state(tmp_path):
     lore = LoreManager(tmp_path)
     assert lore.episode_count == 0
-    assert lore.current_arc == "saison_1_enfance"
+    assert lore.current_arc == "saison_1_la_question"
     assert lore.doll_mystery_level == 1
 
 
@@ -34,7 +34,7 @@ def test_arc_progression(tmp_path):
     # Avance jusqu'au seuil du 2e arc (épisode 10)
     for _ in range(10):
         lore.record_episode("emotionnelle")
-    assert lore.current_arc == "saison_2_yawatch"
+    assert lore.current_arc == "saison_2_ombre_du_pere"
 
 
 def test_secret_revealed_at_episode_5(tmp_path):
