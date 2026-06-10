@@ -20,6 +20,7 @@ Secrets révélés :
 - Épisode 3 : Luna comprend une phrase que Malik n'a jamais dite
 - Épisode 5 : Aby connaît l'origine de cette capacité
 - Épisode 8 : une phrase de Luna vient en réalité de son père
+- Final : les événements les plus sombres ont été manipulés par Aby, pas par Luna
 
 ---
 

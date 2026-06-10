@@ -119,6 +119,12 @@ Nouvelle logique :
 
 > Qu'est-ce que Luna essaie d'empecher de recommencer ?
 
+Secret final de saison 1 :
+
+> Le public croit que Luna est la source des phenomenes sombres. En realite, Aby manipulait les evenements dans l'ombre.
+
+Cette revelation ne doit arriver qu'au final de saison. Avant cela, Luna doit rester la fausse coupable.
+
 ## Motifs Recurrentiels
 
 - photo retournee
@@ -127,6 +133,7 @@ Nouvelle logique :
 - maquette de ville
 - jeton noir d'Aby
 - poupee Luna
+- comptine brisee / voix enfant
 - porte entrouverte
 - fenetre de bureau a La Defense
 - nuit parisienne
