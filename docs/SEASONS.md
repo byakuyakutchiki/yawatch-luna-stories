@@ -2,27 +2,34 @@
 
 ## Structure narrative par saison
 
-### Saison 1 — Découverte (`saison_1_enfance`)
+### Saison 1 — La Question (`saison_1_la_question`)
 *Épisodes 1–10*
 
-- Découverte de YAWatch Industries
-- Anomalies émotionnelles étranges
-- Luna introduite progressivement
-- La poupée apparaît à répétition
-- Tons : nostalgiques, doux, légèrement inquiétants
+Question centrale :
+
+> Pourquoi Luna connaît-elle des choses qu'elle ne devrait pas connaître ?
+
+- Luna adulte apparaît comme brillante et maîtrisée
+- Aby semble savoir plus qu'elle ne dit
+- Malik devient le premier cas humain qui prouve que Luna détecte l'invisible
+- Le père de Luna et Aby existe d'abord comme absence, photo, phrase, silence
+- YAWatch reste en arrière-plan : conséquence du passé, pas sujet principal
+- Tons : Paris clair, présent réaliste, bascules plus sombres quand le passé remonte
 
 Secrets révélés :
-- Épisode 5 : Luna Doll a été faite par Luna enfant
+- Épisode 3 : Luna comprend une phrase que Malik n'a jamais dite
+- Épisode 5 : Aby connaît l'origine de cette capacité
+- Épisode 8 : une phrase de Luna vient en réalité de son père
 
 ---
 
-### Saison 2 — Instabilité (`saison_2_yawatch`)
+### Saison 2 — L'Ombre Du Pere (`saison_2_ombre_du_pere`)
 *Épisodes 11–25*
 
-- Les événements deviennent plus perturbants
-- Les personnages subissent des ruptures émotionnelles
-- Le comportement de YAWatch devient suspect
-- YAWatch AI gagne en autonomie
+- Le père devient une présence narrative active
+- Des enregistrements, photos et témoins contredisent la version officielle
+- Aby refuse toujours de dire toute la vérité
+- YAWatch semble protéger les gens avec les méthodes mêmes que Luna voulait fuir
 
 Secrets révélés :
 - Épisode 10 : la poupée contient un fragment de code IA prototype
@@ -31,13 +38,12 @@ Secrets révélés :
 
 ---
 
-### Saison 3 — Révélation (`saison_3_mystere`)
+### Saison 3 — Le Systeme (`saison_3_systeme`)
 *Épisodes 26–40*
 
-- Les histoires d'enfance commencent à correspondre à la réalité
-- L'enquête commence
-- Le passé de Luna émerge
-- L'antagoniste apparaît
+- Les histoires d'enfance correspondent à la réalité adulte
+- Le système émotionnel de YAWatch reproduit des réflexes hérités du père
+- Luna découvre qu'elle a transformé une blessure en outil de protection, mais aussi de contrôle
 
 Secrets révélés :
 - Épisode 30 : la vraie fondatrice de YAWatch n'est pas Luna — elle l'a repris de force

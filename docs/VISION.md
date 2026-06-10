@@ -12,6 +12,12 @@ YAWatch-LUNA est un univers narratif IA combinant :
 **L'objectif n'est pas de créer des vidéos YouTube.**
 L'objectif est de créer un **écosystème narratif vivant**.
 
+La question centrale de la série est :
+
+> Pourquoi Luna connaît-elle des choses qu'elle ne devrait pas connaître ?
+
+Cette question passe avant l'application, la technologie et YAWatch Industries. Les spectateurs doivent suivre la série parce qu'ils veulent comprendre Luna, Aby, leur père et les secrets qui ont donné naissance au système.
+
 ---
 
 ## L'univers
@@ -49,6 +55,10 @@ L'histoire suit :
 > La réalité reflète inconsciemment les jeux émotionnels que Luna inventait enfant avec ses poupées.
 
 Les personnages découvrent progressivement que les événements actuels correspondent aux histoires de l'enfance de Luna.
+
+Nouvelle colonne vertébrale :
+
+> Chaque épisode révèle un morceau du passé de Luna et d'Aby, jusqu'à comprendre ce que Luna essaie d'empêcher de recommencer.
 
 ---
 
