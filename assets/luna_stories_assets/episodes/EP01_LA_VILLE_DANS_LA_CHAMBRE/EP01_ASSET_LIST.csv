@@ -1,0 +1,8 @@
+plan,duration_seconds,status,asset_path,description
+01,4,generated,EP01_PLAN_01_chambre_fenetre_nuit.png,"Chambre de Luna sans enfant visible, fenetre pluie"
+02,5,generated,EP01_PLAN_02_poupee_luna_chambre_nuit.png,Poupee Luna dans la chambre de nuit
+03,6,generated,EP01_PLAN_03_ville_miniature_illuminee.png,Ville miniature illuminee
+04,5,generated,EP01_PLAN_04_maison_porte_ouverte.png,Petite maison miniature porte ouverte
+05,6,generated,EP01_PLAN_05_poupee_et_ville_miniature.png,Poupee Luna et ville miniature
+06,6,to_replace,EP01_PLAN_06_ref_luna_maquette_ville.png,"A remplacer: cette reference ressemble a Aby enfant canon APK, pas Luna"
+07,5,generated,EP01_PLAN_07_jeton_aby_observe.png,Jeton noir Aby pres de la maquette
