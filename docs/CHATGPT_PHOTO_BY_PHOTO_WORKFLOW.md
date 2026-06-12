@@ -39,7 +39,7 @@ On travaille personnage par personnage et case par case :
 
 ### LUNA-A-001 — Neutral 9:16
 
-Statut : premier essai reçu le 13 juin 2026, classé `[~]` non canonique. La scène est validée, mais le visage ne correspond pas assez à la référence principale. Correction `LUNA-A-001-R1` à produire avant de continuer.
+Statut : `[x]` validé par la direction artistique le 13 juin 2026. Cette image devient la nouvelle référence canonique de Luna adulte pour toutes les générations suivantes.
 
 Références :
 
@@ -75,17 +75,17 @@ Nom cible après téléchargement :
 luna_adulte_neutral_9x16_01.png
 ```
 
-Premier candidat archivé :
+Premier candidat, ensuite promu comme référence canonique :
 
 ```text
-assets/luna_stories_assets/01_luna_adulte/candidates/non_canon/luna_adulte_neutral_9x16_candidate_face_mismatch_01.png
+assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
 ```
 
-Motif : visage plus long et plus anguleux, âge apparent supérieur, yeux, nez et bouche insuffisamment fidèles à `luna_adulte_reference_realiste_01.jpg`.
+Décision artistique : le visage diffère des anciennes références, mais son naturel, sa crédibilité et sa présence ont été préférés. Il remplace les anciennes images comme référence d'identité prioritaire.
 
 ### LUNA-A-001-R1 — Correction d'identité
 
-Statut : à générer maintenant.
+Statut : annulé après validation artistique de `LUNA-A-001`. Ne pas générer.
 
 ```text
 Tu dois CORRIGER la photo verticale que tu viens de générer, pas inventer une nouvelle femme.
@@ -111,8 +111,8 @@ Statut : après validation de LUNA-A-001.
 Prompt :
 
 ```text
-Utilise comme identité canon la photo Luna adulte validée précédemment dans cette conversation. Consulte aussi si nécessaire le dossier GitHub :
-https://github.com/byakuyakutchiki/yawatch-luna-stories/tree/master/assets/luna_stories_assets/01_luna_adulte
+Utilise comme unique référence d'identité canonique cette photo de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
 
 Génère exactement UNE nouvelle photo du même personnage.
 

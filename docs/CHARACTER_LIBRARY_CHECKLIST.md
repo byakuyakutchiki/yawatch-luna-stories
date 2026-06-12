@@ -38,7 +38,7 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 
 | Émotion | Fichier(s) | Statut |
 |---|---|---|
-| neutral | `luna_adulte_reference_realiste_01.jpg` | [x] |
+| neutral | `luna_adulte_reference_realiste_01.jpg`, `luna_adulte_neutral_9x16_01.png` (nouveau visage canon approuvé) | [x] |
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
 | worried | — | [ ] |
@@ -51,7 +51,7 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 
 **Assets disponibles** : 4 portraits + 1 avatar app
 **Score** : 2/10 couvertes — 1/10 partielle
-**Manquants prioritaires avant teaser** : `worried`, `neutral` propre 9:16
+**Manquants prioritaires avant teaser** : `worried`
 **Manquants prioritaires avant EP01** : `protective` (avec Luna Doll dans les mains), `sad`
 
 ---
