@@ -1,0 +1,209 @@
+# ChatGPT Photo-By-Photo Workflow — YAWatch-LUNA
+
+## Principe
+
+Une demande ChatGPT = une seule photo finale.
+
+On travaille personnage par personnage et case par case :
+
+1. ChatGPT consulte les références canoniques sur GitHub.
+2. Il produit une seule image correspondant à une case de checklist.
+3. Ludovic télécharge l'image.
+4. Codex la contrôle, la renomme et la classe.
+5. Codex met à jour les checklists et GitHub.
+6. On passe seulement ensuite à la photo suivante.
+
+## Sources De Vérité GitHub
+
+- Repo : https://github.com/byakuyakutchiki/yawatch-luna-stories
+- Bible personnages : https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/docs/CHARACTER_BIBLE.md
+- Direction visuelle : https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/docs/VISUAL_DIRECTION.md
+- Checklist émotions : https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/docs/CHARACTER_LIBRARY_CHECKLIST.md
+- Checklist poses : https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/docs/POSE_LIBRARY_CHECKLIST.md
+- Assets classés : https://github.com/byakuyakutchiki/yawatch-luna-stories/tree/master/assets/luna_stories_assets
+
+## Règles Pour ChatGPT
+
+- Produire exactement une image, jamais une planche.
+- Utiliser les fichiers GitHub indiqués comme références d'identité.
+- Conserver le même visage, âge, cheveux, carnation et silhouette.
+- Modifier seulement l'émotion, la pose, le cadrage ou le décor demandé.
+- Format vertical 9:16, sauf indication contraire.
+- Réalisme cinématographique premium.
+- Présent parisien lumineux et crédible.
+- Pas de cyberpunk générique, pas de New York.
+- Pas de texte lisible, pas de watermark, pas de logo inventé.
+- Émotions subtiles, jamais théâtrales.
+
+## File De Production — Luna Adulte
+
+### LUNA-A-001 — Neutral 9:16
+
+Statut : À générer en premier.
+
+Références :
+
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_reference_realiste_01.jpg
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_ceo_01.png
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_ceo_03_portrait.png
+
+Prompt :
+
+```text
+Consulte d'abord ces trois références GitHub de Luna adulte :
+
+1. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_reference_realiste_01.jpg
+2. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_ceo_01.png
+3. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_ceo_03_portrait.png
+
+Génère exactement UNE nouvelle photo de Luna adulte.
+
+Objectif checklist : LUNA ADULTE — émotion NEUTRAL, portrait vertical propre 9:16.
+
+Conserve strictement son identité visuelle : même femme méditerranéenne de 30 à 35 ans, mêmes traits du visage, mêmes longs cheveux bruns légèrement ondulés, mêmes yeux bruns profonds, silhouette élégante et crédible.
+
+Scène : portrait vertical, Luna face caméra dans un bureau premium lumineux de YAWatch Industries à La Défense. Lumière naturelle parisienne, verre et architecture de bureau réaliste en arrière-plan. Blazer noir ou anthracite, chemisier sobre. Expression neutre, calme, intelligente, légèrement fatiguée mais sans inquiétude visible.
+
+Important : Luna est la fausse suspecte de la saison 1, mais cette photo est sa référence neutre. Elle ne doit sembler ni méchante, ni glamour, ni théâtrale.
+
+Contraintes : une seule image, 9:16, réalisme cinématographique premium, pas de violet dominant, pas de cyberpunk, pas de New York, pas de texte lisible, pas de watermark, pas de logo inventé.
+```
+
+Nom cible après téléchargement :
+
+```text
+luna_adulte_neutral_9x16_01.png
+```
+
+### LUNA-A-002 — Worried / Insomniaque
+
+Statut : après validation de LUNA-A-001.
+
+Prompt :
+
+```text
+Utilise comme identité canon la photo Luna adulte validée précédemment dans cette conversation. Consulte aussi si nécessaire le dossier GitHub :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/tree/master/assets/luna_stories_assets/01_luna_adulte
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : LUNA ADULTE — émotion WORRIED.
+
+Luna se trouve dans son bureau YAWatch à La Défense, de nuit. Paris est flou derrière les grandes vitres. Elle porte le même style de blazer sobre. Son visage montre une inquiétude contenue et une fatigue insomniaque : regard légèrement fuyant, mâchoire détendue, respiration calme. Pas de larmes, pas de panique, pas de grimace.
+
+La scène doit faire soupçonner qu'elle cache quelque chose sans la rendre mauvaise.
+
+Contraintes : une seule image verticale 9:16, même visage que la référence canon, lumière nocturne réaliste, reflets discrets, pas de violet excessif, pas de cyberpunk, pas de texte, pas de watermark.
+```
+
+Nom cible : `luna_adulte_worried_9x16_01.png`
+
+### LUNA-A-003 — Protective Avec Luna Doll
+
+Statut : après validation de LUNA-A-002.
+
+Référence poupée :
+
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_violette_01.jpg
+
+Prompt :
+
+```text
+Utilise la Luna adulte validée précédemment comme identité canon.
+Consulte la référence officielle de Luna Doll :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_violette_01.jpg
+
+Génère exactement UNE photo.
+
+Objectif checklist : LUNA ADULTE — émotion PROTECTIVE, Luna Doll tenue dans les mains.
+
+Luna tient délicatement contre elle une petite poupée artisanale en tissu d'environ 20 cm, cheveux bruns courts, robe violette en velours légèrement usée. La poupée n'est jamais robotique : aucun métal, circuit, LED ou visage numérique.
+
+Luna est dans un bureau parisien lumineux. Son geste est protecteur, son émotion retenue, son regard doux mais grave. Cadrage poitrine ou plan américain vertical.
+
+Contraintes : une seule image 9:16, même visage de Luna, poupée fidèle à la référence, réalisme premium, pas de texte, pas de watermark, pas de logo inventé.
+```
+
+Nom cible : `luna_adulte_protective_luna_doll_01.png`
+
+### LUNA-A-004 — Looking Out Window
+
+Statut : après validation de LUNA-A-003.
+
+Prompt :
+
+```text
+Utilise la Luna adulte validée précédemment comme identité canon.
+
+Génère exactement UNE photo.
+
+Objectif checklist pose : LUNA ADULTE — LOOKING_OUT_WINDOW.
+
+Luna est vue de profil ou de trois quarts dos dans son bureau YAWatch à La Défense. Elle regarde Paris de nuit à travers une grande baie vitrée. Son reflet reste visible dans le verre. Posture immobile, élégante, solitude contenue. Architecture réaliste de La Défense, pas de skyline américaine.
+
+Contraintes : vertical 9:16, même visage et mêmes cheveux, lumière nocturne réaliste, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark.
+```
+
+Nom cible : `luna_adulte_looking_out_window_01.png`
+
+### LUNA-A-005 — Office Desk
+
+Statut : après validation de LUNA-A-004.
+
+Prompt :
+
+```text
+Utilise la Luna adulte validée précédemment comme identité canon.
+
+Génère exactement UNE photo.
+
+Objectif checklist pose : LUNA ADULTE — OFFICE_DESK.
+
+Luna est assise à son bureau YAWatch à La Défense. Bureau premium mais sobre : ordinateur discret, dossier fermé sans texte lisible, Luna Doll posée clairement sur le bureau. Lumière parisienne de fin de journée. Luna travaille en silence, expression concentrée et calme.
+
+La technologie doit rester crédible et secondaire. YAWatch est la conséquence de son traumatisme familial, pas un décor de science-fiction spectaculaire.
+
+Contraintes : vertical 9:16, même identité, pas de cyberpunk, pas de faux texte, pas de logo inventé, pas de watermark.
+```
+
+Nom cible : `luna_adulte_office_desk_01.png`
+
+### LUNA-A-006 — Looking At Turned Photo
+
+Statut : après validation de LUNA-A-005.
+
+Prompt :
+
+```text
+Utilise la Luna adulte validée précédemment comme identité canon.
+
+Génère exactement UNE photo.
+
+Objectif checklist pose et teaser : LUNA ADULTE — LOOKING_AT_PHOTO.
+
+Luna se tient ou s'assoit devant son bureau YAWatch. Elle regarde une photo familiale encadrée posée face contre le bureau, ou presque retournée. Le contenu de la photo ne doit pas être visible. Son expression est troublée mais contenue. Sa main hésite près du cadre sans encore le retourner.
+
+Décor lumineux et réaliste de La Défense, avec une bascule psychologique très subtile dans les reflets. Aucun père visible directement.
+
+Contraintes : une seule image verticale 9:16, même visage de Luna, émotion subtile, pas de texte, pas de watermark, pas de violence, pas de cyberpunk.
+```
+
+Nom cible : `luna_adulte_looking_at_turned_photo_01.png`
+
+## Validation Après Chaque Photo
+
+Codex contrôle :
+
+- identité du visage ;
+- format et cadrage ;
+- émotion demandée ;
+- cohérence Paris / YAWatch ;
+- absence d'artefacts ;
+- absence de texte ou faux logo ;
+- conformité à la checklist.
+
+Si la photo est bonne : elle est classée et la case passe à `[x]`.
+
+Si elle est presque bonne : elle est classée comme variante `[~]` et Codex écrit un prompt correctif unique.
+
+Si elle est incohérente : elle n'entre pas dans le canon et la même case est régénérée.

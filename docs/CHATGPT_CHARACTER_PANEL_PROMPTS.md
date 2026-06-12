@@ -1,5 +1,7 @@
 # ChatGPT Character Panel Prompts — YAWatch-LUNA
 
+> ARCHIVE : la production utilise maintenant le workflow photo par photo décrit dans `docs/CHATGPT_PHOTO_BY_PHOTO_WORKFLOW.md`. Ce document reste disponible comme réserve de prompts groupés.
+
 Objectif : remplir progressivement `CHARACTER_LIBRARY_CHECKLIST.md` et `POSE_LIBRARY_CHECKLIST.md` sans gaspiller les générations.
 
 Workflow :
