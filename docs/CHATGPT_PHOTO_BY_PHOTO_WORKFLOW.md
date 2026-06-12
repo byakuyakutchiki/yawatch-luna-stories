@@ -39,7 +39,7 @@ On travaille personnage par personnage et case par case :
 
 ### LUNA-A-001 — Neutral 9:16
 
-Statut : À générer en premier.
+Statut : premier essai reçu le 13 juin 2026, classé `[~]` non canonique. La scène est validée, mais le visage ne correspond pas assez à la référence principale. Correction `LUNA-A-001-R1` à produire avant de continuer.
 
 Références :
 
@@ -73,6 +73,35 @@ Nom cible après téléchargement :
 
 ```text
 luna_adulte_neutral_9x16_01.png
+```
+
+Premier candidat archivé :
+
+```text
+assets/luna_stories_assets/01_luna_adulte/candidates/non_canon/luna_adulte_neutral_9x16_candidate_face_mismatch_01.png
+```
+
+Motif : visage plus long et plus anguleux, âge apparent supérieur, yeux, nez et bouche insuffisamment fidèles à `luna_adulte_reference_realiste_01.jpg`.
+
+### LUNA-A-001-R1 — Correction d'identité
+
+Statut : à générer maintenant.
+
+```text
+Tu dois CORRIGER la photo verticale que tu viens de générer, pas inventer une nouvelle femme.
+
+Consulte cette référence d'identité principale de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_reference_realiste_01.jpg
+
+Génère exactement UNE image corrigée.
+
+Conserve de la photo actuelle : le cadrage vertical 9:16, le bureau lumineux à La Défense, la lumière naturelle, le blazer noir, les longs cheveux bruns et l'expression neutre.
+
+Corrige uniquement l'identité du personnage pour reproduire fidèlement le visage de la référence principale : même âge apparent, même forme douce et légèrement ovale du visage, mêmes grands yeux bruns, mêmes sourcils, même nez, mêmes lèvres et mêmes proportions. La nouvelle image ne doit pas paraître plus âgée, plus anguleuse ou plus sévère que la référence.
+
+Luna doit rester naturelle, calme et légèrement fatiguée. Ne l'embellis pas et ne la transforme pas en mannequin. Aucun changement de décor ou de tenue.
+
+Contraintes : une seule image, photoréalisme cinématographique, 9:16, pas de texte, pas de watermark, pas de logo inventé, pas de cyberpunk.
 ```
 
 ### LUNA-A-002 — Worried / Insomniaque
