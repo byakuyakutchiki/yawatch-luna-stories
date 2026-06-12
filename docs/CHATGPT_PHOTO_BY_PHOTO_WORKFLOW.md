@@ -159,7 +159,7 @@ Nom cible : `luna_adulte_protective_luna_doll_01.png`
 
 ### LUNA-A-004 — Looking Out Window
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026.
 
 Prompt :
 
@@ -180,18 +180,22 @@ Nom cible : `luna_adulte_looking_out_window_01.png`
 
 ### LUNA-A-005 — Office Desk
 
-Statut : après validation de LUNA-A-004.
+Statut : à générer maintenant.
 
 Prompt :
 
 ```text
-Utilise la Luna adulte validée précédemment comme identité canon.
+Utilise comme unique référence d'identité canonique cette photo de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
+
+Utilise cette image uniquement comme référence de Luna Doll :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_violette_01.jpg
 
 Génère exactement UNE photo.
 
 Objectif checklist pose : LUNA ADULTE — OFFICE_DESK.
 
-Luna est assise à son bureau YAWatch à La Défense. Bureau premium mais sobre : ordinateur discret, dossier fermé sans texte lisible, Luna Doll posée clairement sur le bureau. Lumière parisienne de fin de journée. Luna travaille en silence, expression concentrée et calme.
+Luna est assise à son bureau YAWatch à La Défense. Bureau premium mais sobre : ordinateur portable discret, dossier fermé sans texte lisible, Luna Doll posée sur un côté du bureau. Lumière parisienne de fin de journée. Luna travaille en silence, expression concentrée et calme. Son visage, ses deux mains et la poupée doivent être visibles sans se chevaucher.
 
 La technologie doit rester crédible et secondaire. YAWatch est la conséquence de son traumatisme familial, pas un décor de science-fiction spectaculaire.
 

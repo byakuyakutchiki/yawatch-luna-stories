@@ -39,7 +39,7 @@ Dernière mise à jour : 2026-06-11
 | walking | — | [ ] |
 | sitting | `luna_adulte_protective_luna_doll_01.png` | [x] |
 | looking_at_photo | — | [ ] |
-| looking_out_window | — | [ ] |
+| looking_out_window | `luna_adulte_looking_out_window_01.png` | [x] |
 | phone_call | — | [ ] |
 | office_desk | `luna_bureau_la_defense_jour_01.png` (décor — personnage non intégré) | [~] |
 | family_dinner | — | [ ] |
@@ -171,7 +171,7 @@ Dernière mise à jour : 2026-06-11
 
 | Personnage | Poses couvertes |
 |---|---|
-| Luna adulte | 1/10 + 2 partiels |
+| Luna adulte | 3/10 + 1 partielle |
 | Luna enfant | 0/10 + 2 partiels |
 | Aby adulte | 0/10 + 4 partiels |
 | Aby enfant | 1/10 |
