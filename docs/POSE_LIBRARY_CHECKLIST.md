@@ -37,7 +37,7 @@ Dernière mise à jour : 2026-06-11
 |---|---|---|
 | standing | `luna_adulte_ceo_01.png`, `luna_adulte_ceo_03_portrait.png` | [x] |
 | walking | — | [ ] |
-| sitting | — | [ ] |
+| sitting | `luna_adulte_protective_luna_doll_01.png` | [x] |
 | looking_at_photo | — | [ ] |
 | looking_out_window | — | [ ] |
 | phone_call | — | [ ] |

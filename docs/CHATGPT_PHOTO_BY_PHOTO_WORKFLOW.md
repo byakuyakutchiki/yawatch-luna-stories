@@ -129,7 +129,7 @@ Nom cible : `luna_adulte_worried_9x16_01.png`
 
 ### LUNA-A-003 — Protective Avec Luna Doll
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026.
 
 Référence poupée :
 
@@ -159,18 +159,19 @@ Nom cible : `luna_adulte_protective_luna_doll_01.png`
 
 ### LUNA-A-004 — Looking Out Window
 
-Statut : après validation de LUNA-A-003.
+Statut : à générer maintenant.
 
 Prompt :
 
 ```text
-Utilise la Luna adulte validée précédemment comme identité canon.
+Utilise comme unique référence d'identité canonique cette photo de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
 
 Génère exactement UNE photo.
 
 Objectif checklist pose : LUNA ADULTE — LOOKING_OUT_WINDOW.
 
-Luna est vue de profil ou de trois quarts dos dans son bureau YAWatch à La Défense. Elle regarde Paris de nuit à travers une grande baie vitrée. Son reflet reste visible dans le verre. Posture immobile, élégante, solitude contenue. Architecture réaliste de La Défense, pas de skyline américaine.
+Luna est vue de profil, suffisamment tournée pour que son visage canonique reste identifiable, dans son bureau YAWatch à La Défense. Elle regarde Paris de nuit à travers une grande baie vitrée. Son reflet subtil reste visible dans le verre. Posture immobile, élégante, solitude contenue. Architecture réaliste de La Défense, pas de skyline américaine.
 
 Contraintes : vertical 9:16, même visage et mêmes cheveux, lumière nocturne réaliste, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark.
 ```

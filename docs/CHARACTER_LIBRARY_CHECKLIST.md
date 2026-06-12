@@ -45,14 +45,14 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | determined | `luna_adulte_ceo_01.png`, `luna_adulte_ceo_03_portrait.png` | [x] |
 | controlled_anger | — | [ ] |
 | shocked | — | [ ] |
-| protective | `luna_adulte_ceo_02_landscape.png` (enfant visible en décor) | [~] |
+| protective | `luna_adulte_protective_luna_doll_01.png` | [x] |
 | suspicious | — | [ ] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 6 portraits + 1 avatar app
-**Score** : 3/10 couvertes — 1/10 partielle
+**Assets disponibles** : 7 portraits + 1 avatar app
+**Score** : 4/10 couvertes
 **Manquants prioritaires avant teaser** : aucun portrait émotionnel critique
-**Manquants prioritaires avant EP01** : `protective` (avec Luna Doll dans les mains), `sad`
+**Manquants prioritaires avant EP01** : `sad`
 
 ---
 
@@ -197,7 +197,7 @@ Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
 | Personnage | Assets totaux | Émotions couvertes | Urgence |
 |---|---|---|---|
 | Luna Doll | 6 | 6/8 états | Basse — 2 états manquants |
-| Luna adulte | 7 | 3/10 + 1 partielle | Haute — `protective` et `sad` prioritaires |
+| Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
 | Luna enfant | 3 | 0/10 dédiés | **CRITIQUE** |
 | Aby adulte | 3 | 0/10 dédiés | **CRITIQUE** |
 | Aby enfant | 2 | 1/10 | Haute |
