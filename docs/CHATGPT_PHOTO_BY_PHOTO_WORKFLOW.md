@@ -106,7 +106,7 @@ Contraintes : une seule image, photoréalisme cinématographique, 9:16, pas de t
 
 ### LUNA-A-002 — Worried / Insomniaque
 
-Statut : après validation de LUNA-A-001.
+Statut : `[x]` validé le 13 juin 2026.
 
 Prompt :
 
@@ -129,7 +129,7 @@ Nom cible : `luna_adulte_worried_9x16_01.png`
 
 ### LUNA-A-003 — Protective Avec Luna Doll
 
-Statut : après validation de LUNA-A-002.
+Statut : à générer maintenant.
 
 Référence poupée :
 
@@ -138,7 +138,9 @@ Référence poupée :
 Prompt :
 
 ```text
-Utilise la Luna adulte validée précédemment comme identité canon.
+Utilise comme unique référence d'identité canonique cette photo de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
+
 Consulte la référence officielle de Luna Doll :
 https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_violette_01.jpg
 
@@ -146,7 +148,7 @@ Génère exactement UNE photo.
 
 Objectif checklist : LUNA ADULTE — émotion PROTECTIVE, Luna Doll tenue dans les mains.
 
-Luna tient délicatement contre elle une petite poupée artisanale en tissu d'environ 20 cm, cheveux bruns courts, robe violette en velours légèrement usée. La poupée n'est jamais robotique : aucun métal, circuit, LED ou visage numérique.
+Luna tient délicatement contre elle une petite poupée artisanale en tissu d'environ 20 cm, cheveux bruns, robe violette légèrement usée. La poupée doit clairement rester un objet textile de petite taille : ce n'est ni un robot, ni une enfant miniature. Aucun métal, circuit, LED ou visage numérique.
 
 Luna est dans un bureau parisien lumineux. Son geste est protecteur, son émotion retenue, son regard doux mais grave. Cadrage poitrine ou plan américain vertical.
 
