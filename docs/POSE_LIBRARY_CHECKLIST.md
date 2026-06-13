@@ -38,7 +38,7 @@ Dernière mise à jour : 2026-06-11
 | standing | `luna_adulte_ceo_01.png`, `luna_adulte_ceo_03_portrait.png` | [x] |
 | walking | — | [ ] |
 | sitting | `luna_adulte_protective_luna_doll_01.png` | [x] |
-| looking_at_photo | — | [ ] |
+| looking_at_photo | `luna_adulte_looking_at_turned_photo_01.png` | [x] |
 | looking_out_window | `luna_adulte_looking_out_window_01.png` | [x] |
 | phone_call | — | [ ] |
 | office_desk | `luna_adulte_office_desk_01.png` | [x] |
@@ -46,7 +46,7 @@ Dernière mise à jour : 2026-06-11
 | paris_street | — | [ ] |
 | defensive_posture | — | [ ] |
 
-**Score** : 1/10 poses — 2/10 partielles
+**Score** : 5/10 poses
 
 ---
 
@@ -171,7 +171,7 @@ Dernière mise à jour : 2026-06-11
 
 | Personnage | Poses couvertes |
 |---|---|
-| Luna adulte | 4/10 |
+| Luna adulte | 5/10 |
 | Luna enfant | 0/10 + 2 partiels |
 | Aby adulte | 0/10 + 4 partiels |
 | Aby enfant | 1/10 |

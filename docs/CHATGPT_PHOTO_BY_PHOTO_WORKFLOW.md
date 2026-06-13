@@ -206,7 +206,7 @@ Nom cible : `luna_adulte_office_desk_01.png`
 
 ### LUNA-A-006 — Looking At Turned Photo
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026. Le cadre est vertical, dos visible; son contenu reste entièrement caché.
 
 Prompt :
 
@@ -226,6 +226,42 @@ Contraintes : une seule image verticale 9:16, même visage de Luna, émotion sub
 ```
 
 Nom cible : `luna_adulte_looking_at_turned_photo_01.png`
+
+## File De Production — Luna Enfant
+
+### LUNA-E-001 — Neutral 9:16
+
+Statut : à générer maintenant.
+
+Références d'identité autorisées :
+
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/00_assets_deja_dans_app/app_luna_enfant_current.png
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/02_luna_enfant/luna_enfant_chambre_poupee_01.png
+
+Références interdites pour cette génération : `app_aby_enfant_current.png` et `luna_enfant_maquette_ville_01.png`, qui représentent une enfant blonde et risquent de mélanger Luna avec Aby.
+
+```text
+Consulte uniquement ces deux références canoniques de Luna enfant :
+
+1. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/00_assets_deja_dans_app/app_luna_enfant_current.png
+2. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/02_luna_enfant/luna_enfant_chambre_poupee_01.png
+
+Génère exactement UNE nouvelle photo de Luna enfant.
+
+Objectif checklist : LUNA ENFANT — portrait NEUTRAL propre, vertical 9:16.
+
+Conserve strictement l'identité visible sur les deux références : petite fille méditerranéenne d'environ 8 ans, longs cheveux bruns foncés, grands yeux bruns, visage doux et légèrement ovale, peau naturelle. Elle doit pouvoir être reconnue comme la version enfant de Luna adulte.
+
+Attention : Luna enfant est brune. Ne consulte pas et ne reproduis pas `app_aby_enfant_current.png` ni `luna_enfant_maquette_ville_01.png`. Ne la transforme surtout pas en petite fille blonde : ce serait Aby ou une identité incohérente.
+
+Scène : portrait vertical simple dans sa chambre parisienne, en journée, avec une lumière naturelle douce. Fond réaliste et discret, légèrement flou. Luna est debout ou assise face caméra, vêtue d'un haut bleu nuit ou violet très sombre, sans costume fantastique. Expression neutre, attentive et calme, avec une fragilité subtile; pas de sourire appuyé, pas de tristesse théâtrale.
+
+Aucune poupée dans ses mains pour ce portrait de référence. Aucun autre enfant ni adulte visible.
+
+Contraintes : exactement une image 9:16, photoréalisme cinématographique naturel, âge clairement enfantin et non adolescent, pas de glamour, pas de maquillage, pas de pose adulte, pas de cyberpunk, pas de texte, pas de watermark et pas de logo.
+```
+
+Nom cible : `luna_enfant_neutral_9x16_01.png`
 
 ## Validation Après Chaque Photo
 
