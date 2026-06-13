@@ -361,7 +361,7 @@ Nom cible : `aby_adulte_neutral_9x16_01.png`
 
 ### ABY-A-002 — Observing Luna
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo d'Aby adulte :
@@ -387,6 +387,38 @@ Contraintes : exactement une image, photoréalisme cinématographique premium, m
 ```
 
 Nom cible : `aby_adulte_observing_luna_01.png`
+
+### ABY-A-003 — Vulnerable After Meeting
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo d'Aby adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_adulte_neutral_9x16_01.png
+
+Utilise cette image comme référence de continuité pour sa tenue professionnelle :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_adulte_observing_luna_01.png
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : ABY ADULTE — émotion VULNERABLE, blessure cachée brièvement visible.
+
+Conserve strictement son visage, son âge apparent d'environ 28 ans, son chignon blond imparfait aux racines sombres, ses yeux foncés et la même tenue professionnelle couvrante : tailleur noir structuré, chemisier noir fermé, bijoux très discrets. Aucun décolleté plongeant, aucune tenue glamour ou sexualisée.
+
+Scène : quelques minutes après la réunion, Aby est seule dans une petite salle vitrée de YAWatch Industries à La Défense. Elle est assise près de la table, légèrement tournée vers la fenêtre. Le dossier fermé de la réunion est posé devant elle. Elle ne regarde pas la caméra.
+
+Pour un instant, son contrôle se fissure : regard baissé ou perdu vers Paris, mâchoire détendue, fatigue contenue. Elle semble blessée et isolée, mais ne pleure pas. Aucun geste spectaculaire, aucune main sur le visage et aucune posture théâtrale.
+
+Une main repose naturellement sur le dossier fermé; l'autre tient doucement son poignet ou repose sur la table. Les mains doivent être entièrement visibles et anatomiquement correctes.
+
+Lumière parisienne douce de fin d'après-midi, décor clair et réaliste. La scène doit donner envie de comprendre Aby, pas de la condamner.
+
+Cadrage vertical 9:16, plan poitrine ou plan américain. Une seule femme adulte apparaît.
+
+Contraintes : exactement une image, photoréalisme cinématographique premium, tenue professionnelle couvrante, émotion subtile, pas de larmes, pas de sexualisation, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `aby_adulte_vulnerable_after_meeting_01.png`
 
 ## Validation Après Chaque Photo
 
