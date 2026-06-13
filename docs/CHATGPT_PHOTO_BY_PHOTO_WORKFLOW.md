@@ -231,7 +231,7 @@ Nom cible : `luna_adulte_looking_at_turned_photo_01.png`
 
 ### LUNA-E-001 — Neutral 9:16
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026. Cette image devient la référence d'identité prioritaire de Luna enfant.
 
 Références d'identité autorisées :
 
@@ -262,6 +262,31 @@ Contraintes : exactement une image 9:16, photoréalisme cinématographique natur
 ```
 
 Nom cible : `luna_enfant_neutral_9x16_01.png`
+
+### LUNA-E-002 — Worried At Night
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo de Luna enfant :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/02_luna_enfant/luna_enfant_neutral_9x16_01.png
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : LUNA ENFANT — émotion WORRIED, inquiétude nocturne contenue.
+
+Conserve strictement son identité : même petite fille méditerranéenne d'environ 8 ans, même visage, mêmes grands yeux bruns, mêmes longs cheveux bruns foncés, même âge apparent et mêmes proportions enfantines.
+
+Scène : Luna est assise sur le bord de son lit dans sa chambre parisienne, la nuit. Elle vient d'entendre un bruit inquiétant hors champ dans l'appartement. Elle regarde légèrement vers la porte fermée, jamais vers la caméra. Son expression montre une peur silencieuse et contenue : yeux attentifs, lèvres légèrement serrées, épaules un peu rentrées. Pas de larmes, pas de cri et pas de grimace.
+
+La chambre est réaliste et rassurante en apparence : lampe de chevet chaude, faible lumière bleue venant de la fenêtre, quelques jouets discrets. Luna Doll peut être visible posée près d'elle sur le lit, mais Luna ne la tient pas encore. Aucun adulte, aucune silhouette, aucune violence et aucune menace visible.
+
+Cadrage vertical 9:16, plan mi-corps ou plan américain. Luna doit paraître clairement enfantine, vulnérable et naturelle, jamais glamourisée.
+
+Contraintes : exactement une image, photoréalisme cinématographique naturel, même identité que la référence, pas de maquillage, pas de pose adulte, pas de contenu violent, pas de texte, pas de watermark, pas de cyberpunk et pas de violet dominant.
+```
+
+Nom cible : `luna_enfant_worried_night_01.png`
 
 ## Validation Après Chaque Photo
 
