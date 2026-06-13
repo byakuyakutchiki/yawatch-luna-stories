@@ -14,8 +14,8 @@ Generated/imported: 2026-06-09T19:32:33
   Source: `C:\Users\saint\Documents\Codex\2026-06-09\yawatch-luna-stories-public-yawatch-luna\outputs\luna_stories_assets\05_objets_symboliques_poupees\poupee_luna_violette_01.jpg`
 - `EP01_PLAN_05_ref_chambre_poupee.png` - Reference existante copiee pour montage EP01
   Source: `C:\Users\saint\Documents\Codex\2026-06-09\yawatch-luna-stories-public-yawatch-luna\outputs\luna_stories_assets\02_luna_enfant\luna_enfant_chambre_poupee_01.png`
-- `EP01_PLAN_06_ref_luna_maquette_ville.png` - Reference existante copiee pour montage EP01
-  Source: `C:\Users\saint\Documents\Codex\2026-06-09\yawatch-luna-stories-public-yawatch-luna\outputs\luna_stories_assets\02_luna_enfant\luna_enfant_maquette_ville_01.png`
+- `EP01_PLAN_06_ref_aby_maquette_ville.png` - Reference canonique d'Aby enfant blonde avec la maquette; ne pas utiliser comme Luna enfant
+  Source canonique: `assets/luna_stories_assets/03_aby/aby_enfant_canon_apk_maquette_ville_01.png`
 
 ## Replacement pass - 2026-06-09T19:36:34
 - `EP01_PLAN_02_poupee_luna_chambre_nuit.png` - Plan 02 - poupee Luna dans chambre nuit

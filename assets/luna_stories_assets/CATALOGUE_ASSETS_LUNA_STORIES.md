@@ -27,7 +27,7 @@ Derniere mise a jour : 2026-06-09T18:52:38
 - `01_luna_adulte/luna_adulte_ceo_03_portrait.png` - Luna adulte CEO format vertical, utile Shorts/fiche personnage.
 - `01_luna_adulte/luna_adulte_reference_realiste_01.jpg` - Reference visage adulte plus realiste/cinematique, a garder comme source.
 - `02_luna_enfant/luna_enfant_chambre_poupee_01.png` - Luna enfant dans la chambre avec poupee, CANDIDAT CANON enfance.
-- `02_luna_enfant/luna_enfant_maquette_ville_01.png` - Luna enfant construit une ville miniature, excellent symbole Luna City.
+- `03_aby/aby_enfant_canon_apk_maquette_ville_01.png` - Aby enfant blonde contrôle une ville miniature, image canonique de son tempérament stratégique.
 - `03_aby/aby_character_sheet_01.png` - Planche Aby adulte/enfant, tres utile pour stabiliser son design.
 - `03_aby/aby_character_sheet_02.png` - Planche Aby alternative, plus sombre et strategique.
 - `04_univers_et_decors/yawatch_logo_dark_01.png` - Logo YAWatch Industries noir/premium.

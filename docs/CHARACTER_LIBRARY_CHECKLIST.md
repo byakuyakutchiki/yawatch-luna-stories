@@ -64,16 +64,16 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
 | worried | — | [ ] |
-| determined | `luna_enfant_maquette_ville_01.png` (identité à vérifier : enfant blonde, ne pas utiliser comme référence canonique) | [~] |
+| determined | — | [ ] |
 | controlled_anger | — | [ ] |
 | shocked | — | [ ] |
 | protective | `luna_enfant_chambre_poupee_01.png` (avec poupée) | [~] |
 | suspicious | — | [ ] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 3 fichiers (dont 1 app)
-**Score** : 0/10 portraits dédiés — 3/10 partiels
-**ALERTE CANON** : ne jamais utiliser `app_aby_enfant_current.png` pour Luna enfant. C'est Aby. Ne pas utiliser non plus `luna_enfant_maquette_ville_01.png` comme référence d'identité avant clarification : l'enfant blonde ne correspond pas aux deux références brunes de Luna.
+**Assets disponibles** : 2 fichiers (dont 1 app)
+**Score** : 0/10 portraits dédiés — 2/10 partiels
+**ALERTE CANON** : ne jamais utiliser `app_aby_enfant_current.png` ni `aby_enfant_canon_apk_maquette_ville_01.png` pour Luna enfant. La petite blonde est Aby enfant. Luna enfant est la petite brune.
 **Manquants prioritaires** : aucun portrait dédié de Luna enfant n'existe encore.
 
 ---

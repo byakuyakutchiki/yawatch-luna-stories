@@ -238,7 +238,7 @@ Références d'identité autorisées :
 - https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/00_assets_deja_dans_app/app_luna_enfant_current.png
 - https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/02_luna_enfant/luna_enfant_chambre_poupee_01.png
 
-Références interdites pour cette génération : `app_aby_enfant_current.png` et `luna_enfant_maquette_ville_01.png`, qui représentent une enfant blonde et risquent de mélanger Luna avec Aby.
+Références interdites pour cette génération : `app_aby_enfant_current.png` et `aby_enfant_canon_apk_maquette_ville_01.png`, qui représentent toutes les deux Aby enfant, la petite blonde.
 
 ```text
 Consulte uniquement ces deux références canoniques de Luna enfant :
@@ -252,7 +252,7 @@ Objectif checklist : LUNA ENFANT — portrait NEUTRAL propre, vertical 9:16.
 
 Conserve strictement l'identité visible sur les deux références : petite fille méditerranéenne d'environ 8 ans, longs cheveux bruns foncés, grands yeux bruns, visage doux et légèrement ovale, peau naturelle. Elle doit pouvoir être reconnue comme la version enfant de Luna adulte.
 
-Attention : Luna enfant est brune. Ne consulte pas et ne reproduis pas `app_aby_enfant_current.png` ni `luna_enfant_maquette_ville_01.png`. Ne la transforme surtout pas en petite fille blonde : ce serait Aby ou une identité incohérente.
+Attention : Luna enfant est brune. Ne consulte pas et ne reproduis pas `app_aby_enfant_current.png` ni `aby_enfant_canon_apk_maquette_ville_01.png`. La petite fille blonde est officiellement Aby enfant.
 
 Scène : portrait vertical simple dans sa chambre parisienne, en journée, avec une lumière naturelle douce. Fond réaliste et discret, légèrement flou. Luna est debout ou assise face caméra, vêtue d'un haut bleu nuit ou violet très sombre, sans costume fantastique. Expression neutre, attentive et calme, avec une fragilité subtile; pas de sourire appuyé, pas de tristesse théâtrale.
 
