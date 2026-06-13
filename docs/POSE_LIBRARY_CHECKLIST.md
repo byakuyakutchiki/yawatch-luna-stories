@@ -56,7 +56,7 @@ Dernière mise à jour : 2026-06-11
 |---|---|---|
 | standing | — | [ ] |
 | walking | — | [ ] |
-| sitting | `luna_enfant_chambre_poupee_01.png` (au sol, chambre) | [~] |
+| sitting | `luna_enfant_worried_night_01.png` | [x] |
 | looking_at_photo | — | [ ] |
 | looking_out_window | `EP01/EP01_PLAN_01_chambre_fenetre_nuit.png` (chambre vide) | [~] |
 | phone_call | — | [ ] |
@@ -65,7 +65,7 @@ Dernière mise à jour : 2026-06-11
 | paris_street | — | [ ] |
 | defensive_posture | — | [ ] |
 
-**Score** : 0/10 dédiés — 2/10 partiels
+**Score** : 1/10 dédiée — 1/10 partielle
 
 ---
 

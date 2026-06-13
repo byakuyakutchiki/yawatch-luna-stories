@@ -63,7 +63,7 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | neutral | `luna_enfant_neutral_9x16_01.png` (visage canonique) | [x] |
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
-| worried | — | [ ] |
+| worried | `luna_enfant_worried_night_01.png` | [x] |
 | determined | — | [ ] |
 | controlled_anger | — | [ ] |
 | shocked | — | [ ] |
@@ -71,10 +71,10 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | suspicious | — | [ ] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 3 fichiers (dont 1 app)
-**Score** : 1/10 portrait dédié — 1/10 partielle
+**Assets disponibles** : 4 fichiers (dont 1 app)
+**Score** : 2/10 portraits dédiés — 1/10 partielle
 **ALERTE CANON** : ne jamais utiliser `app_aby_enfant_current.png` ni `aby_enfant_canon_apk_maquette_ville_01.png` pour Luna enfant. La petite blonde est Aby enfant. Luna enfant est la petite brune.
-**Manquants prioritaires** : `worried`, `vulnerable`, `sad`.
+**Manquants prioritaires** : `vulnerable`, `sad`, `protective` dédié.
 
 ---
 
@@ -198,7 +198,7 @@ Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
 |---|---|---|---|
 | Luna Doll | 6 | 6/8 états | Basse — 2 états manquants |
 | Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
-| Luna enfant | 3 | 1/10 + 1 partielle | **CRITIQUE** — émotions nocturnes manquantes |
+| Luna enfant | 4 | 2/10 + 1 partielle | Haute — `vulnerable` et `sad` manquants |
 | Aby adulte | 3 | 0/10 dédiés | **CRITIQUE** |
 | Aby enfant | 2 | 1/10 | Haute |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
