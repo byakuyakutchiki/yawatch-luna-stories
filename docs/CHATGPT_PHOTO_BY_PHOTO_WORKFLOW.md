@@ -180,7 +180,7 @@ Nom cible : `luna_adulte_looking_out_window_01.png`
 
 ### LUNA-A-005 — Office Desk
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026.
 
 Prompt :
 
@@ -206,18 +206,19 @@ Nom cible : `luna_adulte_office_desk_01.png`
 
 ### LUNA-A-006 — Looking At Turned Photo
 
-Statut : après validation de LUNA-A-005.
+Statut : à générer maintenant.
 
 Prompt :
 
 ```text
-Utilise la Luna adulte validée précédemment comme identité canon.
+Utilise comme unique référence d'identité canonique cette photo de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
 
 Génère exactement UNE photo.
 
 Objectif checklist pose et teaser : LUNA ADULTE — LOOKING_AT_PHOTO.
 
-Luna se tient ou s'assoit devant son bureau YAWatch. Elle regarde une photo familiale encadrée posée face contre le bureau, ou presque retournée. Le contenu de la photo ne doit pas être visible. Son expression est troublée mais contenue. Sa main hésite près du cadre sans encore le retourner.
+Luna est assise devant son bureau YAWatch. Elle regarde une photo familiale encadrée posée face contre le bureau. Le contenu de la photo ne doit absolument pas être visible. Son expression est troublée mais contenue. Une main hésite près du cadre sans le retourner, l'autre repose naturellement sur le bureau. Elle ne regarde pas la caméra.
 
 Décor lumineux et réaliste de La Défense, avec une bascule psychologique très subtile dans les reflets. Aucun père visible directement.
 
