@@ -390,7 +390,7 @@ Nom cible : `aby_adulte_observing_luna_01.png`
 
 ### ABY-A-003 — Vulnerable After Meeting
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 14 juin 2026.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo d'Aby adulte :
@@ -419,6 +419,36 @@ Contraintes : exactement une image, photoréalisme cinématographique premium, t
 ```
 
 Nom cible : `aby_adulte_vulnerable_after_meeting_01.png`
+
+### ABY-A-004 — Controlled Anger
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo d'Aby adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_adulte_neutral_9x16_01.png
+
+Utilise cette image comme référence stricte de tenue professionnelle :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_adulte_observing_luna_01.png
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : ABY ADULTE — émotion CONTROLLED_ANGER, colère entièrement maîtrisée.
+
+Conserve strictement son visage, son âge apparent d'environ 28 ans, son chignon blond imparfait aux racines sombres, ses yeux foncés et sa tenue professionnelle couvrante : tailleur noir structuré et chemisier noir fermé, bijoux très discrets. Aucun décolleté plongeant, aucune tenue moulante, glamour ou sexualisée.
+
+Scène : Aby est debout au bout d'une table de réunion dans une salle vitrée de YAWatch Industries à La Défense. Une discussion difficile vient de se terminer. Elle regarde une personne hors champ, jamais la caméra. Aucun autre personnage identifiable ne doit apparaître.
+
+Sa colère reste presque invisible : mâchoire légèrement tendue, regard fixe et calme, lèvres fermées, respiration maîtrisée. Une main est posée fermement mais naturellement sur un dossier fermé; l'autre reste détendue le long du corps ou près de la table. Aucun poing serré, aucun cri, aucun geste agressif.
+
+La scène doit montrer une femme qui transforme immédiatement son émotion en stratégie. Elle ne doit ressembler ni à une méchante caricaturale ni à une femme fatale.
+
+Lumière naturelle parisienne de fin de journée, architecture claire et crédible de La Défense. Cadrage vertical 9:16, plan américain permettant de voir son visage, sa posture et ses mains.
+
+Contraintes : exactement une image, photoréalisme cinématographique premium, tenue professionnelle couvrante, même identité que la référence, colère subtile, pas de violence, pas de sexualisation, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `aby_adulte_controlled_anger_01.png`
 
 ## Validation Après Chaque Photo
 
