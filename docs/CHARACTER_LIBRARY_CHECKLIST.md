@@ -67,14 +67,14 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | determined | — | [ ] |
 | controlled_anger | — | [ ] |
 | shocked | — | [ ] |
-| protective | `luna_enfant_chambre_poupee_01.png` (avec poupée) | [~] |
+| protective | `luna_enfant_comforted_with_doll_01.png` | [x] |
 | suspicious | — | [ ] |
-| vulnerable | — | [ ] |
+| vulnerable | `luna_enfant_comforted_with_doll_01.png` | [x] |
 
-**Assets disponibles** : 4 fichiers (dont 1 app)
-**Score** : 2/10 portraits dédiés — 1/10 partielle
+**Assets disponibles** : 5 fichiers (dont 1 app)
+**Score** : 4/10 portraits dédiés
 **ALERTE CANON** : ne jamais utiliser `app_aby_enfant_current.png` ni `aby_enfant_canon_apk_maquette_ville_01.png` pour Luna enfant. La petite blonde est Aby enfant. Luna enfant est la petite brune.
-**Manquants prioritaires** : `vulnerable`, `sad`, `protective` dédié.
+**Manquants prioritaires** : `sad`.
 
 ---
 
@@ -198,7 +198,7 @@ Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
 |---|---|---|---|
 | Luna Doll | 6 | 6/8 états | Basse — 2 états manquants |
 | Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
-| Luna enfant | 4 | 2/10 + 1 partielle | Haute — `vulnerable` et `sad` manquants |
+| Luna enfant | 5 | 4/10 | Moyenne — `sad` manquant |
 | Aby adulte | 3 | 0/10 dédiés | **CRITIQUE** |
 | Aby enfant | 2 | 1/10 | Haute |
 | Père | 14 | 4/10 (usage S2) | Moyenne |

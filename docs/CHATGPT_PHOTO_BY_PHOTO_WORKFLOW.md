@@ -290,7 +290,7 @@ Nom cible : `luna_enfant_worried_night_01.png`
 
 ### LUNA-E-003 — Comforted With Luna Doll
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo de Luna enfant :
@@ -320,6 +320,41 @@ Contraintes : exactement une image, scène familiale saine et non sensible, phot
 ```
 
 Nom cible : `luna_enfant_vulnerable_with_doll_01.png`
+
+Fichier finalement classé : `luna_enfant_comforted_with_doll_01.png`.
+
+## File De Production — Aby Adulte
+
+### ABY-A-001 — Neutral 9:16
+
+Statut : à générer maintenant.
+
+Référence adulte autorisée :
+
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_character_sheet_01.png
+
+Ne pas utiliser `aby_character_sheet_02.png` : cette planche représente Aby adolescente, pas Aby adulte.
+
+```text
+Consulte cette planche GitHub uniquement pour identifier l'apparence d'Aby adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_character_sheet_01.png
+
+Génère exactement UNE nouvelle photo d'Aby adulte, jamais une planche ni un collage.
+
+Objectif checklist : ABY ADULTE — portrait NEUTRAL propre, vertical 9:16.
+
+Reproduis fidèlement l'identité adulte montrée dans la planche : femme française d'environ 28 ans, cheveux blond foncé avec racines légèrement plus sombres, coiffés en chignon haut volontairement imparfait avec quelques mèches libres, yeux très foncés, traits fins et anguleux, silhouette élégante. Elle porte un tailleur noir sobre et quelques bijoux discrets.
+
+Aby est la manipulatrice cachée de la saison 1, mais ce portrait ne doit pas la présenter comme une méchante évidente. Son expression est neutre, intelligente, calme et professionnelle. Son regard direct laisse seulement deviner qu'elle observe beaucoup.
+
+Scène : portrait vertical dans un bureau contemporain lumineux de YAWatch Industries à La Défense, en journée. Architecture de verre réaliste, lumière naturelle parisienne, arrière-plan légèrement flou. Aucun écran futuriste et aucun décor nocturne violet.
+
+Attention : ne reproduis aucun texte, aucune citation, aucun logo ni aucune mise en page de la planche. Ne génère pas Aby adolescente. Une seule femme adulte doit apparaître.
+
+Contraintes : exactement une image 9:16, photoréalisme cinématographique premium, apparence adulte d'environ 28 ans, pas de glamour excessif, pas de regard menaçant, pas de cyberpunk, pas de New York, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `aby_adulte_neutral_9x16_01.png`
 
 ## Validation Après Chaque Photo
 
