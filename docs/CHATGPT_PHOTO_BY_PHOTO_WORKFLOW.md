@@ -34,6 +34,9 @@ On travaille personnage par personnage et case par case :
 - Pas de cyberpunk générique, pas de New York.
 - Pas de texte lisible, pas de watermark, pas de logo inventé.
 - Émotions subtiles, jamais théâtrales.
+- Tenues cohérentes avec la fonction, le lieu et l'heure de la scène.
+- Pour Luna et Aby au travail : silhouettes professionnelles parisiennes, élégantes et couvrantes; aucun décolleté plongeant, tissu transparent, tenue moulante ou look de femme fatale.
+- Conserver la continuité vestimentaire entre deux plans appartenant à la même scène.
 
 ## File De Production — Luna Adulte
 
@@ -368,7 +371,9 @@ Génère exactement UNE nouvelle photo du même personnage.
 
 Objectif checklist : ABY ADULTE — émotion SUSPICIOUS subtile, sans révéler qu'elle est la manipulatrice cachée.
 
-Conserve strictement son visage, son âge apparent d'environ 28 ans, son chignon blond imparfait aux racines sombres, ses yeux foncés, son tailleur noir et ses bijoux discrets.
+Conserve strictement son visage, son âge apparent d'environ 28 ans, son chignon blond imparfait aux racines sombres et ses yeux foncés.
+
+Tenue obligatoire : tailleur pantalon noir ou anthracite parfaitement ajusté, blazer structuré fermé ou porté sur un chemisier noir couvrant à col simple, sans décolleté plongeant. Bijoux très discrets, chaussures professionnelles sobres, aucune tenue moulante, transparente, glamour ou sexualisée. Aby doit évoquer une directrice stratégique parisienne haut de gamme, pas un mannequin ni une femme fatale.
 
 Scène : réunion professionnelle en journée dans une salle vitrée de YAWatch Industries à La Défense. Aby est assise de trois quarts à une table de réunion. Elle regarde légèrement hors champ vers Luna, qui ne doit pas apparaître dans l'image. Un dossier fermé et un stylo sont posés devant elle, sans texte lisible.
 
@@ -378,7 +383,7 @@ Lumière naturelle parisienne, verre et architecture contemporaine crédible de 
 
 Cadrage vertical 9:16, plan poitrine ou plan américain. Ses mains doivent être visibles et naturelles, l'une près du dossier ou tenant doucement le stylo.
 
-Contraintes : exactement une image, photoréalisme cinématographique premium, même identité que la référence, pas de lumière violette dominante, pas de cyberpunk, pas de texte, pas de watermark, pas de logo inventé et pas de regard de méchante.
+Contraintes : exactement une image, photoréalisme cinématographique premium, même identité que la référence, tenue professionnelle couvrante, pas de lumière violette dominante, pas de cyberpunk, pas de texte, pas de watermark, pas de logo inventé, pas de regard de méchante et pas de sexualisation.
 ```
 
 Nom cible : `aby_adulte_observing_luna_01.png`
