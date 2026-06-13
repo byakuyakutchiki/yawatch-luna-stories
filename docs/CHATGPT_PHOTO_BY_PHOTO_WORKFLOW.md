@@ -327,7 +327,7 @@ Fichier finalement classé : `luna_enfant_comforted_with_doll_01.png`.
 
 ### ABY-A-001 — Neutral 9:16
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 13 juin 2026. Cette image devient la référence d'identité prioritaire d'Aby adulte.
 
 Référence adulte autorisée :
 
@@ -355,6 +355,33 @@ Contraintes : exactement une image 9:16, photoréalisme cinématographique premi
 ```
 
 Nom cible : `aby_adulte_neutral_9x16_01.png`
+
+### ABY-A-002 — Observing Luna
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo d'Aby adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_adulte_neutral_9x16_01.png
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : ABY ADULTE — émotion SUSPICIOUS subtile, sans révéler qu'elle est la manipulatrice cachée.
+
+Conserve strictement son visage, son âge apparent d'environ 28 ans, son chignon blond imparfait aux racines sombres, ses yeux foncés, son tailleur noir et ses bijoux discrets.
+
+Scène : réunion professionnelle en journée dans une salle vitrée de YAWatch Industries à La Défense. Aby est assise de trois quarts à une table de réunion. Elle regarde légèrement hors champ vers Luna, qui ne doit pas apparaître dans l'image. Un dossier fermé et un stylo sont posés devant elle, sans texte lisible.
+
+Son expression reste calme, courtoise et professionnelle. Un très léger sourire contenu et un regard attentif suggèrent qu'elle comprend davantage que les autres. Elle ne doit jamais sembler menaçante, cruelle ou caricaturale. Cette image doit paraître normale au premier visionnage et ambiguë seulement après la révélation de fin de saison.
+
+Lumière naturelle parisienne, verre et architecture contemporaine crédible de La Défense. Arrière-plan légèrement flou avec quelques collègues indistincts, sans visage détaillé.
+
+Cadrage vertical 9:16, plan poitrine ou plan américain. Ses mains doivent être visibles et naturelles, l'une près du dossier ou tenant doucement le stylo.
+
+Contraintes : exactement une image, photoréalisme cinématographique premium, même identité que la référence, pas de lumière violette dominante, pas de cyberpunk, pas de texte, pas de watermark, pas de logo inventé et pas de regard de méchante.
+```
+
+Nom cible : `aby_adulte_observing_luna_01.png`
 
 ## Validation Après Chaque Photo
 

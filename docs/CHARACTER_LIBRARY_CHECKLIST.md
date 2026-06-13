@@ -82,7 +82,7 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 
 | Émotion | Fichier(s) | Statut |
 |---|---|---|
-| neutral | `app_aby_adulte_avatar_current.jpg` | [~] |
+| neutral | `aby_adulte_neutral_9x16_01.png` (visage canonique) | [x] |
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
 | worried | — | [ ] |
@@ -93,9 +93,9 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | suspicious | `aby_character_sheet_01.png`, `aby_character_sheet_02.png` | [~] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 3 fichiers (2 planches + 1 avatar app)
-**Score** : 0/10 portraits dédiés — 3/10 partiels (extraits de planches)
-**Manquants prioritaires avant EP02** : portrait face 9:16 isolé, expression froide, expression blessée.
+**Assets disponibles** : 4 fichiers (2 planches + 1 avatar app + 1 portrait canonique)
+**Score** : 1/10 portrait dédié — 2/10 partiels (extraits de planches)
+**Manquants prioritaires avant EP02** : `suspicious`, `controlled_anger`, `vulnerable`.
 
 ---
 
@@ -199,7 +199,7 @@ Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
 | Luna Doll | 6 | 6/8 états | Basse — 2 états manquants |
 | Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
 | Luna enfant | 5 | 4/10 | Moyenne — `sad` manquant |
-| Aby adulte | 3 | 0/10 dédiés | **CRITIQUE** |
+| Aby adulte | 4 | 1/10 + 2 partielles | **CRITIQUE** — ambiguïté émotionnelle à construire |
 | Aby enfant | 2 | 1/10 | Haute |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
 | Mère | 0 | 0/10 | **CRITIQUE** |
