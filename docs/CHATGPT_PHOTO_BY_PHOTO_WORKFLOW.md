@@ -288,7 +288,7 @@ Contraintes : exactement une image, photoréalisme cinématographique naturel, m
 
 Nom cible : `luna_enfant_worried_night_01.png`
 
-### LUNA-E-003 — Vulnerable With Luna Doll
+### LUNA-E-003 — Comforted With Luna Doll
 
 Statut : à générer maintenant.
 
@@ -304,19 +304,19 @@ https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_
 
 Génère exactement UNE nouvelle photo.
 
-Objectif checklist : LUNA ENFANT — émotion VULNERABLE et geste PROTECTIVE avec Luna Doll.
+Crée une scène familiale douce et entièrement innocente : Luna enfant se rassure avec son jouet préféré.
 
-La scène se déroule quelques secondes après la photo nocturne précédente. Conserve strictement le même visage, le même âge d'environ 8 ans, les mêmes cheveux bruns, la même tenue bleu nuit, la même chambre et le même éclairage chaud et bleu.
+Conserve strictement le même visage, le même âge d'environ 8 ans, les mêmes cheveux bruns, la même tenue de pyjama bleu nuit couvrante, la même chambre et le même éclairage chaud et bleu que la référence de continuité.
 
-Luna est toujours assise sur son lit. Elle a maintenant pris Luna Doll dans ses bras et la serre doucement contre sa poitrine pour se rassurer. La poupée est un petit objet artisanal en tissu d'environ 20 cm, avec cheveux bruns et robe violette usée; ce n'est ni un robot ni une enfant miniature.
+Luna est assise normalement sur son lit, entièrement habillée. Luna Doll repose sur ses genoux et Luna la tient doucement avec ses deux mains. La poupée est un petit jouet artisanal en tissu d'environ 20 cm, avec cheveux bruns et robe violette usée; ce n'est ni un robot ni une personne réelle.
 
-Luna baisse légèrement les yeux vers la poupée ou regarde encore vers la porte hors champ. Son visage exprime une vulnérabilité silencieuse et une recherche de réconfort. Pas de larmes visibles, pas de cri, pas de sourire et aucune menace dans la pièce.
+Luna baisse légèrement les yeux vers son jouet avec une expression calme, pensive et rassurée. L'atmosphère est paisible et protectrice. Aucun danger, aucune peur intense, aucune détresse et aucune autre personne dans la pièce.
 
-Ses deux mains doivent être visibles et tenir naturellement la poupée, sans doigts fusionnés. La poupée doit être visible en entier ou presque, sans masquer le visage de Luna.
+Ses deux mains doivent être visibles et tenir naturellement le jouet sur ses genoux, sans doigts fusionnés. La poupée doit être visible en entier ou presque, sans masquer le visage de Luna.
 
 Cadrage vertical 9:16, plan mi-corps. La scène doit pouvoir être montée juste après `luna_enfant_worried_night_01.png` avec une continuité évidente.
 
-Contraintes : exactement une image, photoréalisme cinématographique naturel, enfant clairement âgée d'environ 8 ans, aucune violence, aucun adulte, pas de maquillage, pas de pose adulte, pas de texte, pas de watermark, pas de cyberpunk et pas de violet dominant.
+Contraintes : exactement une image, scène familiale saine et non sensible, photoréalisme cinématographique naturel, enfant clairement âgée d'environ 8 ans et entièrement habillée, aucune violence, aucun adulte, pas de maquillage, pas de pose adulte, pas de texte, pas de watermark, pas de cyberpunk et pas de violet dominant.
 ```
 
 Nom cible : `luna_enfant_vulnerable_with_doll_01.png`
