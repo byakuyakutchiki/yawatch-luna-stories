@@ -454,7 +454,7 @@ Nom cible : `aby_adulte_controlled_anger_01.png`
 
 ### MERE-001 — Neutral 9:16
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 14 juin 2026. Cette image devient la référence d'identité prioritaire de la mère.
 
 Références d'identité :
 
@@ -485,6 +485,35 @@ Contraintes : exactement une image 9:16, photoréalisme cinématographique natur
 ```
 
 Nom cible : `mere_luna_aby_neutral_9x16_01.png`
+
+### MERE-002 — Worried In Bright Apartment
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo de la mère de Luna et Aby :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_neutral_9x16_01.png
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : MÈRE DE LUNA ET ABY — émotion WORRIED, inquiétude contenue dans un appartement lumineux.
+
+Conserve strictement son visage mature d'environ 48 à 52 ans, ses cheveux bruns mi-courts ondulés, ses yeux bruns et ses proportions naturelles.
+
+Tenue obligatoire : pantalon sombre et chemisier opaque à col rond ou boutonné jusqu'en haut, manches longues, coupe quotidienne élégante et couvrante. Bijoux très discrets. Aucun décolleté, tissu transparent, tenue moulante, glamour ou sexualisée.
+
+Scène : elle est debout près de la fenêtre du salon de son appartement parisien, en pleine journée. Les façades haussmanniennes sont visibles mais floues derrière elle. Elle vient de recevoir une information inquiétante par téléphone, mais le téléphone est maintenant posé sur une table, écran invisible et sans texte.
+
+Elle regarde légèrement hors champ vers le couloir. Son inquiétude reste contenue : sourcils très légèrement rapprochés, regard attentif, lèvres au repos, une main posée naturellement sur le dossier d'une chaise. Pas de larmes, pas de panique, pas de geste théâtral.
+
+L'appartement demeure clair, chaleureux et réaliste. La tension vient uniquement de son visage et d'un silence inhabituel, jamais d'une lumière violette ou d'un décor horrifique. Aucun autre personnage ne doit apparaître.
+
+Cadrage vertical 9:16, plan américain permettant de voir son visage, sa posture et ses deux mains.
+
+Contraintes : exactement une image, photoréalisme cinématographique naturel, même identité que la référence, âge mature préservé, tenue couvrante, Paris crédible, pas de violence, pas de cyberpunk, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `mere_luna_aby_worried_apartment_01.png`
 
 ## Validation Après Chaque Photo
 

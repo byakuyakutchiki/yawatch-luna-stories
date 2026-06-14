@@ -43,11 +43,11 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | sad | — | [ ] |
 | worried | `luna_adulte_worried_9x16_01.png` | [x] |
 | determined | `luna_adulte_ceo_01.png`, `luna_adulte_ceo_03_portrait.png` | [x] |
-| controlled_anger | `aby_adulte_controlled_anger_01.png` | [x] |
+| controlled_anger | — | [ ] |
 | shocked | — | [ ] |
 | protective | `luna_adulte_protective_luna_doll_01.png` | [x] |
 | suspicious | — | [ ] |
-| vulnerable | `aby_adulte_vulnerable_after_meeting_01.png` | [x] |
+| vulnerable | — | [ ] |
 
 **Assets disponibles** : 7 portraits + 1 avatar app
 **Score** : 4/10 couvertes
@@ -87,11 +87,11 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | sad | — | [ ] |
 | worried | — | [ ] |
 | determined | `aby_character_sheet_02.png` (planche — non isolé) | [~] |
-| controlled_anger | — | [ ] |
+| controlled_anger | `aby_adulte_controlled_anger_01.png` | [x] |
 | shocked | — | [ ] |
 | protective | — | [ ] |
 | suspicious | `aby_adulte_observing_luna_01.png` | [x] |
-| vulnerable | — | [ ] |
+| vulnerable | `aby_adulte_vulnerable_after_meeting_01.png` | [x] |
 
 **Assets disponibles** : 7 fichiers (2 planches + 1 avatar app + 4 portraits dédiés)
 **Score** : 4/10 portraits dédiés — 1/10 partielle
@@ -150,7 +150,7 @@ Première apparition physique : Saison 2 minimum.
 
 | Émotion | Fichier(s) | Statut |
 |---|---|---|
-| neutral | — | [ ] |
+| neutral | `mere_luna_aby_neutral_9x16_01.png` (visage canonique) | [x] |
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
 | worried | — | [ ] |
@@ -161,12 +161,11 @@ Première apparition physique : Saison 2 minimum.
 | suspicious | — | [ ] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 0 portrait individuel.
-Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
-**Score** : 0/10
+**Assets disponibles** : 1 portrait individuel + 7 scènes famille du Pack 10 (couple).
+**Score** : 1/10
 
 **C'est le personnage le moins documenté visuellement du cast principal.**
-**Manquants prioritaires** : mère seule, regard inquiet, appartement lumineux mais froid.
+**Manquants prioritaires** : `worried`, `protective`, `vulnerable`.
 
 ---
 
@@ -202,7 +201,7 @@ Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
 | Aby adulte | 7 | 4/10 + 1 partielle | Moyenne — pack initial complet |
 | Aby enfant | 2 | 1/10 | Haute |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
-| Mère | 0 | 0/10 | **CRITIQUE** |
+| Mère | 1 portrait + 7 scènes couple | 1/10 | **CRITIQUE** — émotions dédiées manquantes |
 | Malik | 16 | 5/10 | Basse — le plus couvert |
 
 ---
