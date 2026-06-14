@@ -76,6 +76,25 @@ Yeux       : #1A1A1A (presque noir)
 - Style horreur, uncanny valley
 - Style cyberpunk générique
 
+### Continuité Narrative Et Garde De La Poupée
+
+Il existe **une seule Luna Doll canonique**. Une seconde poupée identique ne peut apparaître que si l'histoire révèle explicitement une copie.
+
+| État temporel | Gardienne / emplacement | Usage visuel |
+|---|---|---|
+| `ENFANCE` | Luna enfant, dans sa chambre | Refuge affectif, naissance de son monde intérieur |
+| `CHEZ_LA_MERE` | La mère, dans une boîte à souvenirs fermée | Objet protégé après la rupture familiale |
+| `TRANSMISSION` | La mère remet la boîte à Luna adulte | Scène de passage encore à produire |
+| `BUREAU_LUNA` | Luna adulte, dans son bureau YAWatch | Présence quotidienne après la transmission |
+
+Règles de montage :
+
+- Les scènes `mere_luna_aby_protective_memory_box_01.png` et `mere_luna_aby_vulnerable_closed_box_01.png` se déroulent **avant** la transmission.
+- Les scènes montrant Luna Doll dans le bureau de Luna se déroulent **après** la transmission.
+- Avant la scène de transmission, ne jamais monter la boîte fermée chez la mère et la poupée dans le bureau de Luna comme des événements simultanés.
+- La boîte peut ensuite rester chez Luna, être rangée dans son bureau ou disparaître du champ; la poupée, elle, reste avec Luna.
+- Toute scène sans date claire doit indiquer l'état de garde de la poupée dans ses notes de production.
+
 ---
 
 ## LUNA ADULTE

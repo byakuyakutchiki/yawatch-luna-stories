@@ -26,6 +26,13 @@ Règle de saison :
 - Accuser visuellement Luna sans la rendre coupable explicitement.
 - Laisser le père exister par traces : photo, phrase, silence, archive, peur.
 - Utiliser Paris comme réalité quotidienne, pas seulement comme carte postale.
+- Maintenir l'unicité de Luna Doll : d'abord conservée par la mère dans la boîte, puis transmise à Luna adulte avant toute scène où elle apparaît dans le bureau YAWatch.
+
+Passage narratif à placer pendant la saison 1, sans numéro d'épisode verrouillé à ce stade :
+
+> La mère remet à Luna adulte la boîte à souvenirs contenant Luna Doll. Cette scène transforme la poupée d'objet d'enfance caché en présence active dans le bureau de Luna.
+
+Avant ce passage, les plans de Luna Doll au bureau sont des images postérieures dans la chronologie, pas des scènes simultanées avec la boîte chez la mère.
 
 Secrets révélés :
 - Épisode 3 : Luna comprend une phrase que Malik n'a jamais dite

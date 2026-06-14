@@ -22,6 +22,13 @@ LUNA_DOLL_DNA: Dict[str, str] = {
     "interdit": "pas de robot, pas de métal, pas de circuits, pas de LED, pas de plastique",
 }
 
+LUNA_DOLL_CUSTODY: Dict[str, str] = {
+    "ENFANCE": "avec Luna enfant dans sa chambre",
+    "CHEZ_LA_MERE": "dans la boîte à souvenirs gardée par la mère",
+    "TRANSMISSION": "la mère remet la boîte à Luna adulte",
+    "BUREAU_LUNA": "avec Luna adulte dans le bureau YAWatch, après la transmission",
+}
+
 LUNA_ADULTE_DNA: Dict[str, str] = {
     "type": "femme humaine réelle",
     "age_apparent": "30-35 ans",
@@ -198,6 +205,16 @@ class VisualConsistencyManager:
         )
         logger.debug("Luna Doll DNA injectée dans le prompt")
         return enforced
+
+    def get_luna_doll_custody(self, timeline_state: str) -> str:
+        """Retourne l'emplacement canonique de Luna Doll pour un état temporel."""
+        custody = LUNA_DOLL_CUSTODY.get(timeline_state)
+        if custody is None:
+            logger.warning(
+                "État temporel Luna Doll inconnu: %s", timeline_state
+            )
+            return ""
+        return custody
 
     def validate_prompt(self, prompt: str, character: str) -> bool:
         """Vérifie qu'un prompt ne contredit pas le DNA officiel."""
