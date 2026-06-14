@@ -517,7 +517,7 @@ Nom cible : `mere_luna_aby_worried_apartment_01.png`
 
 ### MERE-003 — Protective Memory Box
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo de la mère de Luna et Aby :
@@ -551,6 +551,36 @@ Contraintes : exactement une image, photoréalisme cinématographique naturel, m
 ```
 
 Nom cible : `mere_luna_aby_protective_memory_box_01.png`
+
+### MERE-004 — Vulnerable With Closed Memory Box
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo de la mère de Luna et Aby :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_neutral_9x16_01.png
+
+Utilise cette image comme référence stricte de continuité pour la tenue, la table, la boîte et l'appartement :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_protective_memory_box_01.png
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : MÈRE DE LUNA ET ABY — émotion VULNERABLE, secret familial porté en silence.
+
+Conserve strictement son visage mature d'environ 48 à 52 ans, ses cheveux bruns mi-courts ondulés, ses yeux bruns, ses proportions naturelles et exactement la même tenue couvrante : pantalon sombre, chemisier ivoire opaque à manches longues et encolure fermée, bijoux très discrets.
+
+Scène : quelques instants après avoir rangé Luna Doll, la mère est toujours assise à la même table dans le salon lumineux. La boîte à souvenirs en bois est maintenant fermée devant elle. Aucun contenu de la boîte n'est visible.
+
+Elle pose doucement ses deux mains sur le couvercle fermé et regarde vers la fenêtre, jamais la caméra. Son visage exprime une fatigue émotionnelle contenue et le poids d'un secret ancien. Elle reste digne et calme : aucune larme, aucune grimace, aucune main sur le visage et aucun geste théâtral.
+
+Aucun enfant, aucun père, aucune poupée visible et aucun autre personnage ne doit apparaître. La vulnérabilité vient uniquement du regard, de la posture légèrement relâchée et du silence.
+
+Lumière naturelle parisienne de fin d'après-midi, appartement toujours clair, façades haussmanniennes légèrement floues derrière la fenêtre. Cadrage vertical 9:16, plan américain montrant son visage, ses deux mains et la boîte fermée.
+
+Contraintes : exactement une image, photoréalisme cinématographique naturel, même identité et même âge, continuité parfaite de tenue et de décor, tenue couvrante, pas de larmes, pas de violence, pas de sexualisation, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `mere_luna_aby_vulnerable_closed_box_01.png`
 
 ## Validation Après Chaque Photo
 
