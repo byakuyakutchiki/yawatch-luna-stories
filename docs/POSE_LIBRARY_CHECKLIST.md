@@ -73,9 +73,9 @@ Dernière mise à jour : 2026-06-11
 
 | Pose | Fichier(s) | Statut |
 |---|---|---|
-| standing | `aby_character_sheet_01.png` (planche) | [~] |
+| standing | `aby_adulte_controlled_anger_01.png` | [x] |
 | walking | — | [ ] |
-| sitting | `aby_bureau_la_defense_01.png` (décor bureau) | [~] |
+| sitting | `aby_adulte_observing_luna_01.png`, `aby_adulte_vulnerable_after_meeting_01.png` | [x] |
 | looking_at_photo | — | [ ] |
 | looking_out_window | — | [ ] |
 | phone_call | — | [ ] |
@@ -84,7 +84,7 @@ Dernière mise à jour : 2026-06-11
 | paris_street | — | [ ] |
 | defensive_posture | `aby_character_sheet_02.png` (planche sombre) | [~] |
 
-**Score** : 0/10 dédiés — 4/10 partiels
+**Score** : 2/10 dédiées — 2/10 partielles
 
 ---
 
@@ -172,8 +172,8 @@ Dernière mise à jour : 2026-06-11
 | Personnage | Poses couvertes |
 |---|---|
 | Luna adulte | 5/10 |
-| Luna enfant | 0/10 + 2 partiels |
-| Aby adulte | 0/10 + 4 partiels |
+| Luna enfant | 1/10 + 1 partielle |
+| Aby adulte | 2/10 + 2 partielles |
 | Aby enfant | 1/10 |
 | Père | 5/10 + 1 partiel |
 | Mère | 0/10 + 6 partiels |

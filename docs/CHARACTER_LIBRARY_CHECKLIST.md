@@ -43,7 +43,7 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | sad | — | [ ] |
 | worried | `luna_adulte_worried_9x16_01.png` | [x] |
 | determined | `luna_adulte_ceo_01.png`, `luna_adulte_ceo_03_portrait.png` | [x] |
-| controlled_anger | — | [ ] |
+| controlled_anger | `aby_adulte_controlled_anger_01.png` | [x] |
 | shocked | — | [ ] |
 | protective | `luna_adulte_protective_luna_doll_01.png` | [x] |
 | suspicious | — | [ ] |
@@ -93,9 +93,9 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | suspicious | `aby_adulte_observing_luna_01.png` | [x] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 6 fichiers (2 planches + 1 avatar app + 3 portraits dédiés)
-**Score** : 3/10 portraits dédiés — 1/10 partielle
-**Manquants prioritaires avant EP02** : `controlled_anger`.
+**Assets disponibles** : 7 fichiers (2 planches + 1 avatar app + 4 portraits dédiés)
+**Score** : 4/10 portraits dédiés — 1/10 partielle
+**Manquants prioritaires avant EP02** : aucun portrait critique.
 
 ---
 
@@ -199,7 +199,7 @@ Présente uniquement dans les 7 scènes famille du Pack 10 (couple).
 | Luna Doll | 6 | 6/8 états | Basse — 2 états manquants |
 | Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
 | Luna enfant | 5 | 4/10 | Moyenne — `sad` manquant |
-| Aby adulte | 6 | 3/10 + 1 partielle | Haute — `controlled_anger` prioritaire |
+| Aby adulte | 7 | 4/10 + 1 partielle | Moyenne — pack initial complet |
 | Aby enfant | 2 | 1/10 | Haute |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
 | Mère | 0 | 0/10 | **CRITIQUE** |

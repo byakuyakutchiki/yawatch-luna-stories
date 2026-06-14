@@ -422,7 +422,7 @@ Nom cible : `aby_adulte_vulnerable_after_meeting_01.png`
 
 ### ABY-A-004 — Controlled Anger
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 14 juin 2026. Pack initial Aby adulte complet.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo d'Aby adulte :
@@ -449,6 +449,42 @@ Contraintes : exactement une image, photoréalisme cinématographique premium, t
 ```
 
 Nom cible : `aby_adulte_controlled_anger_01.png`
+
+## File De Production — Mère De Luna Et Aby
+
+### MERE-001 — Neutral 9:16
+
+Statut : à générer maintenant.
+
+Références d'identité :
+
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/luna_parents_portrait_officiel_yawatch_01.png
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/luna_parents_cuisine_matin_01.png
+
+```text
+Consulte ces deux références GitHub pour identifier uniquement la mère de Luna et Aby :
+
+1. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/luna_parents_portrait_officiel_yawatch_01.png
+2. https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/luna_parents_cuisine_matin_01.png
+
+Génère exactement UNE nouvelle photo de la mère seule. Le père ne doit pas apparaître.
+
+Objectif checklist : MÈRE DE LUNA ET ABY — portrait NEUTRAL propre, vertical 9:16.
+
+Reproduis fidèlement la femme visible sur les références : femme méditerranéenne française d'environ 48 à 52 ans, cheveux bruns foncés mi-courts et ondulés, yeux bruns, traits fins et élégants, visage mature naturel. Elle doit être clairement plus âgée que Luna adulte, sans être vieillie artificiellement.
+
+Scène : portrait vertical dans le salon lumineux d'un appartement parisien contemporain. Lumière naturelle de journée, immeubles haussmanniens discrètement visibles derrière une fenêtre, fond réaliste légèrement flou. Expression neutre, douce, attentive et légèrement fatiguée.
+
+Tenue obligatoire : pantalon sombre et chemisier ou pull fin couvrant, élégant mais quotidien, col simple, manches longues ou trois-quarts. Bijoux familiaux très discrets. Aucun décolleté plongeant, aucune tenue moulante, glamour ou sexualisée.
+
+La mère doit sembler humaine et protectrice, pas riche et froide, pas menaçante et pas coupable. Ce portrait sert uniquement à verrouiller son identité avant les émotions narratives.
+
+Attention : ne reproduis pas le père, le logo, le bureau nocturne ou la composition des références. Une seule femme adulte doit apparaître.
+
+Contraintes : exactement une image 9:16, photoréalisme cinématographique naturel, âge visible 48–52 ans, tenue couvrante, Paris crédible, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `mere_luna_aby_neutral_9x16_01.png`
 
 ## Validation Après Chaque Photo
 
