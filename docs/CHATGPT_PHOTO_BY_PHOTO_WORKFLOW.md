@@ -488,7 +488,7 @@ Nom cible : `mere_luna_aby_neutral_9x16_01.png`
 
 ### MERE-002 — Worried In Bright Apartment
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo de la mère de Luna et Aby :
@@ -514,6 +514,43 @@ Contraintes : exactement une image, photoréalisme cinématographique naturel, m
 ```
 
 Nom cible : `mere_luna_aby_worried_apartment_01.png`
+
+### MERE-003 — Protective Memory Box
+
+Statut : à générer maintenant.
+
+```text
+Utilise comme unique référence d'identité canonique cette photo de la mère de Luna et Aby :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_neutral_9x16_01.png
+
+Utilise cette image comme référence de continuité pour l'appartement et sa tenue :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_worried_apartment_01.png
+
+Utilise cette image uniquement comme référence de Luna Doll :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_violette_01.jpg
+
+Génère exactement UNE nouvelle photo du même personnage.
+
+Objectif checklist : MÈRE DE LUNA ET ABY — émotion PROTECTIVE, préservation d'un souvenir familial.
+
+Conserve strictement son visage mature d'environ 48 à 52 ans, ses cheveux bruns mi-courts ondulés, ses yeux bruns et ses proportions naturelles.
+
+Tenue obligatoire : même pantalon sombre et même chemisier ivoire opaque à manches longues que dans la scène précédente, mais boutonné plus haut avec une encolure fermée et couvrante. Bijoux très discrets. Aucune tenue glamour, moulante, transparente ou sexualisée.
+
+Scène : dans le salon lumineux de son appartement parisien, la mère est assise à une table. Devant elle se trouve une boîte à souvenirs en bois ouverte. Elle dépose délicatement Luna Doll dans la boîte ou la tient juste au-dessus, comme si elle voulait préserver un objet précieux de l'enfance de ses filles.
+
+Luna Doll reste une petite poupée artisanale en tissu d'environ 20 cm, cheveux bruns et robe violette légèrement usée. Ce n'est ni un robot ni une personne réelle.
+
+L'expression de la mère est protectrice, douce et grave. Elle regarde la poupée, jamais la caméra. Aucun enfant, aucun père et aucun autre personnage ne doit apparaître. Aucun contenu de photo familiale ne doit être visible dans la boîte.
+
+Ses deux mains doivent être entièrement visibles et tenir naturellement la poupée, sans doigts fusionnés. La poupée ne doit pas masquer son visage.
+
+Lumière naturelle de journée, appartement clair et réaliste, façades parisiennes discrètes derrière la fenêtre. Cadrage vertical 9:16, plan américain montrant son visage, ses mains, la poupée et la boîte.
+
+Contraintes : exactement une image, photoréalisme cinématographique naturel, même identité et même âge que la référence, tenue couvrante, scène familiale saine, pas de violence, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `mere_luna_aby_protective_memory_box_01.png`
 
 ## Validation Après Chaque Photo
 

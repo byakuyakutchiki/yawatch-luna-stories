@@ -153,7 +153,7 @@ Première apparition physique : Saison 2 minimum.
 | neutral | `mere_luna_aby_neutral_9x16_01.png` (visage canonique) | [x] |
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
-| worried | — | [ ] |
+| worried | `mere_luna_aby_worried_apartment_01.png` | [x] |
 | determined | — | [ ] |
 | controlled_anger | — | [ ] |
 | shocked | — | [ ] |
@@ -161,11 +161,11 @@ Première apparition physique : Saison 2 minimum.
 | suspicious | — | [ ] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 1 portrait individuel + 7 scènes famille du Pack 10 (couple).
-**Score** : 1/10
+**Assets disponibles** : 2 portraits individuels + 7 scènes famille du Pack 10 (couple).
+**Score** : 2/10
 
 **C'est le personnage le moins documenté visuellement du cast principal.**
-**Manquants prioritaires** : `worried`, `protective`, `vulnerable`.
+**Manquants prioritaires** : `protective`, `vulnerable`.
 
 ---
 
@@ -201,7 +201,7 @@ Première apparition physique : Saison 2 minimum.
 | Aby adulte | 7 | 4/10 + 1 partielle | Moyenne — pack initial complet |
 | Aby enfant | 2 | 1/10 | Haute |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
-| Mère | 1 portrait + 7 scènes couple | 1/10 | **CRITIQUE** — émotions dédiées manquantes |
+| Mère | 2 portraits + 7 scènes couple | 2/10 | Haute — `protective` et `vulnerable` manquants |
 | Malik | 16 | 5/10 | Basse — le plus couvert |
 
 ---
