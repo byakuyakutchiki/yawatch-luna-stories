@@ -554,7 +554,7 @@ Nom cible : `mere_luna_aby_protective_memory_box_01.png`
 
 ### MERE-004 — Vulnerable With Closed Memory Box
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026. Pack initial de la mère complet.
 
 ```text
 Utilise comme unique référence d'identité canonique cette photo de la mère de Luna et Aby :
@@ -581,6 +581,39 @@ Contraintes : exactement une image, photoréalisme cinématographique naturel, m
 ```
 
 Nom cible : `mere_luna_aby_vulnerable_closed_box_01.png`
+
+## File De Production — Aby Enfant, Plans Symboliques
+
+### ABY-E-001 — Main Et Jeton Noir
+
+Statut : à générer maintenant.
+
+Référence de la maquette et de l'univers d'Aby enfant :
+
+- https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_enfant_canon_apk_maquette_ville_01.png
+
+```text
+Consulte cette référence GitHub uniquement pour reproduire la ville miniature et l'univers visuel d'Aby enfant :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_enfant_canon_apk_maquette_ville_01.png
+
+Génère exactement UNE image symbolique, sans visage et sans personnage identifiable.
+
+Objectif checklist : ABY ENFANT — une petite main pose un jeton noir sur une ville miniature.
+
+Scène familiale entièrement innocente : gros plan cinématographique sur une maquette de quartier parisien construite comme un jeu de stratégie. Une petite main d'enfant, visible seulement du poignet jusqu'aux doigts et couverte par la manche longue d'un pull noir, pose délicatement un jeton rond noir sur le toit d'un bâtiment miniature.
+
+Aucun visage, aucune tête, aucun corps, aucune peau autre que la main et aucun autre enfant ne doivent apparaître. La main accomplit simplement un geste de jeu calme, sans danger ni violence.
+
+La ville miniature doit être détaillée et réaliste : petites maisons parisiennes, rues éclairées, quelques éléments violets très discrets. Le jeton noir est simple, mat, sans symbole, sans texte et sans logo. Il doit être clairement distinct des bâtiments.
+
+Éclairage chaleureux de chambre en fin d'après-midi, avec une légère lumière froide venant d'une fenêtre hors champ. L'image suggère la stratégie et le contrôle, jamais la peur ou la menace.
+
+Cadrage vertical 9:16, mise au point sur les doigts, le jeton et la zone de la maquette où il est posé. Anatomie de la main naturelle, cinq doigts cohérents, aucun doigt fusionné.
+
+Contraintes : exactement une image, scène saine et non sensible, photoréalisme cinématographique premium, aucun visage, aucun personnage complet, aucune violence, aucun texte, aucun watermark, aucun logo inventé et pas de cyberpunk.
+```
+
+Nom cible : `aby_enfant_main_jeton_noir_maquette_01.png`
 
 ## Validation Après Chaque Photo
 
