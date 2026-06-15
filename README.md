@@ -4,6 +4,8 @@
 
 ## Production Visuelle En Cours
 
+- [Format officiel des épisodes de 7 minutes](docs/EPISODE_FORMAT_7_MINUTES.md)
+- [Pack de production EP01 en 7 min 30](docs/EP01_LA_PHOTO_RETOURNEE_PRODUCTION_PACK.md)
 - [Tableau de bord autonome pour ChatGPT](docs/CHATGPT_AUTONOMOUS_IMAGE_PRODUCTION.md) — file de prompts par lots de cinq, références canoniques et audit obligatoire.
 - [Checklist des personnages](docs/CHARACTER_LIBRARY_CHECKLIST.md)
 - [État des épisodes 1 à 3](docs/EP01_EP03_REVISED_SPINE.md)

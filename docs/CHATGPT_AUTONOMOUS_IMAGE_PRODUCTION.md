@@ -1,4 +1,6 @@
-# CHATGPT - PILOTAGE AUTONOME DES IMAGES
+# CHATGPT - PILOTAGE AUTONOME DES IMAGES - SUSPENDU
+
+> Expérience suspendue le 15 juin 2026 : ChatGPT ne conservait pas correctement la file et mélangeait les personnages. Ne plus utiliser ce protocole. Codex reprend le pilotage photo par photo.
 
 Source de vérité opérationnelle pour produire les images YAWatch-LUNA par lots de cinq.
 
@@ -15,8 +17,8 @@ Codex reste responsable de l'audit final, du renommage, du classement et de l'é
 | Livrable | Visuels | Nouveaux personnages requis | Blocage réel |
 |---|---:|---|---|
 | Teaser 25-30 s | 90-95 % | Aucun | Voix narrateur, mouvement, musique, montage |
-| EP01 - La Photo Retournee | 95-100 % | Aucun | Voix, animation, montage |
-| EP02 - Aby Refuse Le Nom | 95-100 % | Aucun | Voix, animation, montage |
+| EP01 - La Photo Retournee, format 7 min 30 | 35-45 % | Aucun nouveau personnage | 10 images sources, voix, animation, montage |
+| EP02 - Aby Refuse Le Nom, format long | À réévaluer après EP01 | Aucun nouveau personnage | Écriture longue et nouveaux plans |
 | EP03 - L'Homme Qui Ne Parlait Plus | 65-75 % | Aucun | Malik propre, téléphone ignoré, interface YAWatch |
 
 Conclusion : ne pas retarder le teaser ou EP01 pour compléter tous les personnages. Le lot actif sert principalement à terminer EP03 et à combler deux plans émotionnels réutilisables.

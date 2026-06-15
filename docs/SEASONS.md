@@ -2,6 +2,8 @@
 
 ## Structure narrative par saison
 
+Format officiel : épisodes hebdomadaires de 7 à 9 minutes, cible 7 min 30. Voir `EPISODE_FORMAT_7_MINUTES.md`.
+
 ### Saison 1 — La Question (`saison_1_la_question`)
 *Épisodes 1–10*
 

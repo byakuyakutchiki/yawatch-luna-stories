@@ -14,7 +14,7 @@ On ne vend pas encore YAWatch. On installe Luna, Aby, Malik et l'ombre du pere.
 
 ## EP01 - La Photo Retournee
 
-**Statut visuel : prêt. Ne plus générer de photos principales. Voir `EP01_LA_PHOTO_RETOURNEE_PRODUCTION_PACK.md`.**
+**Statut : fondation visuelle prête pour un Short, mais épisode long de 7 min 30 encore à produire. Voir `EP01_LA_PHOTO_RETOURNEE_PRODUCTION_PACK.md`.**
 
 ### Fonction
 
