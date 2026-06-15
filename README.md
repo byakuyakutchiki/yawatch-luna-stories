@@ -2,6 +2,12 @@
 
 > Usine narrative IA — Générateur automatique de Shorts YouTube autour de l'univers YAWatch-Luna.
 
+## Production Visuelle En Cours
+
+- [Tableau de bord autonome pour ChatGPT](docs/CHATGPT_AUTONOMOUS_IMAGE_PRODUCTION.md) — file de prompts par lots de cinq, références canoniques et audit obligatoire.
+- [Checklist des personnages](docs/CHARACTER_LIBRARY_CHECKLIST.md)
+- [État des épisodes 1 à 3](docs/EP01_EP03_REVISED_SPINE.md)
+
 ---
 
 ## L'univers

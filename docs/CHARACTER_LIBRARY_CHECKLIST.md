@@ -194,14 +194,14 @@ Première apparition physique : Saison 2 minimum.
 
 | Personnage | Assets totaux | Émotions couvertes | Urgence |
 |---|---|---|---|
-| Luna Doll | 7 états | 7/8 états | Basse — gros plan yeux manquant |
+| Luna Doll | 8 états | 8/8 états | Complet |
 | Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
 | Luna enfant | 5 | 4/10 | Moyenne — `sad` manquant |
 | Aby adulte | 7 | 4/10 + 1 partielle | Moyenne — pack initial complet |
 | Aby enfant | 3 | 1/10 + 2 partielles | Moyenne — plan symbolique produit |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
 | Mère | 4 portraits + 7 scènes couple | 4/10 | Moyenne — pack initial complet |
-| Malik | 16 | 5/10 | Basse — le plus couvert |
+| Malik | 16 | 5/10 | Haute — référence neutre propre requise pour EP03 |
 
 ---
 
