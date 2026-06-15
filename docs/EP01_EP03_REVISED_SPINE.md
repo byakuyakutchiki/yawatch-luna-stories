@@ -14,6 +14,8 @@ On ne vend pas encore YAWatch. On installe Luna, Aby, Malik et l'ombre du pere.
 
 ## EP01 - La Photo Retournee
 
+**Statut visuel : prêt. Ne plus générer de photos principales. Voir `EP01_LA_PHOTO_RETOURNEE_PRODUCTION_PACK.md`.**
+
 ### Fonction
 
 Presenter Luna adulte dans le present lumineux de La Defense, puis ouvrir une faille intime.

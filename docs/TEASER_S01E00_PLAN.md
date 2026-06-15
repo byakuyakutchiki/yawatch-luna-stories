@@ -217,6 +217,8 @@ Creer un motif original :
 
 Le teaser est faisable maintenant.
 
+**Décision du 15 juin 2026 : le catalogue visuel est fermé. Ne plus générer de photos pour ce teaser. Utiliser `TEASER_S01E00_PRODUCTION_PACK.md`.**
+
 Le catalogue visuel principal est désormais couvert. Pour accélérer, aucun nouveau personnage n'est requis.
 
 Il manque surtout en production :
