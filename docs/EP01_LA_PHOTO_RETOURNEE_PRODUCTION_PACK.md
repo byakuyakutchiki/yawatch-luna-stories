@@ -125,7 +125,7 @@ Luna se retourne. Cut noir avant de voir la photo.
 
 ### Lot EP01-A - À Produire Maintenant
 
-1. Écran YAWatch nocturne vide, prêt pour surimpression.
+1. Écran YAWatch nocturne avec ADN Iris Workspace, prêt pour surimpression.
 2. Aby entrant dans le bureau lumineux de Luna, deux identités parfaitement cohérentes.
 3. Luna et Aby en dialogue de profil ou trois quarts, cadre retourné visible entre elles.
 4. Gros plan : main d'Aby approchant le cadre, main de Luna l'arrêtant doucement.
