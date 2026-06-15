@@ -660,7 +660,7 @@ Nom cible : `mere_transmet_boite_luna_adulte_01.png`
 
 ### DOLL-M-001 — Gros Plan Sur Les Yeux
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026. Cette image devient la référence canonique du visage et des yeux de Luna Doll.
 
 Ce plan complète le dernier état manquant de Luna Doll et sert de ponctuation mystérieuse dans EP01.
 
@@ -684,6 +684,39 @@ Contraintes : exactement une image, photoréalisme cinématographique naturel, u
 ```
 
 Nom cible : `poupee_luna_gros_plan_yeux_mystere_01.png`
+
+## File De Production — EP02, Le Dossier D'Aby
+
+### ABY-O-001 — Aby Referme Le Dossier
+
+Statut : à générer maintenant.
+
+Ce plan couvre le dernier asset principal manquant de EP02 et matérialise le refus d'Aby de parler du père.
+
+```text
+Utilise cette image comme référence canonique stricte de l'identité, de la peau et de la tenue professionnelle d'Aby adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/03_aby/aby_adulte_neutral_9x16_01.png
+
+Génère exactement UNE nouvelle photo.
+
+Objectif narratif : ABY REFERME LE DOSSIER. Au moment où le nom de son père est évoqué, Aby ferme volontairement un dossier confidentiel sans en montrer le contenu.
+
+Scène : très gros plan vertical sur les deux mains adultes d'Aby qui rabattent calmement la couverture d'un dossier cartonné noir mat posé sur une table de réunion sombre. Une main maintient le dossier, l'autre termine le geste de fermeture. Les manches de son blazer professionnel noir sont visibles.
+
+Le visage d'Aby peut rester entièrement hors champ. Si une petite partie de son menton ou de sa silhouette apparaît en haut du cadre, elle doit rester cohérente avec la référence, mais les mains et le dossier sont le sujet principal.
+
+Le dossier est sobre, fermé ou presque fermé, sans titre, sans nom, sans photographie, sans logo et sans texte lisible. Aucun document intérieur ne doit révéler d'information. Un stylo noir peut être posé à côté, mais aucun autre objet symbolique.
+
+Arrière-plan : salle de réunion vitrée de YAWatch à La Défense, claire et réaliste, architecture de bureaux contemporaine légèrement floue. Lumière naturelle froide de journée avec un reflet discret sur la table. L'ambiance devient psychologiquement tendue sans rendre la scène sombre ou violette.
+
+Les deux mains doivent être entièrement visibles, anatomiquement correctes, naturelles, avec cinq doigts chacune, sans fusion ni bijou extravagant. Le geste est contrôlé, précis, presque trop calme; aucune violence et aucune colère théâtrale.
+
+Cadrage vertical 9:16, macro cinématographique, profondeur de champ faible, espace suffisant autour du dossier pour permettre une légère animation de caméra.
+
+Contraintes : exactement une image, deux mains d'une femme adulte seulement, un seul dossier noir, aucun texte lisible, aucun visage supplémentaire, aucune photographie visible, pas d'arme, pas de violence, pas de cyberpunk, pas de violet dominant, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `aby_adulte_mains_referme_dossier_01.png`
 
 ## Validation Après Chaque Photo
 

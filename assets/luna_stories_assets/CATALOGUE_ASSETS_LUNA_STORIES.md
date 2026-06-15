@@ -36,7 +36,8 @@ Derniere mise a jour : 2026-06-09T18:52:38
 - `04_univers_et_decors/decor_chambre_poupee_nuit_01.jpg` - Decor sombre poupee/chambre, utile enfance/mystere.
 - `04_univers_et_decors/decor_salon_moderne_noir_01.png` - Decor salon moderne, a valider pour scenes famille/adulte.
 - `04_univers_et_decors/scene_route_brume_dos_personnage_01.jpg` - Scene de dos/brume/route, possible episode fuite ou souvenir.
-- `05_objets_symboliques_poupees/poupee_luna_violette_01.jpg` - Poupee violette propre, objet symbole Luna enfant.
+- `05_objets_symboliques_poupees/poupee_luna_violette_01.jpg` - Archive de recherche non canonique (poupée blonde en porcelaine, ne plus utiliser).
+- `05_objets_symboliques_poupees/poupee_luna_gros_plan_yeux_mystere_01.png` - Référence canonique du visage et des yeux de Luna Doll.
 - `05_objets_symboliques_poupees/poupee_luna_portrait_02.jpg` - Poupee ancienne plus sombre, tension dramatique.
 - `05_objets_symboliques_poupees/poupee_luna_portrait_03.jpg` - Poupee ancienne douce/rose, reference objet.
 - `05_objets_symboliques_poupees/poupee_luna_allongee_04.jpg` - Poupee allongee, possible symbole de souvenir/perte.

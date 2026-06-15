@@ -20,17 +20,17 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 
 | État | Fichier | Statut |
 |---|---|---|
-| Neutre / posée sur bureau | `05_objets/poupee_luna_violette_01.jpg` | [x] |
+| Référence visage / yeux | `poupee_luna_gros_plan_yeux_mystere_01.png` | [x] |
 | Éclairage doux / chaleureux | `05_objets/poupee_luna_portrait_03.jpg` | [x] |
 | Tension / contre-jour mystère | `05_objets/poupee_luna_portrait_02.jpg` | [x] |
 | Allongée / souvenir / perte | `05_objets/poupee_luna_allongee_04.jpg` | [x] |
 | Avec ville miniature | `EP01/EP01_PLAN_05_poupee_et_ville_miniature.png` | [x] |
 | Dans chambre nuit | `EP01/EP01_PLAN_02_poupee_luna_chambre_nuit.png` | [x] |
-| Gros plan yeux (mystère) | — | [ ] — prochain asset |
+| Gros plan yeux (mystère) | `poupee_luna_gros_plan_yeux_mystere_01.png` | [x] |
 | Tenue dans les mains de Luna | `luna_adulte_protective_luna_doll_01.png`, `luna_enfant_comforted_with_doll_01.png` | [x] |
 
-**Score** : 7/8 états couverts
-**Manquants prioritaires** : gros plan yeux (mystère).
+**Score** : 8/8 états couverts
+**Manquants prioritaires** : aucun. Pack Luna Doll complet.
 
 ---
 
@@ -215,7 +215,7 @@ Première apparition physique : Saison 2 minimum.
 ### Bloc 2 — Avant EP01
 
 3. Luna adulte — `protective` (Luna Doll dans les mains)
-4. Luna Doll — gros plan yeux (mystère) — en cours
+4. Luna Doll — gros plan yeux (mystère) — `[x]`
 5. Luna Doll — tenue dans les mains de Luna
 
 ### Bloc 3 — Avant EP02

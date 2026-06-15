@@ -19,8 +19,8 @@ Source de vérité officielle pour tous les personnages.
 |---|---|
 | Taille | ~20cm — petite, tient dans une main |
 | Tête | Ronde, douce, légèrement oversized par rapport au corps |
-| Cheveux | Bruns courts, lisses, tombant sur les épaules |
-| Yeux | Sombres, brodés, expressifs — regard doux et légèrement mélancolique |
+| Cheveux | Bruns en fils de laine, mi-longs, tombant sur les épaules |
+| Yeux | Deux petits boutons noirs cousus, avec reflet naturel uniquement |
 | Bouche | Petite, légèrement souriante |
 | Mains | Petites, de tissu, sans articulations |
 | Corps | Proportions poupée classique — ni trop réaliste, ni trop cartoon |
@@ -84,10 +84,14 @@ Il existe **une seule Luna Doll canonique**. Une seconde poupée identique ne pe
 |---|---|---|
 | `ENFANCE` | Luna enfant, dans sa chambre | Refuge affectif, naissance de son monde intérieur |
 | `CHEZ_LA_MERE` | La mère, dans une boîte à souvenirs fermée | Objet protégé après la rupture familiale |
-| `TRANSMISSION` | La mère remet la boîte à Luna adulte | Scène de passage encore à produire |
+| `TRANSMISSION` | La mère remet la boîte à Luna adulte | `mere_transmet_boite_luna_adulte_01.png` |
 | `BUREAU_LUNA` | Luna adulte, dans son bureau YAWatch | Présence quotidienne après la transmission |
 
 Règles de montage :
+
+- Référence canonique du visage : `poupee_luna_gros_plan_yeux_mystere_01.png`.
+- Référence canonique du corps et de la robe : la poupée visible dans `luna_enfant_comforted_with_doll_01.png`.
+- `poupee_luna_violette_01.jpg` est une archive de recherche non canonique : poupée blonde en porcelaine interdite pour toute nouvelle génération.
 
 - Les scènes `mere_luna_aby_protective_memory_box_01.png` et `mere_luna_aby_vulnerable_closed_box_01.png` se déroulent **avant** la transmission.
 - Les scènes montrant Luna Doll dans le bureau de Luna se déroulent **après** la transmission.

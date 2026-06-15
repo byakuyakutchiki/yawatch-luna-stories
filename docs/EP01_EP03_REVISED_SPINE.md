@@ -101,9 +101,12 @@ Que sait Aby sur leur pere ?
 
 ### Assets manquants
 
-- Aby adulte present clair/La Defense.
-- Jeton noir sur maquette en vertical 9:16.
 - Dossier ferme avec aucun texte lisible.
+
+### Assets désormais couverts
+
+- Aby adulte dans le présent clair de La Défense.
+- Jeton noir sur la maquette en vertical 9:16.
 
 ---
 
