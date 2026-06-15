@@ -27,10 +27,10 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | Avec ville miniature | `EP01/EP01_PLAN_05_poupee_et_ville_miniature.png` | [x] |
 | Dans chambre nuit | `EP01/EP01_PLAN_02_poupee_luna_chambre_nuit.png` | [x] |
 | Gros plan yeux (mystère) | — | [ ] |
-| Tenue dans les mains de Luna | — | [ ] |
+| Tenue dans les mains de Luna | `luna_adulte_protective_luna_doll_01.png`, `luna_enfant_comforted_with_doll_01.png` | [x] |
 
-**Score** : 6/8 états couverts
-**Manquants prioritaires** : gros plan yeux, poupée dans les mains de Luna adulte.
+**Score** : 7/8 états couverts
+**Manquants prioritaires** : gros plan yeux (mystère).
 
 ---
 
@@ -107,17 +107,17 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | soft_smile | — | [ ] |
 | sad | — | [ ] |
 | worried | — | [ ] |
-| determined | `aby_enfant_canon_apk_maquette_ville_01.png` (stratégique) | [~] |
+| determined | `aby_enfant_canon_apk_maquette_ville_01.png`, `aby_enfant_main_jeton_noir_maquette_01.png` (action symbolique sans visage) | [~] |
 | controlled_anger | — | [ ] |
 | shocked | — | [ ] |
 | protective | — | [ ] |
 | suspicious | `aby_enfant_canon_apk_maquette_ville_01.png` (regard calculateur) | [x] |
 | vulnerable | — | [ ] |
 
-**Assets disponibles** : 2 fichiers (1 canon APK + 1 app — même asset)
-**Score** : 1/10 utilisable — 1/10 partielle
+**Assets disponibles** : 3 fichiers (dont 1 plan symbolique sans visage)
+**Score** : 1/10 utilisable — 2/10 partielles
 **Règle canon** : petite blonde, maquette de ville, regard stratégique. Ne jamais confondre avec Luna enfant.
-**Manquants prioritaires** : main posant le jeton noir (visage hors champ), regard de biais vers maquette.
+**Manquants prioritaires** : regard de biais vers maquette.
 
 ---
 
@@ -194,11 +194,11 @@ Première apparition physique : Saison 2 minimum.
 
 | Personnage | Assets totaux | Émotions couvertes | Urgence |
 |---|---|---|---|
-| Luna Doll | 6 | 6/8 états | Basse — 2 états manquants |
+| Luna Doll | 7 états | 7/8 états | Basse — gros plan yeux manquant |
 | Luna adulte | 8 | 4/10 | Haute — `sad` prioritaire |
 | Luna enfant | 5 | 4/10 | Moyenne — `sad` manquant |
 | Aby adulte | 7 | 4/10 + 1 partielle | Moyenne — pack initial complet |
-| Aby enfant | 2 | 1/10 | Haute |
+| Aby enfant | 3 | 1/10 + 2 partielles | Moyenne — plan symbolique produit |
 | Père | 14 | 4/10 (usage S2) | Moyenne |
 | Mère | 4 portraits + 7 scènes couple | 4/10 | Moyenne — pack initial complet |
 | Malik | 16 | 5/10 | Basse — le plus couvert |
@@ -222,7 +222,7 @@ Première apparition physique : Saison 2 minimum.
 
 6. Aby adulte — portrait face 9:16 isolé (`neutral` froid)
 7. Aby adulte — `suspicious` (regard calculateur de côté)
-8. Aby enfant — main posant le jeton noir (visage hors champ)
+8. Aby enfant — main posant le jeton noir (visage hors champ) — `[x]`
 
 ### Bloc 4 — Avant EP03
 

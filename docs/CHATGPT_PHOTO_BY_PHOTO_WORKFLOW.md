@@ -586,7 +586,7 @@ Nom cible : `mere_luna_aby_vulnerable_closed_box_01.png`
 
 ### ABY-E-001 — Main Et Jeton Noir
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026. La version téléchargée à 17:10 est retenue; la version antérieure, plus plate, n'entre pas dans le canon.
 
 Référence de la maquette et de l'univers d'Aby enfant :
 
@@ -614,6 +614,45 @@ Contraintes : exactement une image, scène saine et non sensible, photoréalisme
 ```
 
 Nom cible : `aby_enfant_main_jeton_noir_maquette_01.png`
+
+## File De Production — Transmission De Luna Doll
+
+### DOLL-T-001 — La Mère Remet La Boîte À Luna
+
+Statut : à générer maintenant.
+
+Cette scène est le raccord canonique entre les états `CHEZ_LA_MERE` et `BUREAU_LUNA`.
+
+```text
+Utilise comme référence d'identité canonique de la mère :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_neutral_9x16_01.png
+
+Utilise comme référence d'identité canonique de Luna adulte :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png
+
+Utilise comme référence stricte de la boîte à souvenirs et de la tenue de la mère :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/10_famille_luna/mere_luna_aby_vulnerable_closed_box_01.png
+
+Génère exactement UNE nouvelle photo avec uniquement ces deux femmes adultes.
+
+Objectif narratif : LA TRANSMISSION — la mère remet à Luna adulte la boîte fermée qui contient Luna Doll. C'est la scène qui explique pourquoi la poupée quitte l'appartement de la mère et apparaît ensuite dans le bureau de Luna.
+
+Scène : dans le salon lumineux de l'appartement parisien de la mère, les deux femmes sont debout ou assises face à face près de la table en bois. La mère tend la boîte à souvenirs fermée à Luna. Luna la reçoit avec ses deux mains. La poupée ne doit absolument pas être visible; la boîte reste fermée et aucun contenu n'apparaît.
+
+Conserve strictement les deux identités et leurs âges : la mère a environ 48 à 52 ans, cheveux bruns mi-courts ondulés; Luna a environ 32 ans, longs cheveux bruns ondulés. Elles doivent être clairement distinctes, mère et fille, sans fusion de leurs traits.
+
+Tenues : la mère porte exactement son chemisier ivoire opaque à manches longues et encolure fermée avec pantalon sombre. Luna porte un pantalon anthracite et un pull fin noir à col rond ou un chemisier noir fermé sous un blazer sobre. Les deux tenues sont élégantes, couvrantes et quotidiennes; aucun décolleté, vêtement transparent, moulant, glamour ou sexualisé.
+
+Émotion : la mère est grave mais soulagée; Luna est surprise et émue, sans larmes. Elles regardent la boîte ou brièvement l'une vers l'autre, jamais la caméra. Le geste doit être intime et retenu, pas cérémoniel.
+
+Les quatre mains doivent être visibles, anatomiquement correctes et tenir naturellement la même boîte, sans doigts fusionnés. Une seule boîte existe. Aucun père, aucune Aby, aucun enfant et aucun autre personnage ne doivent apparaître.
+
+Lumière naturelle parisienne de fin d'après-midi, façades haussmanniennes légèrement floues derrière la fenêtre. Cadrage vertical 9:16, plan américain suffisamment large pour montrer les deux visages, les mains et la boîte.
+
+Contraintes : exactement une image, photoréalisme cinématographique naturel, deux femmes adultes seulement, une seule boîte fermée, Luna Doll invisible, tenues couvrantes, pas de violence, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `mere_transmet_boite_luna_adulte_01.png`
 
 ## Validation Après Chaque Photo
 
