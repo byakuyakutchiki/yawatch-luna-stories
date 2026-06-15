@@ -619,7 +619,9 @@ Nom cible : `aby_enfant_main_jeton_noir_maquette_01.png`
 
 ### DOLL-T-001 — La Mère Remet La Boîte À Luna
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026 après correction ciblée du visage de Luna.
+
+Usage : plan narratif large approuvé pour le montage. Cette image ne remplace pas les portraits canoniques individuels de Luna ou de sa mère comme références d'identité.
 
 Cette scène est le raccord canonique entre les états `CHEZ_LA_MERE` et `BUREAU_LUNA`.
 

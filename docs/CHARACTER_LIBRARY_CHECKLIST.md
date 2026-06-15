@@ -47,10 +47,10 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | shocked | — | [ ] |
 | protective | `luna_adulte_protective_luna_doll_01.png` | [x] |
 | suspicious | — | [ ] |
-| vulnerable | — | [ ] |
+| vulnerable | `mere_transmet_boite_luna_adulte_01.png` (plan narratif de trois quarts, non utilisable comme référence d'identité) | [~] |
 
-**Assets disponibles** : 7 portraits + 1 avatar app
-**Score** : 4/10 couvertes
+**Assets disponibles** : 7 portraits + 1 avatar app + 1 scène de groupe
+**Score** : 4/10 couvertes — 1/10 partielle
 **Manquants prioritaires avant teaser** : aucun portrait émotionnel critique
 **Manquants prioritaires avant EP01** : `sad`
 
