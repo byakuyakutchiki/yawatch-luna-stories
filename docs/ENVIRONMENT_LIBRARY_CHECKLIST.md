@@ -131,7 +131,7 @@ Dernière mise à jour : 2026-06-11
 | Photo retournée | `01_luna_adulte/luna_adulte_looking_at_turned_photo_01.png` | [x] | Cadre vu de dos, contenu familial caché |
 | Vieille photo de famille (floue) | `malik/photo_famille_floue_01.png` | [x] | Malik uniquement |
 | Maquette de ville | 3 assets (EP01 + Luna enfant) | [x] | |
-| Archive / dossier fermé | — | [ ] | Motif récurrent Aby |
+| Archive / dossier fermé | `03_aby/aby_adulte_mains_referme_dossier_01.png` | [x] | Motif récurrent Aby, aucun texte lisible |
 | Montre / objet père | — | [ ] | Objet souvenir familial |
 | Jouet symbolique Malik enfance | `malik_jouet_symbolique_enfance_01.png` | [x] | |
 | Logo YAWatch | `app_yawatch_logo_current.png`, `yawatch_logo_dark_01.png` | [x] | |
@@ -173,7 +173,7 @@ Dernière mise à jour : 2026-06-11
 ### Avant EP02
 
 5. Appartement Aby (sobre, froid, lignes nettes)
-6. Archive / dossier fermé (objet motif Aby)
+6. Archive / dossier fermé (objet motif Aby) — `[x]`
 
 ### Avant EP03
 

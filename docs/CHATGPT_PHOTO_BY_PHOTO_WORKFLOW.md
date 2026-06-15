@@ -689,7 +689,7 @@ Nom cible : `poupee_luna_gros_plan_yeux_mystere_01.png`
 
 ### ABY-O-001 — Aby Referme Le Dossier
 
-Statut : à générer maintenant.
+Statut : `[x]` validé le 15 juin 2026 après correction de l'identité. Aby est identifiable par ses mèches blondes, son chignon hors cadre et sa tenue fermée.
 
 Ce plan couvre le dernier asset principal manquant de EP02 et matérialise le refus d'Aby de parler du père.
 

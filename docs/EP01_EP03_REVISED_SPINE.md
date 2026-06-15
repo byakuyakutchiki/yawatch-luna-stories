@@ -2,6 +2,8 @@
 
 ## Principe
 
+Ce document remplace l'ancienne version `EP01_LA_VILLE_DANS_LA_CHAMBRE` pour la continuité de diffusion. Les anciens assets restent utilisables comme flashbacks, mais l'épisode 1 canonique est `La Photo Retournee`.
+
 Les trois premiers episodes doivent lancer une question addictive :
 
 > Pourquoi Luna connait-elle des choses qu'elle ne devrait pas connaitre ?
@@ -47,13 +49,14 @@ Qu'y a-t-il sur la photo ?
 
 ### Assets manquants
 
-- Gros plan mystérieux sur les yeux de Luna Doll.
+- Aucun asset principal manquant.
 
 ### Assets désormais couverts
 
 - Photo/cadre familial retourné sur le bureau de Luna.
 - Main de Luna tenant et retournant presque le cadre.
 - Bureau de Luna à La Défense.
+- Gros plan mystérieux sur les yeux de Luna Doll.
 
 ---
 
@@ -101,12 +104,13 @@ Que sait Aby sur leur pere ?
 
 ### Assets manquants
 
-- Dossier ferme avec aucun texte lisible.
+- Aucun asset principal manquant.
 
 ### Assets désormais couverts
 
 - Aby adulte dans le présent clair de La Défense.
 - Jeton noir sur la maquette en vertical 9:16.
+- Dossier noir refermé par Aby, sans texte lisible.
 
 ---
 

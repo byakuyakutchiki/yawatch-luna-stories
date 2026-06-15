@@ -217,10 +217,18 @@ Creer un motif original :
 
 Le teaser est faisable maintenant.
 
-Il manque surtout :
+Le catalogue visuel principal est désormais couvert. Pour accélérer, aucun nouveau personnage n'est requis.
 
-- phrase centrale definitive ;
-- motif sonore ;
-- 5-6 plans de mouvement ;
-- montage rythmique ;
-- un dernier plan qui donne envie de commenter.
+Il manque surtout en production :
+
+- valider un narrateur ElevenLabs ;
+- produire un motif sonore original ;
+- animer légèrement 5 à 6 images existantes ;
+- réaliser le montage rythmique vertical ;
+- exporter et contrôler la version finale.
+
+Phrase centrale retenue pour la version accélérée :
+
+> Tout a commence bien avant YAWatch.
+
+Format accéléré recommandé : 25 à 30 secondes, un narrateur unique, aucun dialogue de personnage obligatoire.
