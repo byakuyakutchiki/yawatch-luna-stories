@@ -128,7 +128,7 @@ Dernière mise à jour : 2026-06-11
 |---|---|---|---|
 | Luna Doll (poupée violette) | 4 assets dossier 05 + 2 EP01 | [x] | Objet le mieux documenté |
 | Jeton noir d'Aby | `EP01/EP01_PLAN_07_jeton_aby_observe.png` | [x] | 1 seul asset |
-| Photo retournée | — | [ ] | Clé EP01 — à générer |
+| Photo retournée | `01_luna_adulte/luna_adulte_looking_at_turned_photo_01.png` | [x] | Cadre vu de dos, contenu familial caché |
 | Vieille photo de famille (floue) | `malik/photo_famille_floue_01.png` | [x] | Malik uniquement |
 | Maquette de ville | 3 assets (EP01 + Luna enfant) | [x] | |
 | Archive / dossier fermé | — | [ ] | Motif récurrent Aby |
@@ -167,7 +167,7 @@ Dernière mise à jour : 2026-06-11
 
 ### Avant EP01
 
-3. Photo retournée sur bureau Luna (objet clé de EP01)
+3. Photo retournée sur bureau Luna (objet clé de EP01) — `[x]`
 4. Chambre enfance Luna nuit harmonisée (style cohérent avec les autres)
 
 ### Avant EP02

@@ -47,9 +47,13 @@ Qu'y a-t-il sur la photo ?
 
 ### Assets manquants
 
-- Photo/cadre familial retourne sur bureau Luna.
-- Main de Luna retournant presque la photo.
-- Bureau Luna lumineux, pas trop sombre.
+- Gros plan mystérieux sur les yeux de Luna Doll.
+
+### Assets désormais couverts
+
+- Photo/cadre familial retourné sur le bureau de Luna.
+- Main de Luna tenant et retournant presque le cadre.
+- Bureau de Luna à La Défense.
 
 ---
 

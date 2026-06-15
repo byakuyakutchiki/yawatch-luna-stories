@@ -656,6 +656,35 @@ Contraintes : exactement une image, photoréalisme cinématographique naturel, d
 
 Nom cible : `mere_transmet_boite_luna_adulte_01.png`
 
+## File De Production — Luna Doll, Plan Mystère
+
+### DOLL-M-001 — Gros Plan Sur Les Yeux
+
+Statut : à générer maintenant.
+
+Ce plan complète le dernier état manquant de Luna Doll et sert de ponctuation mystérieuse dans EP01.
+
+```text
+Utilise cette image uniquement comme référence canonique stricte de Luna Doll :
+https://github.com/byakuyakutchiki/yawatch-luna-stories/blob/master/assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_violette_01.jpg
+
+Génère exactement UNE nouvelle photo de Luna Doll, sans aucun personnage humain.
+
+Objectif : créer un très gros plan cinématographique mystérieux sur le visage et surtout les deux yeux de la poupée.
+
+Luna Doll reste exactement la même petite poupée artisanale en tissu : mêmes cheveux bruns en laine, même peau textile cousue, mêmes deux petits yeux sombres, mêmes proportions et même fabrication légèrement usée. Elle reste clairement un jouet inanimé. Ce n'est ni une enfant réelle, ni un robot, ni une poupée de porcelaine.
+
+Cadrage vertical 9:16, macro très rapprochée. Les deux yeux doivent être entièrement visibles, nets et symétriques; une partie des cheveux bruns et du haut du visage reste dans le cadre. La robe violette peut apparaître très légèrement en bas, sans dominer l'image.
+
+Éclairage réaliste de fin de journée venant d'une fenêtre du bureau de Luna. Dans les yeux sombres, ajoute uniquement un minuscule reflet naturel rectangulaire de fenêtre, suffisamment ambigu pour créer un doute au montage. Les yeux ne brillent pas par eux-mêmes et ne changent pas de forme.
+
+Ambiance premium, silencieuse et psychologique. Faible profondeur de champ, texture du tissu visible, fond de bureau YAWatch complètement flou et sans texte lisible. Aucun effet horrifique, aucune expression menaçante, aucun sourire ajouté, aucune larme, aucun mouvement surnaturel.
+
+Contraintes : exactement une image, photoréalisme cinématographique naturel, une seule poupée, aucun humain, aucun visage humain dans un reflet, yeux non lumineux, pas de LED, pas de métal, pas de circuits, pas de cyberpunk, pas de violet dominant, pas de texte, pas de watermark et pas de logo inventé.
+```
+
+Nom cible : `poupee_luna_gros_plan_yeux_mystere_01.png`
+
 ## Validation Après Chaque Photo
 
 Codex contrôle :

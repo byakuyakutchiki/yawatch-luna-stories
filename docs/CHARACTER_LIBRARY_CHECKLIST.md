@@ -26,7 +26,7 @@ Audit : Claude (Handoff Codex → Claude, session juin 2026)
 | Allongée / souvenir / perte | `05_objets/poupee_luna_allongee_04.jpg` | [x] |
 | Avec ville miniature | `EP01/EP01_PLAN_05_poupee_et_ville_miniature.png` | [x] |
 | Dans chambre nuit | `EP01/EP01_PLAN_02_poupee_luna_chambre_nuit.png` | [x] |
-| Gros plan yeux (mystère) | — | [ ] |
+| Gros plan yeux (mystère) | — | [ ] — prochain asset |
 | Tenue dans les mains de Luna | `luna_adulte_protective_luna_doll_01.png`, `luna_enfant_comforted_with_doll_01.png` | [x] |
 
 **Score** : 7/8 états couverts
@@ -215,7 +215,7 @@ Première apparition physique : Saison 2 minimum.
 ### Bloc 2 — Avant EP01
 
 3. Luna adulte — `protective` (Luna Doll dans les mains)
-4. Luna Doll — gros plan yeux (mystère)
+4. Luna Doll — gros plan yeux (mystère) — en cours
 5. Luna Doll — tenue dans les mains de Luna
 
 ### Bloc 3 — Avant EP02
