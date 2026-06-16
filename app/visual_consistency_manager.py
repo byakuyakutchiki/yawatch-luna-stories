@@ -89,6 +89,15 @@ YAWATCH_ENV_DNA: Dict[str, str] = {
     "interdit": "pas de New York, pas de cyberpunk permanent, pas de bleu sombre dominant sans raison",
 }
 
+IRIS_WORKSPACE_DNA: Dict[str, str] = {
+    "type": "interface analytique YAWatch / Iris Workspace crédible en 2026",
+    "affichage_defaut": "cartes, trajectoires, corrélations, chronologies, métadonnées, sources disponibles",
+    "source_brute": "image caméra seulement après ouverture explicite de la source brute",
+    "visio": "titre IRIS WORKSPACE lisible si utile, vraies vignettes photo de participants adultes",
+    "camera_urbaine": "flux HD/4K moderne, mobilier urbain actuel, véhicules européens contemporains 2024-2026",
+    "interdit": "pas de VHS, pas d'archive années 80/90, pas de véhicules datés, pas de logos de marques lisibles",
+}
+
 PARIS_REAL_DNA: Dict[str, str] = {
     "type": "Paris réel contemporain",
     "lieux": "La Défense, Quatre Temps, métro/RER, quais de Seine, Marais, cafés, appartements",
@@ -150,6 +159,10 @@ NEGATIVE_PROMPTS: Dict[str, List[str]] = {
     "YAWatch": [
         "New York", "Manhattan", "cyberpunk city", "spaceship", "rustic", "vintage",
     ],
+    "Iris_Workspace": [
+        "VHS", "old CCTV", "1990s surveillance", "1980s car", "vintage car",
+        "old archive footage", "brand logo", "readable fake text",
+    ],
     "Paris_reel": [
         "New York", "Manhattan", "Los Angeles", "Tokyo", "generic American city",
         "cyberpunk", "futuristic megacity",
@@ -172,6 +185,7 @@ class VisualConsistencyManager:
             "Malik_adulte": MALIK_ADULTE_DNA,
             "YAWatch": YAWATCH_ENV_DNA,
             "YAWatch_env": YAWATCH_ENV_DNA,
+            "Iris_Workspace": IRIS_WORKSPACE_DNA,
             "Paris_reel": PARIS_REAL_DNA,
         }
         dna = mapping.get(character)

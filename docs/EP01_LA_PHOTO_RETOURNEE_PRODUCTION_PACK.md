@@ -136,8 +136,8 @@ Luna se retourne. Cut noir avant de voir la photo.
 6. `[x]` Luna consultant l'historique sur écran, texte illisible : `08_visuels_cles/ep01_luna_consulte_historique_yawatch_01.png`.
 7. `[x]` Reflet d'Aby observant Luna dans la vitre : `08_visuels_cles/ep01_reflet_aby_observe_luna_vitre_01.png`.
 8. `[x]` Luna seule au bureau de nuit, cadre en main : `08_visuels_cles/ep01_luna_seule_bureau_nuit_cadre_en_main_01.png`.
-9. `[x]` Écran Iris Workspace en visio-conférence qui se rallume derrière Luna, participants visibles et zone sombre pour la phrase finale : `08_visuels_cles/ep01_ecran_iris_workspace_visio_participants_01.jpg`.
-10. Insert du cadre presque retourné, contenu toujours caché.
+9. `[x]` Écran Iris Workspace en visio-conférence qui se rallume derrière Luna, participants visibles et zone sombre pour la phrase finale : `08_visuels_cles/ep01_ecran_iris_workspace_visio_participants_01.png`.
+10. `[x]` Insert du cadre presque retourné, contenu toujours caché : `08_visuels_cles/ep01_insert_cadre_presque_retourne_contenu_cache_01.jpg`.
 
 ## Voix Nécessaires
 
@@ -171,6 +171,6 @@ L'épisode entre en montage lorsque :
 
 - le scénario dialogué complet est verrouillé ;
 - les dix images sources manquantes sont validées ;
-- état actuel : 9/10 images sources manquantes validées ;
+- état actuel : 10/10 images sources manquantes validées ;
 - les voix narrateur, Luna et Aby adulte sont choisies ;
 - au moins quinze clips image-to-video sont disponibles.

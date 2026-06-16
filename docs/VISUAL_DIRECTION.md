@@ -39,6 +39,18 @@
 - Bascule bleu/violet uniquement quand le secret ou le système reprend le dessus
 - Ambiance thriller corporate parisien, pas cyberpunk générique
 
+### Iris Workspace / YAWatch Analytics
+
+- Iris Workspace est une interface analytique contemporaine, crédible en 2026.
+- Par défaut, Iris n'affiche pas directement une vieille capture caméra au centre du dashboard.
+- Iris montre d'abord cartes, trajectoires, corrélations, chronologies, métadonnées, sources disponibles et niveaux de confiance.
+- Une image caméra apparaît seulement quand Luna force ou ouvre la source brute.
+- Les flux caméra doivent être HD/4K modernes, pas des images d'archive VHS ou vidéosurveillance années 90.
+- Les scènes urbaines surveillées doivent contenir des véhicules européens contemporains 2024-2026, mobilier urbain actuel, marquages récents et signal vidéo propre.
+- Les voitures peuvent évoquer SUV compacts modernes, berlines électriques récentes et véhicules urbains français actuels, sans marque ni logo lisible.
+- En visio, l'interface peut afficher lisiblement `IRIS WORKSPACE`, avec de vraies vignettes photo de participants adultes si la scène prépare l'application.
+- Les textes métier doivent rester illisibles ou symboliques, sauf décision explicite de production.
+
 ### Aby
 
 - Femme blonde, élégante, froide, stratégique
@@ -151,6 +163,8 @@ STATUS: not_ready_for_upload
 - Absence de rythme cinématique
 - Visuels cyberpunk génériques déconnectés du lore
 - Paris remplacé par New York ou ville générique américaine
+- Interface 2026 mélangée à des flux caméra ou véhicules visuellement datés années 80/90
+- Vieux look VHS/archive quand la scène est censée être une source urbaine actuelle
 - Présent constamment violet/noir sans raison narrative
 - Aby rendue coupable trop tôt
 - Père traité comme gangster cartoon
