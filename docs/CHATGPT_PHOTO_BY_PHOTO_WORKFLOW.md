@@ -800,4 +800,6 @@ Nom cible : `sophie_drh_yawatch_neutral_canon_01.png`
 
 ### LUNA-MALIK-001 — Conversation a refaire
 
-Statut : `[ ]` refuse le 16 juin 2026. Malik est coherent, mais la femme n'est pas Luna. Nouveau prompt correctif requis avec reference stricte de Luna adulte.
+Statut : `[x]` valide le 16 juin 2026 apres correction dos/trois-quarts. Malik est coherent; Luna est acceptee par ses codes canoniques visibles (longs cheveux bruns ondules, blazer noir, posture d'ecoute), sans gros plan frontal pour eviter un faux visage.
+
+Nom cible : `luna_malik_conversation_cafe_la_defense_01.png`

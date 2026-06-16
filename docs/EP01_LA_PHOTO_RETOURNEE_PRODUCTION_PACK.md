@@ -175,6 +175,7 @@ Images de densité déjà validées :
 - `03_aby/aby_adulte_privee_baie_vitree_dossier_01.png` : Aby seule, indice privé sans révélation.
 - `06_personnage_masculin_noir/malik_adulte_neutral_canon_realiste_01.png` : Malik adulte canon réaliste au présent.
 - `06_personnage_masculin_noir/malik_adulte_travail_couloir_jour_01.png` : Malik au travail en journée.
+- `08_visuels_cles/luna_malik_conversation_cafe_la_defense_01.png` : première interaction humaine Luna/Malik, Luna de dos/trois-quarts pour préserver son canon.
 - `06_personnages_secondaires_a_valider/thomas_assistant_yawatch_neutral_canon_01.png` : Thomas assistant YAWatch.
 
 ## Critère De Prêt À Monter
