@@ -168,8 +168,14 @@ Ces images ne remplacent pas les dix plans clés : elles servent à densifier le
 Images de densité déjà validées :
 
 - `09_decors_paris_la_defense/pack_01_yawatch_industries/yawatch_hall_openspace_jour_realiste_sans_logo_01.png` : hall + open space YAWatch vivant en journée.
+- `09_decors_paris_la_defense/pack_01_yawatch_industries/yawatch_cafeteria_jour_employes_01.png` : cafétéria YAWatch en journée.
+- `09_decors_paris_la_defense/pack_04_quartiers_paris/paris_reel_respiration_jour_contemporain_01.png` : respiration Paris réel en journée.
 - `03_aby/aby_adulte_bureau_public_realiste_01.png` : Aby publique, professionnelle, normale.
+- `03_aby/aby_adulte_reunion_publique_collaborateurs_01.png` : Aby en réunion publique avec collaborateurs.
+- `03_aby/aby_adulte_privee_baie_vitree_dossier_01.png` : Aby seule, indice privé sans révélation.
 - `06_personnage_masculin_noir/malik_adulte_neutral_canon_realiste_01.png` : Malik adulte canon réaliste au présent.
+- `06_personnage_masculin_noir/malik_adulte_travail_couloir_jour_01.png` : Malik au travail en journée.
+- `06_personnages_secondaires_a_valider/thomas_assistant_yawatch_neutral_canon_01.png` : Thomas assistant YAWatch.
 
 ## Critère De Prêt À Monter
 

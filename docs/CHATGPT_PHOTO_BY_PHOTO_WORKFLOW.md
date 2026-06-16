@@ -755,3 +755,47 @@ Nom cible : `malik_adulte_neutral_canon_realiste_01.png`
 Statut : `[x]` valide le 16 juin 2026 apres correction. Version sans faux logo visible, employees adultes, accueil, open space, mezzanine et ecrans analytiques modernes. Sert a densifier les episodes longs.
 
 Nom cible : `yawatch_hall_openspace_jour_realiste_sans_logo_01.png`
+
+### ABY-PUBLIC-002 — Reunion avec collaborateurs
+
+Statut : `[x]` valide le 16 juin 2026. Aby reste publique, professionnelle et normale. Le plan sert a montrer qu'elle peut etre percue comme une dirigeante fiable par ses collaborateurs.
+
+Nom cible : `aby_adulte_reunion_publique_collaborateurs_01.png`
+
+### ABY-PRIVATE-001 — Baie vitree et dossier
+
+Statut : `[x]` valide le 16 juin 2026 comme plan prive/tension douce, pas comme portrait canon. Image stylisee mais utile pour suggerer qu'Aby cache quelque chose sans la rendre caricaturale.
+
+Nom cible : `aby_adulte_privee_baie_vitree_dossier_01.png`
+
+### MALIK-WORK-001 — Couloir de travail
+
+Statut : `[x]` valide le 16 juin 2026. Malik conserve bien son identite et devient utilisable dans un contexte de travail quotidien.
+
+Nom cible : `malik_adulte_travail_couloir_jour_01.png`
+
+### YAWATCH-LIFE-001 — Cafeteria
+
+Statut : `[x]` valide le 16 juin 2026. Plan lumineux de respiration montrant YAWatch comme une vraie entreprise vivante.
+
+Nom cible : `yawatch_cafeteria_jour_employes_01.png`
+
+### PARIS-REAL-001 — Respiration exterieure
+
+Statut : `[x]` valide le 16 juin 2026. Paris reel, contemporain, quotidien. Utilisable comme respiration hors bureau.
+
+Nom cible : `paris_reel_respiration_jour_contemporain_01.png`
+
+### THOMAS-001 — Assistant YAWatch
+
+Statut : `[x]` valide le 16 juin 2026 comme premiere reference canonique de Thomas. Il reste discret, humain, professionnel et non caricatural.
+
+Nom cible : `thomas_assistant_yawatch_neutral_canon_01.png`
+
+### SOPHIE-001 — DRH a refaire
+
+Statut : `[ ]` refuse le 16 juin 2026. Image techniquement correcte, mais Sophie ressemble trop a Luna. Nouveau prompt correctif requis pour la distinguer fortement : cheveux, age, energie, style RH.
+
+### LUNA-MALIK-001 — Conversation a refaire
+
+Statut : `[ ]` refuse le 16 juin 2026. Malik est coherent, mais la femme n'est pas Luna. Nouveau prompt correctif requis avec reference stricte de Luna adulte.
