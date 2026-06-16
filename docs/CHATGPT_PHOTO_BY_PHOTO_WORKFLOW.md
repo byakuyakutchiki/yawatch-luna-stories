@@ -735,3 +735,23 @@ Si la photo est bonne : elle est classée et la case passe à `[x]`.
 Si elle est presque bonne : elle est classée comme variante `[~]` et Codex écrit un prompt correctif unique.
 
 Si elle est incohérente : elle n'entre pas dans le canon et la même case est régénérée.
+
+## Production Parallele — Densite EP01 / EP02
+
+### ABY-PUBLIC-001 — Bureau public realiste
+
+Statut : `[x]` valide le 16 juin 2026 apres correction. La version retenue est plus sobre que la premiere generation : moins mannequin corporate, pas de faux logo visible, La Defense lisible, Aby professionnelle et publiquement normale.
+
+Nom cible : `aby_adulte_bureau_public_realiste_01.png`
+
+### MALIK-CANON-001 — Portrait realiste humain
+
+Statut : `[x]` valide le 16 juin 2026 apres correction. Cette version devient la reference prioritaire recente de Malik adulte au present : appartement parisien, regard fatigue, tenue simple, rendu moins banque d'image.
+
+Nom cible : `malik_adulte_neutral_canon_realiste_01.png`
+
+### YAWATCH-INFRA-001 — Hall + open space vivant
+
+Statut : `[x]` valide le 16 juin 2026 apres correction. Version sans faux logo visible, employees adultes, accueil, open space, mezzanine et ecrans analytiques modernes. Sert a densifier les episodes longs.
+
+Nom cible : `yawatch_hall_openspace_jour_realiste_sans_logo_01.png`

@@ -165,6 +165,12 @@ Pour que l'épisode ressemble à une vraie série et pas seulement à une suite 
 
 Ces images ne remplacent pas les dix plans clés : elles servent à densifier le montage, créer le monde autour de Luna, préparer Malik et rendre les conséquences du passé visibles dans le présent.
 
+Images de densité déjà validées :
+
+- `09_decors_paris_la_defense/pack_01_yawatch_industries/yawatch_hall_openspace_jour_realiste_sans_logo_01.png` : hall + open space YAWatch vivant en journée.
+- `03_aby/aby_adulte_bureau_public_realiste_01.png` : Aby publique, professionnelle, normale.
+- `06_personnage_masculin_noir/malik_adulte_neutral_canon_realiste_01.png` : Malik adulte canon réaliste au présent.
+
 ## Critère De Prêt À Monter
 
 L'épisode entre en montage lorsque :

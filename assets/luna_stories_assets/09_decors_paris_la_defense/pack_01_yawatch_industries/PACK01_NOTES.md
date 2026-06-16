@@ -12,8 +12,11 @@ Des versions avec le vrai logo YAWatch ont ete creees par incrustation locale a 
 - `PACK01_YAWATCH_INDUSTRIES_PLANCHE.jpg` : planche contact du pack.
 - Versions sans logo : assets bruts decoupes.
 - Versions `_logo_01` : assets avec logo YAWatch discret.
+- `yawatch_hall_openspace_jour_realiste_sans_logo_01.png` : hall + open space vivant, version corrigee sans faux logo visible, validee pour densifier EP01/EP02.
 
 ## Prochaine consigne ChatGPT
 Pour les prochains packs corporate, demander : "laisse un mur/vitre/espace propre pour incruster le logo plus tard", plutot que demander a ChatGPT d'ecrire YAWatch.
 
 Mise a jour : 2026-06-09T19:59:20
+
+Mise a jour : 2026-06-16 - ajout du hall/open space vivant sans logo invente.

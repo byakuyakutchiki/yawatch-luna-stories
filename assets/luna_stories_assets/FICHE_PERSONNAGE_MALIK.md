@@ -40,6 +40,7 @@ Dossier : `06_personnage_masculin_noir/`
 - `personnage_masculin_noir_planche_reference_01.png` : planche reference complete
 - `personnage_masculin_noir_portrait_face_stresse_01.png` : portrait face stress intense
 - `personnage_masculin_noir_portrait_trois_quarts_calme_01.png` : portrait 3/4 calme fatigue
+- `malik_adulte_neutral_canon_realiste_01.png` : portrait canon realiste en appartement parisien, reference prioritaire pour Malik adulte au present
 - `personnage_masculin_noir_portrait_profil_01.png` : profil dramatique
 - `personnage_masculin_noir_scene_salon_seul_01.png` : seul dans salon sombre
 - `personnage_masculin_noir_scene_fenetre_nuit_01.png` : de dos devant fenetre de nuit
