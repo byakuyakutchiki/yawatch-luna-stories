@@ -133,7 +133,7 @@ Luna se retourne. Cut noir avant de voir la photo.
 
 ### Lot EP01-B - Après Validation Du Premier Lot
 
-6. Luna consultant l'historique sur écran, texte illisible.
+6. `[x]` Luna consultant l'historique sur écran, texte illisible : `08_visuels_cles/ep01_luna_consulte_historique_yawatch_01.png`.
 7. Reflet d'Aby observant Luna dans la vitre.
 8. Luna seule au bureau de nuit, cadre en main.
 9. Écran qui se rallume derrière Luna, zone vide pour la phrase finale.
@@ -154,6 +154,6 @@ L'épisode entre en montage lorsque :
 
 - le scénario dialogué complet est verrouillé ;
 - les dix images sources manquantes sont validées ;
-- état actuel : 5/10 images sources manquantes validées ;
+- état actuel : 6/10 images sources manquantes validées ;
 - les voix narrateur, Luna et Aby adulte sont choisies ;
 - au moins quinze clips image-to-video sont disponibles.
