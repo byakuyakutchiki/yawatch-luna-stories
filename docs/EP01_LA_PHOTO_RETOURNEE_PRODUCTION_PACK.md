@@ -128,7 +128,7 @@ Luna se retourne. Cut noir avant de voir la photo.
 1. `[x]` Écran YAWatch nocturne avec ADN Iris Workspace, prêt pour surimpression : `08_visuels_cles/ep01_ecran_yawatch_iris_workspace_nuit_01.png`.
 2. `[x]` Aby entrant dans le bureau lumineux de Luna, deux identités cohérentes : `08_visuels_cles/ep01_aby_entre_bureau_luna_01.png`.
 3. `[x]` Luna et Aby en dialogue, cadre retourné visible entre elles : `08_visuels_cles/ep01_dialogue_luna_aby_cadre_retourne_01.png`.
-4. Gros plan : main d'Aby approchant le cadre, main de Luna l'arrêtant doucement.
+4. `[x]` Gros plan : main d'Aby approchant le cadre, main de Luna l'arrêtant doucement : `08_visuels_cles/ep01_mains_luna_arrete_aby_cadre_01.png`.
 5. Flashback : porte entrouverte de la chambre de Luna enfant, sans adulte visible.
 
 ### Lot EP01-B - Après Validation Du Premier Lot
@@ -154,6 +154,6 @@ L'épisode entre en montage lorsque :
 
 - le scénario dialogué complet est verrouillé ;
 - les dix images sources manquantes sont validées ;
-- état actuel : 3/10 images sources manquantes validées ;
+- état actuel : 4/10 images sources manquantes validées ;
 - les voix narrateur, Luna et Aby adulte sont choisies ;
 - au moins quinze clips image-to-video sont disponibles.
