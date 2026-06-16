@@ -135,7 +135,7 @@ Luna se retourne. Cut noir avant de voir la photo.
 
 6. `[x]` Luna consultant l'historique sur écran, texte illisible : `08_visuels_cles/ep01_luna_consulte_historique_yawatch_01.png`.
 7. `[x]` Reflet d'Aby observant Luna dans la vitre : `08_visuels_cles/ep01_reflet_aby_observe_luna_vitre_01.png`.
-8. Luna seule au bureau de nuit, cadre en main.
+8. `[x]` Luna seule au bureau de nuit, cadre en main : `08_visuels_cles/ep01_luna_seule_bureau_nuit_cadre_en_main_01.png`.
 9. Écran qui se rallume derrière Luna, zone vide pour la phrase finale.
 10. Insert du cadre presque retourné, contenu toujours caché.
 
@@ -148,12 +148,29 @@ Luna se retourne. Cut noir avant de voir la photo.
 5. Aby enfant, une phrase.
 6. Voix système YAWatch, deux phrases très courtes.
 
+## Passe Monde Vivant À Ajouter Après L'Ossature
+
+Les dix images prioritaires ci-dessus construisent l'ossature dramatique de l'épisode, mais ne suffisent pas seules à faire respirer un épisode de 7 min 30.
+
+Pour que l'épisode ressemble à une vraie série et pas seulement à une suite de plans de bureau, produire ensuite :
+
+1. Employés YAWatch en journée dans l'open space, ambiance normale, lumière claire.
+2. Assistante ou analyste recevant une alerte étrange sans comprendre le lien avec Luna.
+3. Une personne extérieure à YAWatch à qui il arrive un incident soudain lié indirectement au jeu du village d'enfance.
+4. Malik en journée, dans Paris ou près de La Défense, avant toute tension.
+5. Luna en extérieur parisien, hors bureau, pour montrer qu'elle existe aussi dans la vie réelle.
+6. Aby en extérieur parisien, froide mais socialement crédible, sans révéler sa manipulation.
+7. Plans de respiration : métro, parvis de La Défense, café, quai de Seine, couloir d'entreprise, ascenseur, accueil YAWatch.
+8. Inserts du jeu du village / maquette : maisons, jetons, main d'enfant, détail blond, règle implicite.
+
+Ces images ne remplacent pas les dix plans clés : elles servent à densifier le montage, créer le monde autour de Luna, préparer Malik et rendre les conséquences du passé visibles dans le présent.
+
 ## Critère De Prêt À Monter
 
 L'épisode entre en montage lorsque :
 
 - le scénario dialogué complet est verrouillé ;
 - les dix images sources manquantes sont validées ;
-- état actuel : 7/10 images sources manquantes validées ;
+- état actuel : 8/10 images sources manquantes validées ;
 - les voix narrateur, Luna et Aby adulte sont choisies ;
 - au moins quinze clips image-to-video sont disponibles.
