@@ -794,7 +794,9 @@ Nom cible : `thomas_assistant_yawatch_neutral_canon_01.png`
 
 ### SOPHIE-001 — DRH a refaire
 
-Statut : `[ ]` refuse le 16 juin 2026. Image techniquement correcte, mais Sophie ressemble trop a Luna. Nouveau prompt correctif requis pour la distinguer fortement : cheveux, age, energie, style RH.
+Statut : `[x]` valide le 16 juin 2026 apres correction. Sophie est distincte de Luna : cheveux courts poivre et sel, age/energie RH plus mature, presence humaine et attentive.
+
+Nom cible : `sophie_drh_yawatch_neutral_canon_01.png`
 
 ### LUNA-MALIK-001 — Conversation a refaire
 

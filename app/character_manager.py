@@ -69,6 +69,20 @@ CANONICAL_CHARACTERS: Dict[str, Dict] = {
         "apparence": "homme noir adulte, fatigué, retenu, appartement parisien",
         "faille": "silence émotionnel, blessure familiale non verbalisée",
     },
+    "Thomas_assistant": {
+        "nature": "humain",
+        "role_narratif": "assistant YAWatch discret, témoin du quotidien de l'entreprise",
+        "apparence": "homme adulte 25-35 ans, professionnel simple, badge discret",
+        "fonction": "assistant de direction ou assistant opérationnel",
+        "interdit": "pas de personnage comique, pas de sous-fifre caricatural",
+    },
+    "Sophie_DRH": {
+        "nature": "humaine",
+        "role_narratif": "DRH de YAWatch, relais humain des tensions internes",
+        "apparence": "femme 42-50 ans, cheveux courts ou mi-courts poivre et sel, style RH sobre",
+        "fonction": "responsable des ressources humaines",
+        "interdit": "ne pas la confondre avec Luna, pas de longs cheveux bruns ondulés",
+    },
     "YAWatch_AI": {
         "nature": "intelligence artificielle de surveillance",
         "personnalite": "calme, précise, protectrice mais ambiguë",
