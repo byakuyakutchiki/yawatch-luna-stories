@@ -1,4 +1,12 @@
-"""Assembly vidéo Shorts 9:16 — FFmpeg (prod) ou manifest JSON (fallback)."""
+"""Assembly vidéo Shorts 9:16 — FFmpeg (assemblage) ou manifest JSON (fallback).
+
+IMPORTANT : VideoBuilder est un outil d'ASSEMBLAGE, pas de génération de mouvement.
+Il concatène des clips existants. Il ne génère pas de clips IA.
+Voir docs/AI_VIDEO_ENGINE_KNOWLEDGE/VIDEO_ENGINE_ARCHITECTURE.md — Règle 0.
+
+Tout appel à build() assigne STATUS=PROTOTYPE_TECHNIQUE.
+TEASER_VALIDE ne peut être assigné que par QualityGate.record_human_verdict().
+"""
 
 import logging
 import shutil
@@ -7,9 +15,15 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List, Optional, Tuple
 
+from app.production_statuses import ProductionStatus, assert_not_forbidden
 from app.utils import ensure_dir, get_logger, save_json
 
 logger = get_logger(__name__)
+
+_PLACEHOLDER_PATTERNS = frozenset({
+    "scene_hook", "scene_story", "scene_climax", "scene_resolution",
+    "episode_test", "placeholder", "test_image", "demo_",
+})
 
 RESOLUTION = (1080, 1920)
 
@@ -51,8 +65,19 @@ class VideoBuilder:
     ) -> Path:
         output_dir = ensure_dir(output_dir)
 
+        # Avertissement explicite : VideoBuilder produit toujours un prototype
+        logger.warning(
+            "VideoBuilder.build() — résultat = %s. "
+            "Pour le teaser, utiliser Kling (voir IMAGE_TO_VIDEO_ENGINE_RULES.md).",
+            ProductionStatus.PROTOTYPE_TECHNIQUE.value,
+        )
+
         if self._ffmpeg and audio_path and audio_path.suffix == ".mp3" and image_paths:
-            real_images = [p for p in image_paths if p.exists() and p.suffix in (".png", ".jpg", ".jpeg")]
+            real_images = [
+                p for p in image_paths
+                if p.exists() and p.suffix in (".png", ".jpg", ".jpeg")
+                and not _is_placeholder(p)
+            ]
             if real_images:
                 return self._build_ffmpeg(story_id, real_images, audio_path, subtitles_path, output_dir)
 
@@ -154,18 +179,31 @@ class VideoBuilder:
         save_json(
             {
                 "story_id": story_id,
-                "status": "prototype",
+                "status": ProductionStatus.PROTOTYPE_TECHNIQUE.value,
                 "resolution": list(RESOLUTION),
                 "format": "9:16 Shorts",
                 "images": [str(p) for p in images],
                 "audio": str(audio) if audio else None,
                 "subtitles": str(subs) if subs else None,
-                "ffmpeg_hint": (
-                    f"ffmpeg -loop 1 -t 35 -i image.jpg -i {audio} "
-                    f"-vf subtitles={subs} -c:v libx264 -c:a aac luna_{story_id}.mp4"
+                "quality_gate_required": True,
+                "human_validation_required": True,
+                "note": (
+                    "Ce manifest est un prototype. "
+                    "Pour le teaser final, générer les clips avec Kling "
+                    "puis exécuter QualityGate. "
+                    "Voir docs/AI_VIDEO_ENGINE_KNOWLEDGE/VIDEO_ENGINE_ARCHITECTURE.md."
                 ),
             },
             out,
         )
-        logger.info("Manifest vidéo créé: %s", out.name)
+        logger.info("Manifest prototype créé: %s (status=%s)", out.name, ProductionStatus.PROTOTYPE_TECHNIQUE.value)
         return out
+
+
+def _is_placeholder(path: Path) -> bool:
+    name = path.stem.lower()
+    for pattern in _PLACEHOLDER_PATTERNS:
+        if pattern in name:
+            logger.warning("Image placeholder ignorée : %s", path.name)
+            return True
+    return False

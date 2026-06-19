@@ -1,4 +1,9 @@
-"""Packaging des épisodes pour export YouTube."""
+"""Packaging des épisodes pour export YouTube.
+
+Règle absolue : aucun package ne peut avoir STATUS=TEASER_VALIDE sans appel
+explicite à mark_human_approved(). Les strings "ready", "approved", "done"
+sont interdites — utiliser ProductionStatus uniquement.
+"""
 
 import logging
 import shutil
@@ -6,6 +11,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
+from app.production_statuses import ProductionStatus, assert_not_forbidden
 from app.utils import ensure_dir, get_logger, save_json
 
 logger = get_logger(__name__)
@@ -60,10 +66,21 @@ class ExportManager:
         subs_dest = _copy(subtitles_path, "subtitles.srt")
 
         # Metadata YouTube
+        status = (
+            ProductionStatus.TEASER_CANDIDAT.value if video_dest
+            else ProductionStatus.PROTOTYPE_TECHNIQUE.value
+        )
         metadata = {
             "episode_id": episode_id,
             "export_date": datetime.now().isoformat(),
-            "status": "ready_for_review" if video_dest else "script_only",
+            "status": status,
+            "human_validation_required": True,
+            "human_approved": False,
+            "human_approved_by": None,
+            "note": (
+                f"Statut automatique : {status}. "
+                "Pour publier, appeler mark_human_approved() après visionnage complet."
+            ),
             "files": {
                 "video": video_dest,
                 "thumbnail": thumb_dest,
@@ -86,6 +103,31 @@ class ExportManager:
         save_json(metadata, export_dir / "metadata.json")
         logger.info("Package créé: %s (status: %s)", export_dir.name, metadata["status"])
         return export_dir
+
+    def mark_human_approved(self, episode_id: str, approved_by: str, notes: str = "") -> None:
+        """Seule voie vers TEASER_VALIDE — doit être appelée par un humain identifié."""
+        if not approved_by or approved_by.strip().lower() in ("claude", "codex", "agent", "ai", "bot"):
+            raise ValueError(
+                f"approved_by='{approved_by}' n'est pas un nom humain valide. "
+                "Seul Ludovic peut approuver un package pour publication."
+            )
+        export_dir = EXPORT_ROOT / episode_id
+        meta_path = export_dir / "metadata.json"
+        if not meta_path.exists():
+            raise FileNotFoundError(f"Package introuvable : {episode_id}")
+
+        from app.utils import load_json
+        metadata = load_json(meta_path) or {}
+        metadata["status"] = ProductionStatus.TEASER_VALIDE.value
+        metadata["human_approved"] = True
+        metadata["human_approved_by"] = approved_by.strip()
+        metadata["human_approved_date"] = datetime.now().isoformat()
+        metadata["human_approved_notes"] = notes
+        save_json(metadata, meta_path)
+        logger.info(
+            "Package %s approuvé par %s → %s",
+            episode_id, approved_by, ProductionStatus.TEASER_VALIDE.value
+        )
 
     def list_packages(self, status_filter: Optional[str] = None) -> List[Path]:
         packages = [
