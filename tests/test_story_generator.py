@@ -32,12 +32,27 @@ def test_generate_invalid_type_uses_random(tmp_path):
     assert story["type"] in STORY_TYPES
 
 
-def test_luna_doll_in_most_stories(tmp_path):
+def test_luna_doll_in_emotionnelle_stories(tmp_path):
+    # Luna_Doll n'apparaît que dans le type "emotionnelle" — pas dans tous les types.
     lore = LoreManager(tmp_path)
     gen = StoryGenerator(lore)
-    for _ in range(10):
-        story = gen.generate()
-        assert "Luna_Doll" in story["characters"]
+    for _ in range(5):
+        story = gen.generate("emotionnelle")
+        assert "Luna_Doll" in story["characters"], (
+            "Le type 'emotionnelle' doit toujours inclure Luna_Doll."
+        )
+
+def test_luna_doll_not_in_all_types(tmp_path):
+    # Les types non émotionnels n'incluent pas nécessairement Luna_Doll.
+    lore = LoreManager(tmp_path)
+    gen = StoryGenerator(lore)
+    non_emotional_types = ["mysterieuse", "inquietante", "protection", "philosophique"]
+    for story_type in non_emotional_types:
+        story = gen.generate(story_type)
+        assert "Luna_Doll" not in story["characters"], (
+            f"Le type '{story_type}' ne doit pas inclure Luna_Doll "
+            "(personnage réservé aux épisodes émotionnels)."
+        )
 
 
 def test_save_creates_file(tmp_path):

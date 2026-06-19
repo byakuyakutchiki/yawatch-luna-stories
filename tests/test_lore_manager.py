@@ -37,11 +37,16 @@ def test_arc_progression(tmp_path):
     assert lore.current_arc == "saison_2_ombre_du_pere"
 
 
-def test_secret_revealed_at_episode_5(tmp_path):
+def test_secrets_revealed_by_episode_5(tmp_path):
+    # Le lore a des secrets aux épisodes 3 et 5 → 2 secrets révélés après 5 épisodes.
     lore = LoreManager(tmp_path)
     for _ in range(5):
         lore.record_episode("emotionnelle")
-    assert len(lore.state["revealed_secrets"]) == 1
+    revealed = lore.state["revealed_secrets"]
+    assert len(revealed) == 2
+    episodes = {s["episode"] for s in revealed}
+    assert 3 in episodes
+    assert 5 in episodes
 
 
 def test_get_next_story_prompt(tmp_path):
