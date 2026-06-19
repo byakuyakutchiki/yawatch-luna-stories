@@ -6,6 +6,12 @@ Objectif : valider la faisabilite visuelle avec Kling avant de produire 30 a 50 
 
 Decision : ne generer aucune nouvelle image. Ce test utilise uniquement les assets canon deja valides.
 
+Version mobile prête à utiliser :
+
+`KLING_READY_PACK_001/`
+
+Ce dossier contient les images renommees `PLAN_01...` et les prompts `PROMPT_01...` pour eviter toute recherche manuelle dans le depot.
+
 ## Objectifs De Validation
 
 1. Cohérence visuelle : visages, tenues, decors et objets doivent rester stables.
