@@ -16,6 +16,7 @@ from app.subtitle_generator import SubtitleGenerator
 from app.audio_mixer import AudioMixer
 from app.scene_composer import SceneComposer
 from app.export_manager import ExportManager
+from app.production_gatekeeper import ProductionGatekeeper
 from app.utils import ensure_dir, get_logger, save_json, load_json
 
 logger = get_logger(__name__)
@@ -39,6 +40,8 @@ class BatchProcessor:
         self.composer = SceneComposer()
         self.exporter = ExportManager()
         self.history = load_json(HISTORY_FILE) or {"batches": [], "total_episodes": 0}
+        # Chargement du gatekeeper au démarrage — warn si base de connaissances incomplète
+        self._gatekeeper = ProductionGatekeeper.load(strict=False)
 
     def produce(
         self,
@@ -47,6 +50,7 @@ class BatchProcessor:
         delay_seconds: float = 1.0,
     ) -> List[Dict]:
         logger.info("Batch démarré: %d épisodes", count)
+        logger.info(self._gatekeeper.status_report())
         batch_id = datetime.now().strftime("%Y%m%d_%H%M%S")
         results = []
 

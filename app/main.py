@@ -19,6 +19,7 @@ from app.scene_composer import SceneComposer
 from app.thumbnail_builder import ThumbnailBuilder
 from app.export_manager import ExportManager
 from app.batch_processor import BatchProcessor
+from app.production_gatekeeper import ProductionGatekeeper
 from app.utils import timestamp
 
 
@@ -59,6 +60,10 @@ def parse_args() -> argparse.Namespace:
 def run_pipeline(config: ConfigLoader, lore: LoreManager, story_type: str = None) -> dict:
     logger = logging.getLogger(__name__)
 
+    # Garde-fou obligatoire : vérifier la base de connaissances avant toute production
+    gatekeeper = ProductionGatekeeper.load(strict=False)
+    logger.info(gatekeeper.status_report())
+
     # Chemins
     stories_dir = config.get_path("paths.stories_dir")
     scripts_dir = config.get_path("paths.scripts_dir")
@@ -91,11 +96,14 @@ def run_pipeline(config: ConfigLoader, lore: LoreManager, story_type: str = None
     sub_gen = SubtitleGenerator()
     sub_path = sub_gen.generate(script, story["id"], subtitles_dir)
 
-    # Vidéo (manifest si pas d'images réelles)
+    # Vidéo — toujours un prototype à ce stade (pas d'images réelles)
+    # Le teaser final passe par Kling + QualityGate, pas par ce pipeline narratif.
+    image_paths: list = []
+    gatekeeper.assert_not_placeholder(image_paths)  # no-op ici, bloquant si des placeholders sont passés
     video_builder = VideoBuilder()
     video_path = video_builder.build(
         story_id=story["id"],
-        image_paths=[],  # sera rempli quand les images seront générées
+        image_paths=image_paths,
         audio_path=audio_path,
         subtitles_path=sub_path,
         output_dir=videos_dir,
