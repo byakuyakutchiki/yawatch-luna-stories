@@ -187,3 +187,7 @@ L'épisode entre en montage lorsque :
 - état actuel : 10/10 images sources manquantes validées ;
 - les voix narrateur, Luna et Aby adulte sont choisies ;
 - au moins quinze clips image-to-video sont disponibles.
+
+Avant de lancer les 30 à 50 clips de production complète, valider d'abord le pack test :
+
+- `docs/KLING_TEST_PACK_001.md` : 5 plans représentatifs pour tester stabilité visage, mains, objets, décors et mouvement cinéma.
