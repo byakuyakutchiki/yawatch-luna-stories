@@ -9,8 +9,24 @@ Usage :
 import sys
 from pathlib import Path
 
-CLIPS_DIR = Path("/media/windows/Users/saint/Desktop/PONT_LINUX_WINDOWS/resultats/clips_yawatch")
 REPO_ROOT = Path(__file__).parent
+
+# Deux emplacements possibles pour les clips, dans l'ordre de priorité :
+#   1. Dossier de dépôt du pont (si Codex copie les MP4 avec les noms exacts)
+#   2. Dossier output natif de ComfyUI (chemin réel découvert sur Windows)
+CLIPS_DIRS = [
+    Path("/media/windows/Users/saint/Desktop/PONT_LINUX_WINDOWS/resultats/clips_yawatch"),
+    Path("/media/windows/Users/saint/Documents/Codex/ComfyUI/output"),
+]
+
+
+def find_clip(filename: str) -> Path | None:
+    """Cherche un clip par nom exact dans les deux emplacements connus."""
+    for base in CLIPS_DIRS:
+        candidate = base / filename
+        if candidate.exists():
+            return candidate
+    return None
 
 PLANS = [
     {
@@ -50,11 +66,14 @@ def main():
     print("="*60)
 
     for plan in PLANS:
-        clip_path = CLIPS_DIR / plan["file"]
+        clip_path = find_clip(plan["file"])
 
-        if not clip_path.exists():
+        if clip_path is None:
             print(f"\n❌ {plan['name']}")
-            print(f"   FICHIER MANQUANT : {clip_path}")
+            print(f"   FICHIER MANQUANT : {plan['file']}")
+            print(f"   Cherché dans :")
+            for base in CLIPS_DIRS:
+                print(f"     - {base}")
             results.append({"plan": plan["name"], "status": "MISSING"})
             continue
 
