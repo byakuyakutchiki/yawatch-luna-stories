@@ -1,0 +1,31 @@
+{
+  "yawatch_status": "CANDIDATE_WORKFLOW_REQUIRES_OBJECT_INFO_VALIDATION",
+  "engine": "Wan2.1-I2V-14B-480P-GGUF",
+  "plan_id": "PLAN02_LUNA_ADULTE",
+  "source_image": "yawatch_plan02_luna_adulte_portrait.png",
+  "duration_seconds": 5,
+  "aspect_ratio": "9:16",
+  "prompt_positive": "cinematic premium psychological thriller portrait of Luna, adult woman, same identity as source image, subtle natural breathing, imperceptible slow push-in, restrained emotion, calm serious gaze, Paris La Defense office atmosphere, realistic skin, natural hair movement, shallow depth of field, film grain, high quality, no text",
+  "prompt_negative": "different person, identity change, face swap, deformed face, distorted eyes, asymmetric eyes, melting face, bad anatomy, extra fingers, fused fingers, child, teen, glamour, sexualized, cartoon, anime, cyberpunk, neon, purple dominant lighting, text, watermark, logo, low quality, heavy flicker, jitter, violent motion",
+  "model_targets": {
+    "unet_gguf_primary": "wan2.1-i2v-14b-480p-Q5_K_S.gguf",
+    "unet_gguf_fallback": "wan2.1-i2v-14b-480p-Q4_K_S.gguf",
+    "support_repo": "Comfy-Org/Wan_2.1_ComfyUI_repackaged"
+  },
+  "recommended_parameters": {
+    "seed": 2406202602,
+    "duration_seconds": 5,
+    "target_width": 480,
+    "target_height": 848,
+    "steps": "start with official workflow default",
+    "quality_priority": "high",
+    "speed_priority": "low"
+  },
+  "validation_required": [
+    "Install ComfyUI-GGUF",
+    "Confirm GGUF loader nodes in http://127.0.0.1:8188/object_info",
+    "Use Q5 first; if CUDA OOM, record FAILED_Q5_VRAM and retry Q4",
+    "Export final API workflow from ComfyUI before backend automation"
+  ]
+}
+

@@ -26,7 +26,8 @@ Ce qu'il NE FAIT PAS :
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+import hashlib
+from dataclasses import asdict, dataclass
 from pathlib import Path, PureWindowsPath
 
 from app.i2v_engine.comfyui_backend import VideoJob
@@ -46,6 +47,38 @@ REQUIRED_LIBRARIES = [
 
 _PROFILES_PATH = Path(__file__).resolve().parent / "motion_profiles.json"
 _PLANS_PATH = Path(__file__).resolve().parent / "teaser_s01e00_plans.json"
+RULES_VERSION = "MOTION_CONTROL_RULES.md@5912cd6"
+CRITICAL_LOCKED_FIELDS = [
+    "output_name",
+    "image_path",
+    "prompt_positive",
+    "prompt_negative",
+    "checkpoint",
+    "motion_model",
+    "beta_schedule",
+    "width",
+    "height",
+    "num_frames",
+    "fps",
+    "steps",
+    "cfg",
+    "denoise",
+    "sampler",
+    "scheduler",
+    "seed",
+    "use_ipadapter",
+    "ipadapter_weight",
+    "ipadapter_image",
+    "ipadapter_preset",
+    "motion_scale",
+    "plan_id",
+    "plan_type",
+    "character",
+    "finalize",
+    "final_width",
+    "final_height",
+    "final_fps",
+]
 
 
 class LibrariesNotAvailable(RuntimeError):
@@ -103,6 +136,24 @@ class MotionDirector:
 
     # ── Préparation d'un VideoJob ──────────────────────────────────────────
 
+    @staticmethod
+    def _canonical_job_hash(data: dict) -> str:
+        payload = dict(data)
+        payload.pop("job_hash", None)
+        encoded = json.dumps(payload, sort_keys=True, ensure_ascii=False,
+                             separators=(",", ":")).encode("utf-8")
+        return hashlib.sha256(encoded).hexdigest()
+
+    @staticmethod
+    def _lock_and_sign(job: VideoJob) -> VideoJob:
+        data = asdict(job)
+        job.locked_parameters = {
+            key: data[key] for key in CRITICAL_LOCKED_FIELDS
+        }
+        data = asdict(job)
+        job.job_hash = MotionDirector._canonical_job_hash(data)
+        return job
+
     def prepare_job(self, plan_id: str, target: TargetPaths) -> VideoJob:
         """Construit le VideoJob pour un plan. Ne génère ni ne valide rien."""
         if not self._libraries_ok:
@@ -123,7 +174,7 @@ class MotionDirector:
 
         image_path = target.staged_image(plan["image_stem"])
 
-        return VideoJob(
+        job = VideoJob(
             output_name=f"{plan_id}_{plan['image_stem'].replace('yawatch_' + plan_id + '_', '')}.mp4"
             if plan["image_stem"].startswith(f"yawatch_{plan_id}_")
             else f"{plan_id}_{plan['image_stem']}.mp4",
@@ -147,7 +198,11 @@ class MotionDirector:
             plan_id=plan_id,
             plan_type=plan_type,
             character=character,
+            source_generatrice="MotionDirector",
+            rules_version=RULES_VERSION,
+            motion_profile=plan_type,
         )
+        return self._lock_and_sign(job)
 
     def describe_plan(self, plan_id: str) -> str:
         """Résumé lisible de ce qui sera préparé pour un plan (gouvernance / debug)."""

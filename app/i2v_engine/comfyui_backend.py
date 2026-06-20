@@ -97,6 +97,11 @@ class VideoJob:
     plan_id: str = ""
     plan_type: str = ""
     character: str = ""
+    source_generatrice: str = ""
+    rules_version: str = ""
+    motion_profile: str = ""
+    locked_parameters: dict = field(default_factory=dict)
+    job_hash: str = ""
 
     # Finalisation (FFmpeg = assemblage, conforme Règle 0)
     finalize: bool = True             # upscale + normalise pour le Quality Gate
