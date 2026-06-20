@@ -84,6 +84,20 @@ class VideoJob:
     scheduler: str = "normal"
     seed: int = 2406202601
 
+    # Identité personnage (IPAdapter) — préparé par le MotionDirector
+    use_ipadapter: bool = False       # False = chemin prouvé plan02 (sans IPAdapter)
+    ipadapter_weight: float = 0.0
+    ipadapter_image: str = ""         # image de référence (= image source du perso)
+    ipadapter_preset: str = "STANDARD (medium strength)"
+
+    # Mouvement (métadonnée — appliquée si le nœud de scale est disponible)
+    motion_scale: float = 1.0
+
+    # Traçabilité gouvernance (d'où vient ce job)
+    plan_id: str = ""
+    plan_type: str = ""
+    character: str = ""
+
     # Finalisation (FFmpeg = assemblage, conforme Règle 0)
     finalize: bool = True             # upscale + normalise pour le Quality Gate
     final_width: int = 1080
@@ -183,8 +197,12 @@ def build_workflow(job: VideoJob, image_name: str) -> dict:
 
     Approche prudente : faible denoise pour préserver l'identité du visage
     (critère n°1 de la matrice de décision YAWatch-LUNA).
+
+    Si job.use_ipadapter est True, l'identité du personnage est renforcée par
+    IPAdapter (image de référence injectée dans le MODEL avant AnimateDiff).
+    Si False, le graphe est strictement celui prouvé sur plan02.
     """
-    return {
+    graph = {
         "1": {"class_type": "CheckpointLoaderSimple",
               "inputs": {"ckpt_name": job.checkpoint}},
         "2": {"class_type": "LoadImage",
@@ -200,6 +218,7 @@ def build_workflow(job: VideoJob, image_name: str) -> dict:
               "inputs": {"clip": ["1", 1], "text": job.prompt_positive}},
         "7": {"class_type": "CLIPTextEncode",
               "inputs": {"clip": ["1", 1], "text": job.prompt_negative}},
+        # Source du MODEL pour AnimateDiff — remplacé par IPAdapter si activé
         "8": {"class_type": "ADE_AnimateDiffLoaderGen1",
               "inputs": {"model": ["1", 0], "model_name": job.motion_model,
                          "beta_schedule": job.beta_schedule}},
@@ -217,6 +236,21 @@ def build_workflow(job: VideoJob, image_name: str) -> dict:
                           "format": "video/h264-mp4", "pingpong": False,
                           "save_output": True}},
     }
+
+    if job.use_ipadapter:
+        # IPAdapter : injecte l'identité du personnage dans le MODEL avant AnimateDiff.
+        # Chaîne : checkpoint MODEL → UnifiedLoader → IPAdapter(ref image) → AnimateDiff
+        graph["12"] = {"class_type": "IPAdapterUnifiedLoader",
+                       "inputs": {"model": ["1", 0], "preset": job.ipadapter_preset}}
+        graph["13"] = {"class_type": "IPAdapter",
+                       "inputs": {"model": ["12", 0], "ipadapter": ["12", 1],
+                                  "image": ["2", 0], "weight": job.ipadapter_weight,
+                                  "weight_type": "standard",
+                                  "start_at": 0.0, "end_at": 1.0}}
+        # AnimateDiff prend désormais le MODEL enrichi par l'IPAdapter
+        graph["8"]["inputs"]["model"] = ["13", 0]
+
+    return graph
 
 
 # ──────────────────────────────────────────────────────────────────────────

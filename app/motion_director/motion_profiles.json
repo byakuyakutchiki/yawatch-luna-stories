@@ -1,0 +1,27 @@
+{
+  "_source": "docs/AI_VIDEO_ENGINE_KNOWLEDGE/MOTION_CONTROL_RULES.md",
+  "_note": "Reflet machine des profils. Un test garantit la cohérence avec le doc.",
+  "negative_base": "deformed face, distorted face, asymmetric eyes, extra fingers, fused fingers, melting, warping, mutated, disfigured, bad anatomy, different person, identity change, face swap, wrong face, cartoon, anime, cyberpunk, neon, text, watermark, logo, low quality, heavy flicker",
+  "profiles": {
+    "establishing": {
+      "denoise": 0.50, "cfg": 5.5, "steps": 14, "num_frames": 16, "fps": 8.0,
+      "ipadapter_weight": 0.0, "motion_scale": 0.9
+    },
+    "portrait_adult": {
+      "denoise": 0.40, "cfg": 4.5, "steps": 16, "num_frames": 16, "fps": 8.0,
+      "ipadapter_weight": 0.75, "motion_scale": 0.7
+    },
+    "portrait_child": {
+      "denoise": 0.35, "cfg": 4.0, "steps": 18, "num_frames": 16, "fps": 8.0,
+      "ipadapter_weight": 0.85, "motion_scale": 0.6
+    },
+    "hand_object": {
+      "denoise": 0.45, "cfg": 5.0, "steps": 16, "num_frames": 16, "fps": 8.0,
+      "ipadapter_weight": 0.5, "motion_scale": 0.8
+    },
+    "macro_object": {
+      "denoise": 0.40, "cfg": 4.5, "steps": 14, "num_frames": 16, "fps": 8.0,
+      "ipadapter_weight": 0.3, "motion_scale": 0.5
+    }
+  }
+}

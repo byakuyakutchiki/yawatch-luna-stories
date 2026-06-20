@@ -1,0 +1,79 @@
+{
+  "_source": "docs/TEASER_S01E00_PRODUCTION_PACK.md",
+  "_note": "Registre des 9 plans du teaser. Lu par le MotionDirector. Chemins relatifs au repo.",
+  "episode_id": "teaser_s01e00",
+  "plans": {
+    "plan01": {
+      "character": "none",
+      "plan_type": "establishing",
+      "canonical_image": "assets/luna_stories_assets/09_decors_paris_la_defense/pack_01_yawatch_industries/yawatch_tour_la_defense_exterieur_jour_logo_01.png",
+      "image_stem": "yawatch_plan01_tour_la_defense",
+      "movement": "Pan vertical lent vers la tour, logo révélé",
+      "prompt_positive": "cinematic slow vertical pan up a premium glass tower at La Defense Paris, bright realistic daylight, corporate thriller mood, stable architecture, stable logo, no people appearing, film grain, high quality"
+    },
+    "plan02": {
+      "character": "luna_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png",
+      "image_stem": "yawatch_plan02_luna_adulte_portrait",
+      "movement": "Push-in très lent sur Luna",
+      "prompt_positive": "cinematic premium psychological thriller portrait of an adult woman in a Parisian office, slow imperceptible push-in, subtle natural breathing, restrained emotion, calm serious gaze, soft window daylight, realistic skin, shallow depth of field, film grain, high quality"
+    },
+    "plan03": {
+      "character": "luna_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_office_desk_01.png",
+      "image_stem": "yawatch_plan03_luna_bureau",
+      "movement": "Travelling latéral discret",
+      "prompt_positive": "cinematic discreet lateral travelling across an adult woman working at her desk in a bright Parisian office, subtle breathing, restrained emotion, soft daylight, realistic, film grain, high quality"
+    },
+    "plan04": {
+      "character": "luna_adulte",
+      "plan_type": "hand_object",
+      "canonical_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_looking_at_turned_photo_01.png",
+      "image_stem": "yawatch_plan04_photo_retournee",
+      "movement": "Focus progressif sur le cadre retourné, tension",
+      "prompt_positive": "cinematic slow focus pull toward a turned family photo frame on an elegant desk, a hand near the frame, emotional tension, soft office light, shallow depth of field, no text, realistic, film grain"
+    },
+    "plan05": {
+      "character": "luna_enfant",
+      "plan_type": "portrait_child",
+      "canonical_image": "assets/luna_stories_assets/02_luna_enfant/luna_enfant_worried_night_01.png",
+      "image_stem": "yawatch_plan05_luna_enfant_nuit",
+      "movement": "Respiration lumineuse, ombre qui passe, peur",
+      "prompt_positive": "cinematic close shot of a worried child at night, very subtle breathing, a soft passing shadow, restrained fear, warm to cool light shift, stable child face, no exaggerated emotion, realistic, film grain"
+    },
+    "plan06": {
+      "character": "luna_enfant",
+      "plan_type": "portrait_child",
+      "canonical_image": "assets/luna_stories_assets/02_luna_enfant/luna_enfant_comforted_with_doll_01.png",
+      "image_stem": "yawatch_plan06_luna_enfant_poupee",
+      "movement": "Push-in doux vers la poupée, réconfort",
+      "prompt_positive": "cinematic slow gentle push-in toward a small purple velvet doll held by a child, warm indoor light, emotional comfort scene, stable child face, preserved fabric texture of the doll, tender mood, no exaggerated motion, realistic, film grain"
+    },
+    "plan07": {
+      "character": "luna_doll",
+      "plan_type": "macro_object",
+      "canonical_image": "assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_gros_plan_yeux_mystere_01.png",
+      "image_stem": "yawatch_plan07_poupee_yeux",
+      "movement": "Macro très lente vers les yeux mystérieux",
+      "prompt_positive": "cinematic very slow macro push toward the sewn button eyes of a handmade purple velvet doll, soft warm light, mysterious mood, preserved fabric and stitching texture, never plastic, never robotic, realistic, film grain"
+    },
+    "plan08": {
+      "character": "aby_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/luna_stories_assets/03_aby/aby_adulte_observing_luna_01.png",
+      "image_stem": "yawatch_plan08_aby_observe",
+      "movement": "Reflet ou léger mouvement latéral, révélation",
+      "prompt_positive": "cinematic slight lateral movement revealing an elegant cold blonde woman observing from the side, subtle reflection, restrained strategic expression, soft office light, realistic, film grain, high quality"
+    },
+    "plan09": {
+      "character": "aby_enfant",
+      "plan_type": "hand_object",
+      "canonical_image": "assets/luna_stories_assets/03_aby/aby_enfant_main_jeton_noir_maquette_01.png",
+      "image_stem": "yawatch_plan09_aby_jeton_noir",
+      "movement": "Focus pull sur le jeton, main qui dépose, puis noir",
+      "prompt_positive": "cinematic close-up, a child's hand slowly and deliberately deposits a black token on a miniature city model, focus pull from hand to token, then gradual fade to black, calm strategic mood, deliberate movement, no face distortion, realistic, film grain"
+    }
+  }
+}
