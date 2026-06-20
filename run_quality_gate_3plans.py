@@ -1,133 +1,199 @@
-"""Quality Gate — 3 plans tests YAWatch-LUNA.
+"""Validation niveau CLIP — 3 plans tests YAWatch-LUNA.
 
-Lancer depuis la VM Linux après que Codex a déposé les clips dans :
-/media/windows/Users/saint/Desktop/PONT_LINUX_WINDOWS/resultats/clips_yawatch/
+IMPORTANT — distinction de niveau :
+  Le Quality Gate à 6 verdicts (app/quality_gate.py) vise le SHORT FINAL ASSEMBLÉ
+  (9 plans + audio + sous-titres). Un clip I2V BRUT n'a pas encore de son ni de
+  montage — ils arrivent à l'étape d'assemblage (étape 11 du master plan).
 
+  Ce script valide donc ce qui est pertinent pour un CLIP BRUT :
+    1. Technique vidéo (résolution, codec, pix_fmt, fps) — sans exiger l'audio
+    2. Mouvement (vient d'un vrai outil I2V, ratio Ken Burns)
+    3. Cohérence personnage (pas de placeholder, asset canon)
+
+  Les verdicts "son" et "montage" sont marqués N/A — ils s'appliquent au Short
+  assemblé, pas au clip. Ils seront évalués par QualityGate.run() après assemblage.
+
+Lancer depuis la VM Linux après dépôt des clips.
 Usage :
     python3 run_quality_gate_3plans.py
 """
+import json
+import subprocess
 import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent
 
-# Deux emplacements possibles pour les clips, dans l'ordre de priorité :
-#   1. Dossier de dépôt du pont (si Codex copie les MP4 avec les noms exacts)
-#   2. Dossier output natif de ComfyUI (chemin réel découvert sur Windows)
 CLIPS_DIRS = [
     Path("/media/windows/Users/saint/Desktop/PONT_LINUX_WINDOWS/resultats/clips_yawatch"),
     Path("/media/windows/Users/saint/Documents/Codex/ComfyUI/output"),
 ]
 
+# Critères techniques niveau CLIP (audio non requis — il vient à l'assemblage)
+REQUIRED_WIDTH = 1080
+REQUIRED_HEIGHT = 1920
+REQUIRED_VIDEO_CODEC = "h264"
+REQUIRED_PIX_FMT = "yuv420p"
+REQUIRED_FPS = 25
+FPS_TOLERANCE = 0.5
 
-def find_clip(filename: str) -> Path | None:
-    """Cherche un clip par nom exact dans les deux emplacements connus."""
+PLANS = [
+    {
+        "name": "Plan 02 — Luna adulte portrait",
+        "file": "plan02_luna_adulte_portrait.mp4",
+        "source_image": "yawatch_plan02_luna_adulte_portrait",
+        "i2v_tool": "animatediff",
+        "challenge": "Stabilité visage adulte portrait serré",
+    },
+    {
+        "name": "Plan 06 — Luna enfant + poupée",
+        "file": "plan06_luna_enfant_poupee.mp4",
+        "source_image": "luna_enfant_comforted_with_doll_01",
+        "i2v_tool": "animatediff",
+        "challenge": "Visage enfant + texture tissu poupée",
+    },
+    {
+        "name": "Plan 09 — Aby enfant + jeton noir",
+        "file": "plan09_aby_jeton_noir.mp4",
+        "source_image": "aby_enfant_main_jeton_noir_maquette_01",
+        "i2v_tool": "animatediff",
+        "challenge": "Mains + objet + focus pull",
+    },
+]
+
+
+def find_clip(filename: str):
     for base in CLIPS_DIRS:
         candidate = base / filename
         if candidate.exists():
             return candidate
     return None
 
-PLANS = [
-    {
-        "name": "Plan 02 — Luna adulte portrait",
-        "file": "plan02_luna_adulte_portrait.mp4",
-        "i2v_tool": "animatediff_sd15",
-        "duration": 5.0,
-        "challenge": "Stabilité visage adulte portrait serré",
-    },
-    {
-        "name": "Plan 06 — Luna enfant + poupée",
-        "file": "plan06_luna_enfant_poupee.mp4",
-        "i2v_tool": "animatediff_sd15",
-        "duration": 4.0,
-        "challenge": "Visage enfant + texture tissu poupée",
-    },
-    {
-        "name": "Plan 09 — Aby enfant + jeton noir",
-        "file": "plan09_aby_jeton_noir.mp4",
-        "i2v_tool": "animatediff_sd15",
-        "duration": 4.0,
-        "challenge": "Mains + objet + focus pull",
-    },
-]
+
+def probe_clip(clip_path: Path) -> dict:
+    """ffprobe minimal — flux vidéo + durée. Audio non requis au niveau clip."""
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-print_format", "json",
+         "-show_streams", "-show_format", str(clip_path)],
+        capture_output=True, text=True, timeout=20,
+    )
+    if result.returncode != 0:
+        return {}
+    return json.loads(result.stdout)
+
+
+def check_technique_clip(clip_path: Path) -> tuple[str, list]:
+    """Vérifie les specs vidéo d'un clip brut (sans exiger l'audio)."""
+    errors = []
+    probe = probe_clip(clip_path)
+    if not probe:
+        return "FAIL", ["FFprobe ne peut pas lire le fichier."]
+
+    video = next((s for s in probe.get("streams", []) if s.get("codec_type") == "video"), None)
+    if not video:
+        return "FAIL", ["Aucun flux vidéo détecté."]
+
+    w, h = video.get("width", 0), video.get("height", 0)
+    if (w, h) != (REQUIRED_WIDTH, REQUIRED_HEIGHT):
+        errors.append(f"Résolution {w}×{h} (requis {REQUIRED_WIDTH}×{REQUIRED_HEIGHT}).")
+
+    if video.get("codec_name") != REQUIRED_VIDEO_CODEC:
+        errors.append(f"Codec {video.get('codec_name')} (requis {REQUIRED_VIDEO_CODEC}).")
+
+    if video.get("pix_fmt") != REQUIRED_PIX_FMT:
+        errors.append(f"Pix_fmt {video.get('pix_fmt')} (requis {REQUIRED_PIX_FMT}).")
+
+    num, den = (video.get("r_frame_rate", "0/1").split("/") + ["1"])[:2]
+    fps = float(num) / float(den) if float(den) else 0
+    if abs(fps - REQUIRED_FPS) > FPS_TOLERANCE:
+        errors.append(f"FPS {fps:.2f} (requis {REQUIRED_FPS}±{FPS_TOLERANCE}).")
+
+    return ("FAIL" if errors else "PASS"), errors
+
 
 def main():
     sys.path.insert(0, str(REPO_ROOT))
     from app.production_gatekeeper import ProductionGatekeeper
-    from app.quality_gate import QualityGate
 
-    gatekeeper = ProductionGatekeeper.load(strict=False)
-    gate = QualityGate(gatekeeper)
+    gk = ProductionGatekeeper.load(strict=False)
     results = []
 
-    print("\n" + "="*60)
-    print("QUALITY GATE — 3 PLANS TESTS YAWATCH-LUNA")
-    print("="*60)
+    print("\n" + "=" * 64)
+    print("VALIDATION NIVEAU CLIP — 3 PLANS TESTS YAWATCH-LUNA")
+    print("=" * 64)
 
     for plan in PLANS:
         clip_path = find_clip(plan["file"])
 
         if clip_path is None:
-            print(f"\n❌ {plan['name']}")
-            print(f"   FICHIER MANQUANT : {plan['file']}")
-            print(f"   Cherché dans :")
-            for base in CLIPS_DIRS:
-                print(f"     - {base}")
+            print(f"\n⏳ {plan['name']} → PAS ENCORE GÉNÉRÉ ({plan['file']})")
             results.append({"plan": plan["name"], "status": "MISSING"})
             continue
 
+        size_kb = clip_path.stat().st_size // 1024
         print(f"\n▶  {plan['name']}")
-        print(f"   Fichier : {clip_path.name} ({clip_path.stat().st_size // 1024} KB)")
+        print(f"   Fichier   : {clip_path.name} ({size_kb} KB)")
         print(f"   Challenge : {plan['challenge']}")
 
-        context = {
+        # 1. Technique vidéo (niveau clip)
+        tech_status, tech_errors = check_technique_clip(clip_path)
+        print(f"   [1] Technique vidéo   : {tech_status}")
+        for e in tech_errors:
+            print(f"        ⚠ {e}")
+
+        # 2. Mouvement (rôle MotionEngineer)
+        motion = gk.motion_engineer.validate({
+            "clips": [str(clip_path)],
+            "ken_burns_count": 0,
+            "total_plans": 1,
             "i2v_tool": plan["i2v_tool"],
-            "image_paths": [str(clip_path)],
-            "plan_count": 1,
-            "duration": plan["duration"],
-            "audio_present": False,
-        }
+        })
+        print(f"   [2] Mouvement         : {motion.status}")
+        for e in motion.errors:
+            print(f"        ⚠ {e}")
 
-        try:
-            report = gate.run(video_context=context)
-            print(f"   Technique       : {report.verdict_technique.status}")
-            print(f"   Mouvement       : {report.verdict_mouvement.status}")
-            print(f"   Son             : {report.verdict_son.status}")
-            print(f"   Cohérence       : {report.verdict_coherence_personnage.status}")
-            print(f"   Statut actuel   : {report.current_status.value}")
+        # 3. Cohérence personnage (rôle VideoGenerationEngineer)
+        coherence = gk.video_generation_engineer.validate({
+            "clips": [str(clip_path)],
+            "source_images": [plan["source_image"]],
+            "i2v_tool": plan["i2v_tool"],
+        })
+        print(f"   [3] Cohérence         : {coherence.status}")
+        for e in coherence.errors:
+            print(f"        ⚠ {e}")
 
-            if report.verdict_technique.errors:
-                for e in report.verdict_technique.errors:
-                    print(f"   ⚠  {e}")
+        # Son + montage : niveau assemblage, non applicable à un clip brut
+        print(f"   [—] Son / Montage     : N/A (étape assemblage du Short final)")
 
-            passed = report.automatic_verdicts_pass
-            results.append({
-                "plan": plan["name"],
-                "status": "AUTO_PASS" if passed else "AUTO_FAIL",
-                "current_status": report.current_status.value,
-            })
-        except Exception as exc:
-            print(f"   ERREUR quality gate : {exc}")
-            results.append({"plan": plan["name"], "status": "ERROR", "error": str(exc)})
+        clip_ok = (tech_status == "PASS"
+                   and motion.status == "PASS"
+                   and coherence.status == "PASS")
+        results.append({
+            "plan": plan["name"],
+            "status": "CLIP_VALIDE" if clip_ok else "CLIP_REJETE",
+        })
 
-    print("\n" + "="*60)
+    print("\n" + "=" * 64)
     print("RÉSUMÉ")
-    print("="*60)
+    print("=" * 64)
     for r in results:
-        icon = "✅" if r["status"] == "AUTO_PASS" else ("❌" if r["status"] == "AUTO_FAIL" else "⚠")
+        icon = {"CLIP_VALIDE": "✅", "CLIP_REJETE": "❌", "MISSING": "⏳"}[r["status"]]
         print(f"  {icon}  {r['plan']} → {r['status']}")
 
-    all_pass = all(r["status"] == "AUTO_PASS" for r in results)
-    if all_pass:
-        print("\n✅ Les 3 plans passent les verdicts automatiques.")
-        print("   Prochaine étape : visionnage humain (Ludovic) → verdict storytelling.")
-        print("   Puis : advance_to_candidat() si validé artistiquement.")
-    else:
-        print("\n❌ Un ou plusieurs plans ont échoué.")
-        print("   Analyser les erreurs ci-dessus avant de relancer.")
+    generated = [r for r in results if r["status"] != "MISSING"]
+    valid = [r for r in results if r["status"] == "CLIP_VALIDE"]
 
-    print("="*60 + "\n")
+    print()
+    if generated and len(valid) == len(generated):
+        print(f"✅ {len(valid)}/{len(generated)} clip(s) généré(s) valide(s) au niveau CLIP.")
+        print("   Le moteur local produit des clips techniquement conformes.")
+        print("   Prochaine étape : visionnage humain (Ludovic) pour juger l'ART")
+        print("   (stabilité visage, émotion) — le code ne juge pas ça.")
+    elif generated:
+        print(f"❌ {len(valid)}/{len(generated)} clip(s) valide(s). Voir les ⚠ ci-dessus.")
+    else:
+        print("⏳ Aucun clip généré pour l'instant.")
+    print("=" * 64 + "\n")
 
 
 if __name__ == "__main__":
