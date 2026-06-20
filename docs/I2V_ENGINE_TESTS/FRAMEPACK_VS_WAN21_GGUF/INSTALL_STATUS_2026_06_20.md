@@ -41,11 +41,35 @@ Text encoders copies dans `models/text_encoders/`:
 
 ## Modeles Wan2.1 GGUF
 
-Non encore telecharges au moment de ce rapport:
+Etat mis a jour apres copie du fichier depuis `Downloads` vers ComfyUI:
 
-- `wan2.1-i2v-14b-480p-Q5_K_S.gguf`: absent
+- `models/unet/wan2.1-i2v-14b-480p-Q5_K_S.gguf`: present
 - `wan2.1-i2v-14b-480p-Q4_K_S.gguf`: absent
 - support cache Wan: absent
+
+Fichier source utilisateur:
+
+```text
+C:\Users\saint\Downloads\wan2.1-i2v-14b-480p-Q5_K_S.gguf
+```
+
+Fichier installe:
+
+```text
+C:\Users\saint\Documents\Codex\ComfyUI\models\unet\wan2.1-i2v-14b-480p-Q5_K_S.gguf
+```
+
+Taille:
+
+```text
+12089113984 bytes
+```
+
+SHA256:
+
+```text
+4E1BA3ADF1E96C7147F69B0CC55CAC5AF64517CEA75D08EB3B09F35115FE4BB7
+```
 
 ## Verification ComfyUI
 
@@ -74,6 +98,12 @@ Noeuds pertinents detectes:
 - `UnetLoaderGGUFAdvanced`
 - `WanImageToVideo`
 
+Verification Wan apres redemarrage ComfyUI:
+
+```text
+UnetLoaderGGUF models: wan2.1-i2v-14b-480p-Q5_K_S.gguf
+```
+
 ## Point de blocage actuel
 
 Le workflow officiel FramePack fourni dans `ComfyUI-FramePackWrapper/example_workflows/framepack_hv_example.json` depend de noeuds annexes qui ne sont pas tous presents dans l'installation actuelle:
@@ -98,7 +128,7 @@ INSTALLED_NOT_GENERATED
 Wan2.1 GGUF:
 
 ```text
-NOT_DOWNLOADED
+MODEL_VISIBLE_IN_COMFYUI
 ```
 
 ## Prochaine action concrete
@@ -122,4 +152,3 @@ Choisir une des deux options:
    - `VHS_VideoCombine`
 
 Regle: aucune generation FramePack ne doit etre declaree valide tant qu'un MP4 n'a pas ete produit, visionne et note dans `EVALUATION_SHEET.md`.
-
