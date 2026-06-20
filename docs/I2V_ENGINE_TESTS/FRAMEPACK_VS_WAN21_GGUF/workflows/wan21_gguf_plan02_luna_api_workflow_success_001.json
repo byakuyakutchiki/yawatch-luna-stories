@@ -1,0 +1,178 @@
+{
+  "status": "SUCCESS_MP4_GENERATED",
+  "engine": "Wan2.1-I2V-14B-480P-GGUF",
+  "custom_node": "ComfyUI-GGUF",
+  "model": "wan2.1-i2v-14b-480p-Q5_K_S.gguf",
+  "support_models": {
+    "text_encoder": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "clip_vision": "clip_vision_h.safetensors",
+    "vae": "wan_2.1_vae.safetensors"
+  },
+  "prompt_id": "7c680181-be16-4ca5-b5d4-450f00274a83",
+  "api_workflow": {
+    "1": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "luna.png"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "type": "wan"
+      }
+    },
+    "3": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "cinematic premium psychological thriller portrait of Luna, adult woman, same identity as source image, subtle natural breathing, imperceptible slow push-in, restrained emotion, calm serious gaze, Paris La Defense office atmosphere, realistic skin, natural hair movement, shallow depth of field, film grain, high quality, no text"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "different person, identity change, face swap, deformed face, distorted eyes, asymmetric eyes, melting face, bad anatomy, child, teen, glamour, sexualized, cartoon, anime, cyberpunk, neon, purple dominant lighting, text, watermark, logo, low quality, heavy flicker, jitter, violent motion"
+      }
+    },
+    "5": {
+      "class_type": "CLIPVisionLoader",
+      "inputs": {
+        "clip_name": "clip_vision_h.safetensors"
+      }
+    },
+    "6": {
+      "class_type": "CLIPVisionEncode",
+      "inputs": {
+        "clip_vision": [
+          "5",
+          0
+        ],
+        "image": [
+          "1",
+          0
+        ],
+        "crop": "center"
+      }
+    },
+    "7": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "wan_2.1_vae.safetensors"
+      }
+    },
+    "8": {
+      "class_type": "WanImageToVideo",
+      "inputs": {
+        "positive": [
+          "3",
+          0
+        ],
+        "negative": [
+          "4",
+          0
+        ],
+        "vae": [
+          "7",
+          0
+        ],
+        "width": 480,
+        "height": 832,
+        "length": 41,
+        "batch_size": 1,
+        "start_image": [
+          "1",
+          0
+        ],
+        "clip_vision_output": [
+          "6",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "UnetLoaderGGUF",
+      "inputs": {
+        "unet_name": "wan2.1-i2v-14b-480p-Q5_K_S.gguf"
+      }
+    },
+    "10": {
+      "class_type": "ModelSamplingSD3",
+      "inputs": {
+        "model": [
+          "9",
+          0
+        ],
+        "shift": 8.0
+      }
+    },
+    "11": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "10",
+          0
+        ],
+        "seed": 2406202618,
+        "steps": 12,
+        "cfg": 1.0,
+        "sampler_name": "uni_pc",
+        "scheduler": "simple",
+        "positive": [
+          "8",
+          0
+        ],
+        "negative": [
+          "8",
+          1
+        ],
+        "latent_image": [
+          "8",
+          2
+        ],
+        "denoise": 1.0
+      }
+    },
+    "12": {
+      "class_type": "VAEDecodeTiled",
+      "inputs": {
+        "samples": [
+          "11",
+          0
+        ],
+        "vae": [
+          "7",
+          0
+        ],
+        "tile_size": 256,
+        "overlap": 64,
+        "temporal_size": 16,
+        "temporal_overlap": 4
+      }
+    },
+    "13": {
+      "class_type": "VHS_VideoCombine",
+      "inputs": {
+        "images": [
+          "12",
+          0
+        ],
+        "frame_rate": 8.0,
+        "loop_count": 0,
+        "filename_prefix": "YAWATCH_WAN21_PLAN02_LUNA_TEST",
+        "format": "video/h264-mp4",
+        "pingpong": false,
+        "save_output": true
+      }
+    }
+  }
+}
+
