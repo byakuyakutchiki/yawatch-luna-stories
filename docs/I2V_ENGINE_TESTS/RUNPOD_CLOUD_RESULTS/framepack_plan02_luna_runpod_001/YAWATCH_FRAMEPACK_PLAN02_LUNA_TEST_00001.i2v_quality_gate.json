@@ -1,0 +1,22 @@
+{
+  "video_path": "/workspace/ComfyUI/output/YAWATCH_FRAMEPACK_PLAN02_LUNA_TEST_00001.mp4",
+  "run_date": "2026-06-20T22:33:32.444653",
+  "passed": true,
+  "thresholds": {
+    "face_identity_ssim_min": 0.85,
+    "face_lighting_peak_to_peak_pct": 15.0,
+    "face_flicker_mean_abs_delta": 0.5
+  },
+  "metrics": {
+    "face_identity_ssim_min": 0.9552,
+    "face_lighting_peak_to_peak_pct": 11.1989,
+    "face_flicker_mean_abs_delta": 0.1694,
+    "duration_sec": 9.0625,
+    "fps": 16.0,
+    "frame_count": 145.0
+  },
+  "failures": [],
+  "warnings": [
+    "Automated I2V pass is not final approval; human review remains mandatory."
+  ]
+}
