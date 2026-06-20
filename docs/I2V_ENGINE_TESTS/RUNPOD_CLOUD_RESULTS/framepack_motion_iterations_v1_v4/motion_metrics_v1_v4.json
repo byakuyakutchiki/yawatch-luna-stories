@@ -1,0 +1,41 @@
+{
+  "thresholds": {
+    "organic_score_min": 0.35,
+    "translation_risk_max": 0.45,
+    "face_residual_min": 0.06
+  },
+  "clips": {
+    "v1": {
+      "organic_score": 0.2794,
+      "translation_risk": 0.0909,
+      "face_residual": 0.0882,
+      "shoulders_residual": 0.0844,
+      "background_residual": 0.0679,
+      "ssim_identity": 0.9545
+    },
+    "v2": {
+      "organic_score": 0.6122,
+      "translation_risk": 0.3439,
+      "face_residual": 0.252,
+      "shoulders_residual": 0.1614,
+      "background_residual": 0.1181,
+      "ssim_identity": 0.4391
+    },
+    "v3": {
+      "organic_score": 0.189,
+      "translation_risk": 0.0314,
+      "face_residual": 0.0605,
+      "shoulders_residual": 0.0486,
+      "background_residual": 0.0402,
+      "ssim_identity": 0.9694
+    },
+    "v4": {
+      "organic_score": 0.2663,
+      "translation_risk": 0.0446,
+      "face_residual": 0.0809,
+      "shoulders_residual": 0.0627,
+      "background_residual": 0.0427,
+      "ssim_identity": 0.9278
+    }
+  }
+}
