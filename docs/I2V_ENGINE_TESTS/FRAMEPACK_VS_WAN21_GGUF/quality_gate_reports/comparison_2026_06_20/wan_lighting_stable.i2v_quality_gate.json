@@ -1,0 +1,44 @@
+{
+  "video_path": "C:\\Users\\saint\\Documents\\Codex\\2026-06-09\\yawatch-luna-stories-public-yawatch-luna\\work\\yawatch-luna-stories\\docs\\I2V_ENGINE_TESTS\\FRAMEPACK_VS_WAN21_GGUF\\outputs\\wan21_plan02_luna_lighting_stable_test_001\\YAWATCH_WAN21_PLAN02_LUNA_LIGHTING_STABLE_TEST_00001.mp4",
+  "run_date": "2026-06-20T22:49:11.238171",
+  "passed": false,
+  "thresholds": {
+    "face_identity_ssim_min": 0.85,
+    "face_lighting_peak_to_peak_pct": 15.0,
+    "face_flicker_mean_abs_delta": 0.5
+  },
+  "metrics": {
+    "face_identity_ssim_min": 0.5002,
+    "face_lighting_peak_to_peak_pct": 28.3726,
+    "face_flicker_mean_abs_delta": 1.2967,
+    "duration_sec": 5.0625,
+    "fps": 16.0,
+    "frame_count": 81.0
+  },
+  "failures": [
+    {
+      "metric": "face_identity_ssim_min",
+      "value": 0.5002,
+      "threshold": 0.85,
+      "operator": ">=",
+      "reason": "Face identity proxy 0.5002 below required 0.85."
+    },
+    {
+      "metric": "face_lighting_peak_to_peak_pct",
+      "value": 28.3726,
+      "threshold": 15.0,
+      "operator": "<=",
+      "reason": "Face lighting variation 28.3726% above allowed 15.0%."
+    },
+    {
+      "metric": "face_flicker_mean_abs_delta",
+      "value": 1.2967,
+      "threshold": 0.5,
+      "operator": "<=",
+      "reason": "Face flicker 1.2967 above allowed 0.5."
+    }
+  ],
+  "warnings": [
+    "Automated I2V pass is not final approval; human review remains mandatory."
+  ]
+}

@@ -132,6 +132,37 @@ Statut valide seulement si:
 metrics objectives + contact sheet + visionnage humain Ludovic
 ```
 
+## Gate automatique I2V
+
+Script:
+
+```text
+app/i2v_quality_gate.py
+```
+
+Seuils bloquants actuels:
+
+| Metrique | Seuil |
+|---|---:|
+| `face_identity_ssim_min` | `>= 0.85` |
+| `face_lighting_peak_to_peak_pct` | `<= 15.0` |
+| `face_flicker_mean_abs_delta` | `<= 0.5` |
+
+Regle:
+
+```text
+FAIL automatique = clip rejete avant validation humaine.
+PASS automatique = clip autorise pour visionnage humain, pas validation finale.
+```
+
+Commande:
+
+```powershell
+$repo="C:\Users\saint\Documents\Codex\2026-06-09\yawatch-luna-stories-public-yawatch-luna\work\yawatch-luna-stories"
+$py="C:\Users\saint\Documents\Codex\ComfyUI\.venv\Scripts\python.exe"
+& $py -m app.i2v_quality_gate "$repo\path\to\clip.mp4"
+```
+
 ## Extensions futures
 
 Outils a evaluer plus tard:
