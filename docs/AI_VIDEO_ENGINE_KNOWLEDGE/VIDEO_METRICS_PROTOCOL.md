@@ -163,6 +163,37 @@ $py="C:\Users\saint\Documents\Codex\ComfyUI\.venv\Scripts\python.exe"
 & $py -m app.i2v_quality_gate "$repo\path\to\clip.mp4"
 ```
 
+## Integration pipeline
+
+Le point d'integration correct est:
+
+```text
+app/i2v_engine/comfyui_backend.py
+```
+
+Raison:
+
+```text
+video_builder.py assemble des clips existants; il ne genere pas de mouvement IA.
+comfyui_backend.py est le backend qui depose les MP4 I2V bruts.
+```
+
+Regle appliquee:
+
+```text
+ComfyUI produit le MP4
+→ le MP4 est depose
+→ app.i2v_quality_gate.run_i2v_quality_gate() s'execute
+→ FAIL = RuntimeError bloquante + rapport JSON
+→ PASS = clip autorise pour validation humaine Ludovic
+```
+
+Le rapport est ecrit a cote du MP4:
+
+```text
+<clip>.i2v_quality_gate.json
+```
+
 ## Extensions futures
 
 Outils a evaluer plus tard:

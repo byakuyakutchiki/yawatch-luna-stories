@@ -202,6 +202,10 @@ def run_i2v_quality_gate(
     return result
 
 
+# Compatibility alias for pipeline integrations that use the shorter name.
+run_quality_gate = run_i2v_quality_gate
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="YAWatch-LUNA raw I2V Quality Gate.")
     parser.add_argument("video", type=Path, help="MP4 file to validate.")

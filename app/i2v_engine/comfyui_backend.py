@@ -109,6 +109,9 @@ class VideoJob:
     final_height: int = 1920
     final_fps: int = 25
 
+    # Quality Gate I2V automatique (avant validation humaine)
+    run_i2v_quality_gate: bool = True
+
     @staticmethod
     def from_json(path: Path) -> "VideoJob":
         data = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -344,6 +347,26 @@ def finalize_clip(env: ComfyEnv, job: VideoJob, raw_mp4: Path, final_path: Path)
     return final_path
 
 
+def enforce_i2v_quality_gate(final_path: Path) -> Path:
+    """Run the objective I2V gate and block unstable raw clips.
+
+    The gate only authorizes human review. It never grants final validation.
+    """
+    from app.i2v_quality_gate import run_i2v_quality_gate
+
+    report_path = final_path.with_suffix(".i2v_quality_gate.json")
+    result = run_i2v_quality_gate(final_path, output_json=report_path)
+    print(result)
+    print(f"[quality_gate] Rapport I2V → {report_path}")
+    if not result.passed:
+        raise RuntimeError(
+            "Quality Gate I2V échoué — clip rejeté avant validation humaine. "
+            f"Rapport : {report_path}"
+        )
+    print("[quality_gate] PASS — clip autorisé pour validation humaine Ludovic.")
+    return report_path
+
+
 # ──────────────────────────────────────────────────────────────────────────
 # Orchestration d'un job complet
 # ──────────────────────────────────────────────────────────────────────────
@@ -389,6 +412,8 @@ def run_job(env: ComfyEnv, job: VideoJob) -> Path:
 
         print(f"[done] MP4 déposé : {final_path} "
               f"({final_path.stat().st_size // 1024} KB)")
+        if job.run_i2v_quality_gate:
+            enforce_i2v_quality_gate(final_path)
         return final_path
     finally:
         server.stop()
