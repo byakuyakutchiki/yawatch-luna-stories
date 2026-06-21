@@ -25,32 +25,38 @@ log() { echo -e "\n\033[1;36m[provision] $*\033[0m"; }
 die() { echo -e "\033[1;31m[ÉCHEC] $*\033[0m" >&2; exit 1; }
 
 # --- Téléchargement vérifié (taille mini = filet anti-404/HTML/0-octet) ------
-dl() {  # dl <url> <dest> <min_megabytes>
-  local url="$1" dest="$2" min_mb="${3:-1}"
-  local min_bytes=$(( min_mb * 1024 * 1024 ))
-  if [ -f "$dest" ]; then
-    local sz; sz=$(stat -c%s "$dest")
-    if [ "$sz" -ge "$min_bytes" ]; then
-      echo "  [skip] $(basename "$dest") ($(( sz/1024/1024 )) MB déjà présent)"; return 0
-    fi
-    echo "  [redl] $(basename "$dest") trop petit ($sz o) — re-téléchargement"; rm -f "$dest"
+_content_length() {  # taille réelle annoncée par le serveur (suit les redirections HF)
+  curl -sIL --connect-timeout 20 "$1" | tr -d '\r' \
+    | grep -i '^content-length:' | tail -1 | tr -dc '0-9'
+}
+
+dl() {  # dl <url> <dest>  (3e arg ignoré, gardé pour compat appels existants)
+  local url="$1" dest="$2"
+  local want; want=$(_content_length "$url")
+  # Déjà présent et COMPLET (taille == Content-Length) → skip.
+  if [ -f "$dest" ] && [ -n "$want" ] && [ "$(stat -c%s "$dest" 2>/dev/null || echo 0)" = "$want" ]; then
+    echo "  [skip] $(basename "$dest") ($(( want/1024/1024 )) MB complet)"; return 0
   fi
   mkdir -p "$(dirname "$dest")"
   echo "  [dl  ] $(basename "$dest") ← $url"
-  # -C - : reprend le .part partiel | --speed-time/-limit : coupe un stream figé
-  # --retry-all-errors : relance même sur coupure réseau → reprise auto au lieu
-  # d'un blocage silencieux (le problème rencontré quand le pod a été migré).
-  curl -fL -C - --retry 8 --retry-all-errors --retry-delay 5 \
-       --speed-limit 500000 --speed-time 30 \
-       -o "$dest.part" "$url" \
-    || die "curl a échoué (8 reprises épuisées) sur $url"
-  local sz; sz=$(stat -c%s "$dest.part")
-  if [ "$sz" -lt "$min_bytes" ]; then
-    rm -f "$dest.part"
-    die "$(basename "$dest") = $sz o (< ${min_mb} MB attendu) → probable 404/HTML silencieux. Source à corriger : $url"
-  fi
-  mv "$dest.part" "$dest"
-  echo "  [ok  ] $(basename "$dest") ($(( sz/1024/1024 )) MB)"
+  # curl SIMPLE (pas de -C - ni --speed-time : ces flags tronquaient le fichier
+  # à 0 sur ralentissement — bug réel rencontré le 21 juin). Retry = re-download
+  # propre, puis VÉRIFICATION par Content-Length (rejette toute troncature).
+  local try sz
+  for try in 1 2 3 4 5; do
+    rm -f "$dest"
+    if curl -fL --connect-timeout 30 -o "$dest" "$url"; then
+      sz=$(stat -c%s "$dest" 2>/dev/null || echo 0)
+      if [ -z "$want" ] || [ "$sz" = "$want" ]; then
+        echo "  [ok  ] $(basename "$dest") ($(( sz/1024/1024 )) MB)"; return 0
+      fi
+      echo "  [retry $try] $(basename "$dest") tronqué ($sz != $want)"
+    else
+      echo "  [retry $try] $(basename "$dest") échec curl"
+    fi
+    sleep 5
+  done
+  die "Téléchargement impossible/incomplet : $(basename "$dest") ($url)"
 }
 
 # --- 0. Pré-requis ----------------------------------------------------------
