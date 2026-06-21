@@ -37,8 +37,13 @@ dl() {  # dl <url> <dest> <min_megabytes>
   fi
   mkdir -p "$(dirname "$dest")"
   echo "  [dl  ] $(basename "$dest") ← $url"
-  curl -fL --retry 4 --retry-delay 5 -o "$dest.part" "$url" \
-    || die "curl a échoué sur $url"
+  # -C - : reprend le .part partiel | --speed-time/-limit : coupe un stream figé
+  # --retry-all-errors : relance même sur coupure réseau → reprise auto au lieu
+  # d'un blocage silencieux (le problème rencontré quand le pod a été migré).
+  curl -fL -C - --retry 8 --retry-all-errors --retry-delay 5 \
+       --speed-limit 500000 --speed-time 30 \
+       -o "$dest.part" "$url" \
+    || die "curl a échoué (8 reprises épuisées) sur $url"
   local sz; sz=$(stat -c%s "$dest.part")
   if [ "$sz" -lt "$min_bytes" ]; then
     rm -f "$dest.part"
