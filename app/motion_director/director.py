@@ -27,9 +27,16 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
-from pathlib import Path, PureWindowsPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 
-from app.i2v_engine.comfyui_backend import VideoJob
+from app.i2v_engine.comfyui_backend import (
+    VideoJob,
+    compute_job_hash,
+    GOVERNED_SOURCE,
+    DEFAULT_LOCKED_PARAMETERS,
+    SUPPORTED_ENGINES,
+    ENGINE_ANIMATEDIFF,
+)
 
 # Racine du repo (…/app/motion_director/director.py → remonte de 2)
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -54,13 +61,18 @@ class LibrariesNotAvailable(RuntimeError):
 
 @dataclass
 class TargetPaths:
-    """Où l'image sera mise à disposition et où le clip sera déposé (host d'exécution)."""
+    """Où l'image sera mise à disposition et où le clip sera déposé (host d'exécution).
 
-    sources_dir: str   # dossier (Windows) où les images canoniques sont mises à disposition
-    deposit_dir: str   # dossier (Windows) où le clip final est déposé
+    `posix=True` pour un host Linux (pod RunPod) ; défaut Windows (pont local).
+    """
+
+    sources_dir: str   # dossier où les images canoniques sont mises à disposition
+    deposit_dir: str   # dossier où le clip final est déposé
+    posix: bool = False  # True = chemins Linux (pod), False = chemins Windows (pont)
 
     def staged_image(self, image_stem: str, suffix: str = ".png") -> str:
-        return str(PureWindowsPath(self.sources_dir) / f"{image_stem}{suffix}")
+        flavor = PurePosixPath if self.posix else PureWindowsPath
+        return str(flavor(self.sources_dir) / f"{image_stem}{suffix}")
 
 
 class MotionDirector:
@@ -103,11 +115,23 @@ class MotionDirector:
 
     # ── Préparation d'un VideoJob ──────────────────────────────────────────
 
-    def prepare_job(self, plan_id: str, target: TargetPaths) -> VideoJob:
-        """Construit le VideoJob pour un plan. Ne génère ni ne valide rien."""
+    def prepare_job(
+        self, plan_id: str, target: TargetPaths, engine: str = ENGINE_ANIMATEDIFF
+    ) -> VideoJob:
+        """Construit le VideoJob pour un plan. Ne génère ni ne valide rien.
+
+        `engine` choisit le moteur I2V (animatediff prouvé par défaut ;
+        framepack / wan21 pour la comparaison gouvernée). Le job est scellé
+        (source + locked_parameters + job_hash) pour que le backend puisse
+        refuser toute altération manuelle ultérieure.
+        """
         if not self._libraries_ok:
             raise LibrariesNotAvailable(
                 "Bibliothèques non chargées — préparation refusée."
+            )
+        if engine not in SUPPORTED_ENGINES:
+            raise ValueError(
+                f"Moteur inconnu : '{engine}'. Moteurs supportés : {SUPPORTED_ENGINES}."
             )
         if plan_id not in self._plans:
             raise KeyError(
@@ -123,7 +147,11 @@ class MotionDirector:
 
         image_path = target.staged_image(plan["image_stem"])
 
-        return VideoJob(
+        # Paramètres spécifiques au moteur (FramePack / Wan), lus dans les
+        # bibliothèques (profils). AnimateDiff n'en a pas besoin (champs dédiés).
+        engine_params = dict(self._profiles_data.get("engines", {}).get(engine, {}))
+
+        job = VideoJob(
             output_name=f"{plan_id}_{plan['image_stem'].replace('yawatch_' + plan_id + '_', '')}.mp4"
             if plan["image_stem"].startswith(f"yawatch_{plan_id}_")
             else f"{plan_id}_{plan['image_stem']}.mp4",
@@ -131,6 +159,9 @@ class MotionDirector:
             image_path=image_path,
             prompt_positive=plan["prompt_positive"],
             prompt_negative=self._negative_base,
+            # Moteur I2V
+            engine=engine,
+            engine_params=engine_params,
             # Valeurs pilotées par le profil (MOTION_CONTROL_RULES.md)
             num_frames=profile["num_frames"],
             fps=profile["fps"],
@@ -148,6 +179,14 @@ class MotionDirector:
             plan_type=plan_type,
             character=character,
         )
+
+        # Sceau de gouvernance : le job est signé par le rôle métier. Toute
+        # modification d'un paramètre verrouillé après ce point casse le hash
+        # et fait refuser le job par le backend.
+        job.source_generatrice = GOVERNED_SOURCE
+        job.locked_parameters = tuple(DEFAULT_LOCKED_PARAMETERS)
+        job.job_hash = compute_job_hash(job)
+        return job
 
     def describe_plan(self, plan_id: str) -> str:
         """Résumé lisible de ce qui sera préparé pour un plan (gouvernance / debug)."""

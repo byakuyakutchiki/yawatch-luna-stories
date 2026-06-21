@@ -186,4 +186,27 @@ Le flicker AnimateDiff vient de l'incohérence entre frames. Réduction :
 
 ---
 
-*Motion Control Rules v1.0 — 2026-06-20*
+## Moteurs I2V supportés (gouvernés)
+
+Le pipeline supporte trois moteurs. Le MotionDirector en choisit un (`engine`)
+et injecte les paramètres correspondants dans `VideoJob.engine_params`, scellés
+par le `job_hash`. Le backend exécute la branche dédiée ; il n'en choisit aucun.
+Les paramètres machine vivent dans `app/motion_director/motion_profiles.json`
+(clé `engines`) ; ils sont calqués sur des **workflows réellement validés**.
+
+| Moteur | Statut Quality Gate (plan02, 20 juin) | Notes |
+|---|---|---|
+| `animatediff` | chemin prouvé local (SD1.5) | défaut ; champs natifs du VideoJob (denoise/cfg/IPAdapter) |
+| `framepack` | **PASS** — SSIM 0.925, lumière 10.7 %, flicker 0.16 | HunyuanVideo, `FramePackSampler` (steps 20, guidance 10) |
+| `wan21` | GGUF Q5 = **FAIL** (SSIM 0.50) → re-test en **natif fp16** | chargeur `UNETLoader` (pas GGUF), VRAM 32 GB requise |
+
+**Re-test équitable Wan (décision moteur en attente — Ludovic tranche) :**
+le GGUF quantifié s'effondrait sur l'identité (SSIM 0.50, lumière/flicker hors
+seuils). Le graphe Wan gouverné reprend le workflow prouvé mais remplace le
+chargeur GGUF par le chargeur natif fp16. Les seuils du Quality Gate restent
+**intacts** (SSIM ≥ 0.85, lumière ≤ 15 %, flicker ≤ 0.5) — on ne baisse jamais
+la barre pour faire passer un moteur.
+
+---
+
+*Motion Control Rules v1.1 — 2026-06-21 (ajout moteurs FramePack/Wan gouvernés)*

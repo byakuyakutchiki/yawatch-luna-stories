@@ -38,6 +38,7 @@ Usage :
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
 import sys
@@ -48,6 +49,43 @@ import uuid
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Optional
+
+
+# ──────────────────────────────────────────────────────────────────────────
+# Moteurs I2V supportés par le backend gouverné
+# ──────────────────────────────────────────────────────────────────────────
+# Chaque moteur a un constructeur de workflow dédié (voir build_workflow).
+# AnimateDiff = chemin prouvé sur plan02. FramePack / Wan2.1 = ajoutés pour la
+# comparaison gouvernée (le backend les exécute ; il ne les choisit pas).
+ENGINE_ANIMATEDIFF = "animatediff"
+ENGINE_FRAMEPACK = "framepack"
+ENGINE_WAN21 = "wan21"
+SUPPORTED_ENGINES = (ENGINE_ANIMATEDIFF, ENGINE_FRAMEPACK, ENGINE_WAN21)
+
+
+# ──────────────────────────────────────────────────────────────────────────
+# Gouvernance : un job n'est exécutable que s'il vient d'un rôle métier
+# ──────────────────────────────────────────────────────────────────────────
+# Source autorisée d'un job. Le backend refuse tout job qui n'en provient pas.
+GOVERNED_SOURCE = "MotionDirector"
+
+# Paramètres que le rôle métier verrouille. Le job_hash les scelle : toute
+# modification manuelle ultérieure casse le hash → le backend refuse le job.
+# (Anti-« édition directe du JSON » — la régression qui avait déçu Ludovic.)
+DEFAULT_LOCKED_PARAMETERS = (
+    "engine", "engine_params", "checkpoint", "motion_model",
+    "width", "height", "num_frames", "fps", "steps", "cfg", "denoise",
+    "sampler", "scheduler",
+    "use_ipadapter", "ipadapter_weight", "motion_scale",
+    "prompt_positive", "prompt_negative",
+)
+
+
+class GovernanceError(RuntimeError):
+    """Levée quand un job ne respecte pas la chaîne de gouvernance.
+
+    Pas de fallback silencieux : un job non conforme est REFUSÉ, pas « réparé ».
+    """
 
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -66,6 +104,12 @@ class VideoJob:
     image_path: str                   # image source (déjà canonique)
     prompt_positive: str
     prompt_negative: str
+
+    # Moteur I2V (le rôle métier choisit ; le backend exécute la branche dédiée)
+    engine: str = ENGINE_ANIMATEDIFF  # animatediff | framepack | wan21
+    # Paramètres spécifiques au moteur (modèles, sampler, shift…) scellés dans
+    # le job. Vide pour AnimateDiff (qui utilise les champs ci-dessous).
+    engine_params: dict = field(default_factory=dict)
 
     # Modèles
     checkpoint: str = "DreamShaper_8_pruned.safetensors"
@@ -98,6 +142,11 @@ class VideoJob:
     plan_type: str = ""
     character: str = ""
 
+    # Sceau de gouvernance (posé par le rôle métier, vérifié par le backend)
+    source_generatrice: str = ""              # doit valoir GOVERNED_SOURCE
+    locked_parameters: tuple = ()             # paramètres scellés par le hash
+    job_hash: str = ""                        # SHA-256 des paramètres verrouillés
+
     # Finalisation (FFmpeg = assemblage, conforme Règle 0)
     finalize: bool = True             # upscale + normalise pour le Quality Gate
     final_width: int = 1080
@@ -107,7 +156,64 @@ class VideoJob:
     @staticmethod
     def from_json(path: Path) -> "VideoJob":
         data = json.loads(Path(path).read_text(encoding="utf-8"))
+        # JSON ne connaît pas les tuples : on normalise locked_parameters.
+        if "locked_parameters" in data and data["locked_parameters"] is not None:
+            data["locked_parameters"] = tuple(data["locked_parameters"])
         return VideoJob(**data)
+
+
+# ──────────────────────────────────────────────────────────────────────────
+# Gouvernance — sceau et vérification (le backend est un exécutant discipliné)
+# ──────────────────────────────────────────────────────────────────────────
+
+def compute_job_hash(job: "VideoJob") -> str:
+    """SHA-256 des paramètres verrouillés + source. Sceau anti-altération.
+
+    Recalculable à l'identique par n'importe qui : si un paramètre verrouillé
+    est modifié à la main après préparation, le hash ne correspond plus et
+    validate_job_governance() refuse le job.
+    """
+    payload = {name: getattr(job, name) for name in job.locked_parameters}
+    payload["_source"] = job.source_generatrice
+    blob = json.dumps(payload, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()
+
+
+def validate_job_governance(job: "VideoJob") -> None:
+    """Refuse tout job qui ne respecte pas la chaîne de gouvernance.
+
+    Règles (aucun fallback silencieux — on lève GovernanceError) :
+      1. le job vient du rôle métier (source_generatrice == GOVERNED_SOURCE) ;
+      2. des paramètres sont verrouillés (locked_parameters non vide) ;
+      3. un job_hash est présent ;
+      4. le job_hash correspond aux paramètres verrouillés actuels ;
+      5. le moteur demandé est supporté.
+    """
+    if job.source_generatrice != GOVERNED_SOURCE:
+        raise GovernanceError(
+            f"Job refusé : source_generatrice='{job.source_generatrice}' "
+            f"(attendu '{GOVERNED_SOURCE}'). Un job doit être préparé par le "
+            "rôle métier, jamais écrit à la main."
+        )
+    if not job.locked_parameters:
+        raise GovernanceError(
+            "Job refusé : aucun paramètre verrouillé. Le rôle métier doit "
+            "sceller les paramètres (locked_parameters)."
+        )
+    if not job.job_hash:
+        raise GovernanceError("Job refusé : job_hash absent.")
+    expected = compute_job_hash(job)
+    if expected != job.job_hash:
+        raise GovernanceError(
+            "Job refusé : job_hash invalide — des paramètres verrouillés ont "
+            "été altérés après préparation (édition manuelle interdite).\n"
+            f"  attendu={expected}\n  reçu   ={job.job_hash}"
+        )
+    if job.engine not in SUPPORTED_ENGINES:
+        raise GovernanceError(
+            f"Job refusé : moteur '{job.engine}' inconnu. "
+            f"Moteurs supportés : {SUPPORTED_ENGINES}."
+        )
 
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -193,6 +299,23 @@ class ComfyUIServer:
 # ──────────────────────────────────────────────────────────────────────────
 
 def build_workflow(job: VideoJob, image_name: str) -> dict:
+    """Dispatcher : construit le graphe ComfyUI selon le moteur du job.
+
+    Le backend exécute la branche du moteur demandé — il n'en choisit aucun.
+    AnimateDiff = chemin prouvé sur plan02. FramePack / Wan2.1 = branches pour
+    la comparaison gouvernée (graphes calqués sur les workflows réellement
+    validés, pas inventés).
+    """
+    builder = _ENGINE_BUILDERS.get(job.engine)
+    if builder is None:
+        raise ValueError(
+            f"Moteur '{job.engine}' sans constructeur de workflow. "
+            f"Moteurs supportés : {tuple(_ENGINE_BUILDERS)}."
+        )
+    return builder(job, image_name)
+
+
+def _build_animatediff_workflow(job: VideoJob, image_name: str) -> dict:
     """Construit le graphe img2vid : image → latent répété → AnimateDiff → MP4.
 
     Approche prudente : faible denoise pour préserver l'identité du visage
@@ -251,6 +374,166 @@ def build_workflow(job: VideoJob, image_name: str) -> dict:
         graph["8"]["inputs"]["model"] = ["13", 0]
 
     return graph
+
+
+# Défauts FramePack — calqués sur le workflow PROUVÉ qui passe le Quality Gate
+# (framepack_plan02_luna_api_test_001.json, SSIM 0.925 / flicker 0.16, 20 juin).
+# Le rôle métier copie ces valeurs dans job.engine_params (scellées par le hash).
+FRAMEPACK_DEFAULTS = {
+    "framepack_model": "FramePackI2V_HY_fp8_e4m3fn.safetensors",
+    "base_precision": "bf16",
+    "quantization": "fp8_e4m3fn",
+    "attention_mode": "sdpa",
+    "vae_name": "hunyuan_video_vae_bf16.safetensors",
+    "sigclip_name": "sigclip_vision_patch14_384.safetensors",
+    "clip_name1": "clip_l.safetensors",
+    "clip_name2": "llava_llama3_fp16.safetensors",
+    "base_resolution": 640,
+    "steps": 20,
+    "cfg": 1.0,
+    "guidance_scale": 10.0,
+    "shift": 0.0,
+    "latent_window_size": 9,
+    "total_second_length": 5.0,
+    "gpu_memory_preservation": 6.0,
+    "sampler": "unipc_bh1",
+    "use_teacache": True,
+    "teacache_rel_l1_thresh": 0.15,
+    "frame_rate": 16.0,
+}
+
+# Défauts Wan2.1 I2V 14B — version NATIVE (UNETLoader fp16), pas GGUF.
+# Calqué sur le graphe GGUF prouvé (wan21_gguf_..._success_001.json) mais le
+# chargeur GGUF est remplacé par le chargeur natif (VRAM 32 GB le permet) :
+# c'est la comparaison équitable que le GGUF quantifié (SSIM 0.50) ne permettait pas.
+WAN21_DEFAULTS = {
+    "unet_name": "wan2.1_i2v_480p_14B_fp16.safetensors",
+    "weight_dtype": "default",
+    "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "clip_vision_name": "clip_vision_h.safetensors",
+    "vae_name": "wan_2.1_vae.safetensors",
+    "width": 480,
+    "height": 832,
+    "length": 41,
+    "shift": 8.0,
+    "steps": 12,
+    "cfg": 1.0,
+    "sampler_name": "uni_pc",
+    "scheduler": "simple",
+    "denoise": 1.0,
+    "frame_rate": 8.0,
+}
+
+
+def _build_framepack_workflow(job: VideoJob, image_name: str) -> dict:
+    """Graphe FramePack (HunyuanVideo) — calqué sur le workflow PROUVÉ (PASS).
+
+    Reproduit fidèlement framepack_plan02_luna_api_test_001.json. Les valeurs
+    proviennent de job.engine_params (scellées par le hash de gouvernance) ;
+    FRAMEPACK_DEFAULTS sert de filet si une clé manque. Les prompts viennent du
+    job (préparés par le rôle métier). Tout écart de graphe est rattrapé par
+    ComfyUI au submit (node_errors) — jamais un fallback silencieux.
+    """
+    p = {**FRAMEPACK_DEFAULTS, **(job.engine_params or {})}
+    return {
+        "1": {"class_type": "LoadImage", "inputs": {"image": image_name}},
+        "2": {"class_type": "FramePackFindNearestBucket",
+              "inputs": {"image": ["1", 0], "base_resolution": p["base_resolution"]}},
+        "3": {"class_type": "ImageScale",
+              "inputs": {"image": ["1", 0], "upscale_method": "lanczos",
+                         "width": ["2", 0], "height": ["2", 1], "crop": "center"}},
+        "4": {"class_type": "VAELoader", "inputs": {"vae_name": p["vae_name"]}},
+        "5": {"class_type": "VAEEncode", "inputs": {"pixels": ["3", 0], "vae": ["4", 0]}},
+        "6": {"class_type": "CLIPVisionLoader", "inputs": {"clip_name": p["sigclip_name"]}},
+        "7": {"class_type": "CLIPVisionEncode",
+              "inputs": {"clip_vision": ["6", 0], "image": ["3", 0], "crop": "center"}},
+        "8": {"class_type": "DualCLIPLoader",
+              "inputs": {"clip_name1": p["clip_name1"], "clip_name2": p["clip_name2"],
+                         "type": "hunyuan_video"}},
+        "9": {"class_type": "CLIPTextEncode",
+              "inputs": {"clip": ["8", 0], "text": job.prompt_positive}},
+        "10": {"class_type": "CLIPTextEncode",
+               "inputs": {"clip": ["8", 0], "text": job.prompt_negative}},
+        "11": {"class_type": "ConditioningZeroOut", "inputs": {"conditioning": ["10", 0]}},
+        "12": {"class_type": "LoadFramePackModel",
+               "inputs": {"model": p["framepack_model"], "base_precision": p["base_precision"],
+                          "quantization": p["quantization"], "load_device": "offload_device",
+                          "attention_mode": p["attention_mode"]}},
+        "13": {"class_type": "FramePackSampler",
+               "inputs": {"model": ["12", 0], "positive": ["9", 0], "negative": ["11", 0],
+                          "start_latent": ["5", 0], "steps": p["steps"],
+                          "use_teacache": p["use_teacache"],
+                          "teacache_rel_l1_thresh": p["teacache_rel_l1_thresh"],
+                          "cfg": p["cfg"], "guidance_scale": p["guidance_scale"],
+                          "shift": p["shift"], "seed": job.seed,
+                          "latent_window_size": p["latent_window_size"],
+                          "total_second_length": p["total_second_length"],
+                          "gpu_memory_preservation": p["gpu_memory_preservation"],
+                          "sampler": p["sampler"], "image_embeds": ["7", 0]}},
+        "14": {"class_type": "VAEDecodeTiled",
+               "inputs": {"samples": ["13", 0], "vae": ["4", 0], "tile_size": 256,
+                          "overlap": 64, "temporal_size": 64, "temporal_overlap": 8}},
+        "15": {"class_type": "VHS_VideoCombine",
+               "inputs": {"images": ["14", 0], "frame_rate": p["frame_rate"], "loop_count": 0,
+                          "filename_prefix": "YAWATCH_RAW", "format": "video/h264-mp4",
+                          "pingpong": False, "save_output": True}},
+    }
+
+
+def _build_wan21_workflow(job: VideoJob, image_name: str) -> dict:
+    """Graphe Wan2.1 I2V 14B NATIF (fp16) — calqué sur le graphe GGUF prouvé.
+
+    Identique au workflow Wan testé le 20 juin, SAUF le chargeur : UnetLoaderGGUF
+    (Q5 quantifié, SSIM 0.50) est remplacé par UNETLoader natif fp16. C'est la
+    comparaison équitable rendue possible par la VRAM 32 GB du nouveau GPU.
+    Valeurs scellées via job.engine_params ; WAN21_DEFAULTS en filet.
+    """
+    p = {**WAN21_DEFAULTS, **(job.engine_params or {})}
+    return {
+        "1": {"class_type": "LoadImage", "inputs": {"image": image_name}},
+        "2": {"class_type": "CLIPLoader",
+              "inputs": {"clip_name": p["clip_name"], "type": "wan"}},
+        "3": {"class_type": "CLIPTextEncode",
+              "inputs": {"clip": ["2", 0], "text": job.prompt_positive}},
+        "4": {"class_type": "CLIPTextEncode",
+              "inputs": {"clip": ["2", 0], "text": job.prompt_negative}},
+        "5": {"class_type": "CLIPVisionLoader",
+              "inputs": {"clip_name": p["clip_vision_name"]}},
+        "6": {"class_type": "CLIPVisionEncode",
+              "inputs": {"clip_vision": ["5", 0], "image": ["1", 0], "crop": "center"}},
+        "7": {"class_type": "VAELoader", "inputs": {"vae_name": p["vae_name"]}},
+        "8": {"class_type": "WanImageToVideo",
+              "inputs": {"positive": ["3", 0], "negative": ["4", 0], "vae": ["7", 0],
+                         "width": p["width"], "height": p["height"], "length": p["length"],
+                         "batch_size": 1, "start_image": ["1", 0],
+                         "clip_vision_output": ["6", 0]}},
+        # Chargeur NATIF (vs UnetLoaderGGUF du test GGUF) — clé du re-test équitable
+        "9": {"class_type": "UNETLoader",
+              "inputs": {"unet_name": p["unet_name"], "weight_dtype": p["weight_dtype"]}},
+        "10": {"class_type": "ModelSamplingSD3",
+               "inputs": {"model": ["9", 0], "shift": p["shift"]}},
+        "11": {"class_type": "KSampler",
+               "inputs": {"model": ["10", 0], "seed": job.seed, "steps": p["steps"],
+                          "cfg": p["cfg"], "sampler_name": p["sampler_name"],
+                          "scheduler": p["scheduler"], "positive": ["8", 0],
+                          "negative": ["8", 1], "latent_image": ["8", 2],
+                          "denoise": p["denoise"]}},
+        "12": {"class_type": "VAEDecodeTiled",
+               "inputs": {"samples": ["11", 0], "vae": ["7", 0], "tile_size": 256,
+                          "overlap": 64, "temporal_size": 16, "temporal_overlap": 4}},
+        "13": {"class_type": "VHS_VideoCombine",
+               "inputs": {"images": ["12", 0], "frame_rate": p["frame_rate"], "loop_count": 0,
+                          "filename_prefix": "YAWATCH_RAW", "format": "video/h264-mp4",
+                          "pingpong": False, "save_output": True}},
+    }
+
+
+# Registre des constructeurs de workflow par moteur (dispatcher build_workflow).
+_ENGINE_BUILDERS = {
+    ENGINE_ANIMATEDIFF: _build_animatediff_workflow,
+    ENGINE_FRAMEPACK: _build_framepack_workflow,
+    ENGINE_WAN21: _build_wan21_workflow,
+}
 
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -358,7 +641,12 @@ def stage_input_image(env: ComfyEnv, job: VideoJob) -> str:
 
 
 def run_job(env: ComfyEnv, job: VideoJob) -> Path:
-    """Exécute un job de bout en bout. Retourne le chemin du MP4 déposé."""
+    """Exécute un job de bout en bout. Retourne le chemin du MP4 déposé.
+
+    Gouvernance d'abord : un job non préparé par le rôle métier (ou altéré
+    après préparation) est REFUSÉ avant toute génération.
+    """
+    validate_job_governance(job)
     server = ComfyUIServer(env)
     try:
         server.start()

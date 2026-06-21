@@ -23,5 +23,47 @@
       "denoise": 0.40, "cfg": 4.5, "steps": 14, "num_frames": 16, "fps": 8.0,
       "ipadapter_weight": 0.3, "motion_scale": 0.5
     }
+  },
+  "_engines_note": "Paramètres moteur (FramePack/Wan) injectés dans VideoJob.engine_params par le MotionDirector et scellés par le job_hash. AnimateDiff n'apparaît pas : il utilise les champs natifs du VideoJob (denoise/cfg/...). FramePack = valeurs du workflow PROUVÉ (PASS, 20 juin). Wan = graphe GGUF prouvé mais chargeur NATIF fp16 (re-test équitable sur GPU 32 GB).",
+  "engines": {
+    "framepack": {
+      "framepack_model": "FramePackI2V_HY_fp8_e4m3fn.safetensors",
+      "base_precision": "bf16",
+      "quantization": "fp8_e4m3fn",
+      "attention_mode": "sdpa",
+      "vae_name": "hunyuan_video_vae_bf16.safetensors",
+      "sigclip_name": "sigclip_vision_patch14_384.safetensors",
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "llava_llama3_fp16.safetensors",
+      "base_resolution": 640,
+      "steps": 20,
+      "cfg": 1.0,
+      "guidance_scale": 10.0,
+      "shift": 0.0,
+      "latent_window_size": 9,
+      "total_second_length": 5.0,
+      "gpu_memory_preservation": 6.0,
+      "sampler": "unipc_bh1",
+      "use_teacache": true,
+      "teacache_rel_l1_thresh": 0.15,
+      "frame_rate": 16.0
+    },
+    "wan21": {
+      "unet_name": "wan2.1_i2v_480p_14B_fp16.safetensors",
+      "weight_dtype": "default",
+      "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "clip_vision_name": "clip_vision_h.safetensors",
+      "vae_name": "wan_2.1_vae.safetensors",
+      "width": 480,
+      "height": 832,
+      "length": 41,
+      "shift": 8.0,
+      "steps": 12,
+      "cfg": 1.0,
+      "sampler_name": "uni_pc",
+      "scheduler": "simple",
+      "denoise": 1.0,
+      "frame_rate": 8.0
+    }
   }
 }
