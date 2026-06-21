@@ -1,0 +1,110 @@
+{
+  "video_path": "C:\\Users\\saint\\Downloads\\kling_20260619_VIDEO_Cinematic__4730_0.mp4",
+  "note": "Kling landscape reference, custom regions manually tuned from contact sheet. Frames downscaled to 978x530 for speed.",
+  "source_width": 1956,
+  "source_height": 1060,
+  "fps": 24.0,
+  "frame_count": 121,
+  "duration_sec": 5.0417,
+  "sampled_frames": 121,
+  "identity_ssim_face_mean": 0.8095,
+  "identity_ssim_face_min": 0.7288,
+  "regions": [
+    {
+      "name": "face",
+      "region": [
+        0.315,
+        0.07,
+        0.095,
+        0.25
+      ],
+      "luminance_mean": 8.7342,
+      "luminance_std": 0.6751,
+      "luminance_cv_pct": 7.7297,
+      "luminance_peak_to_peak_pct": 28.679,
+      "flicker_mean_abs_delta": 0.0849,
+      "optical_flow_mean": 0.1072,
+      "optical_flow_p95": 0.2041
+    },
+    {
+      "name": "hair",
+      "region": [
+        0.285,
+        0.04,
+        0.14,
+        0.36
+      ],
+      "luminance_mean": 11.8073,
+      "luminance_std": 0.4671,
+      "luminance_cv_pct": 3.9558,
+      "luminance_peak_to_peak_pct": 14.3283,
+      "flicker_mean_abs_delta": 0.0671,
+      "optical_flow_mean": 0.1602,
+      "optical_flow_p95": 0.3207
+    },
+    {
+      "name": "shoulders",
+      "region": [
+        0.26,
+        0.3,
+        0.22,
+        0.36
+      ],
+      "luminance_mean": 11.923,
+      "luminance_std": 1.7688,
+      "luminance_cv_pct": 14.8355,
+      "luminance_peak_to_peak_pct": 47.8198,
+      "flicker_mean_abs_delta": 0.0656,
+      "optical_flow_mean": 0.159,
+      "optical_flow_p95": 0.3432
+    },
+    {
+      "name": "hands_frame",
+      "region": [
+        0.25,
+        0.52,
+        0.28,
+        0.3
+      ],
+      "luminance_mean": 6.2522,
+      "luminance_std": 0.8599,
+      "luminance_cv_pct": 13.7531,
+      "luminance_peak_to_peak_pct": 42.3545,
+      "flicker_mean_abs_delta": 0.0432,
+      "optical_flow_mean": 0.1635,
+      "optical_flow_p95": 0.3337
+    },
+    {
+      "name": "background_city",
+      "region": [
+        0.56,
+        0.05,
+        0.35,
+        0.43
+      ],
+      "luminance_mean": 13.5224,
+      "luminance_std": 0.1672,
+      "luminance_cv_pct": 1.2364,
+      "luminance_peak_to_peak_pct": 6.7402,
+      "flicker_mean_abs_delta": 0.0648,
+      "optical_flow_mean": 0.181,
+      "optical_flow_p95": 0.4157
+    },
+    {
+      "name": "full_frame",
+      "region": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "luminance_mean": 12.724,
+      "luminance_std": 0.3211,
+      "luminance_cv_pct": 2.5239,
+      "luminance_peak_to_peak_pct": 11.2548,
+      "flicker_mean_abs_delta": 0.0461,
+      "optical_flow_mean": 0.2346,
+      "optical_flow_p95": 0.4668
+    }
+  ]
+}
