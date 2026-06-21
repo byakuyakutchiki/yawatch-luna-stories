@@ -19,6 +19,7 @@ COMFY="$WORK/ComfyUI"
 REPO="$WORK/yawatch-luna-stories"
 MODELS="$COMFY/models"
 REPO_URL="https://github.com/byakuyakutchiki/yawatch-luna-stories.git"
+REPO_BRANCH="${REPO_BRANCH:-feat/governed-i2v-engines}"   # branche gouvernance/moteurs
 
 log() { echo -e "\n\033[1;36m[provision] $*\033[0m"; }
 die() { echo -e "\033[1;31m[ÉCHEC] $*\033[0m" >&2; exit 1; }
@@ -57,12 +58,15 @@ command -v ffmpeg >/dev/null 2>&1 || { log "install ffmpeg"; apt-get update -qq 
 command -v git >/dev/null 2>&1 || die "git absent"
 
 # --- 1. Repo gouverné -------------------------------------------------------
-log "Repo gouverné YAWatch-LUNA"
+log "Repo gouverné YAWatch-LUNA (branche $REPO_BRANCH)"
 if [ -d "$REPO/.git" ]; then
-  git -C "$REPO" pull --ff-only || echo "  (pull ignoré — modifs locales possibles)"
+  git -C "$REPO" fetch --depth 1 origin "$REPO_BRANCH"
+  git -C "$REPO" checkout "$REPO_BRANCH"
+  git -C "$REPO" reset --hard "origin/$REPO_BRANCH"
 else
-  git clone --depth 1 "$REPO_URL" "$REPO"
+  git clone --depth 1 --branch "$REPO_BRANCH" "$REPO_URL" "$REPO"
 fi
+echo "  HEAD: $(git -C "$REPO" rev-parse --short HEAD)"
 
 # --- 2. ComfyUI -------------------------------------------------------------
 log "ComfyUI"
