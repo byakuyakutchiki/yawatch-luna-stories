@@ -114,10 +114,10 @@ dl "$HF/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders
 dl "$HF/Comfy-Org/HunyuanVideo_repackaged/resolve/main/split_files/text_encoders/llava_llama3_fp16.safetensors" \
    "$MODELS/text_encoders/llava_llama3_fp16.safetensors" 8000
 
-log "Modèles Wan2.1 I2V 14B — NATIF fp16 (PAS le GGUF qui échouait)"
+log "Modèles Wan2.1 I2V 14B — NATIF fp8_e4m3fn (PAS le GGUF qui échouait)"
 WAN=Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files
-dl "$HF/$WAN/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors" \
-   "$MODELS/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors" 20000
+dl "$HF/$WAN/diffusion_models/wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors" \
+   "$MODELS/diffusion_models/wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors" 6000
 dl "$HF/$WAN/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" \
    "$MODELS/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors" 3000
 dl "$HF/$WAN/clip_vision/clip_vision_h.safetensors" \

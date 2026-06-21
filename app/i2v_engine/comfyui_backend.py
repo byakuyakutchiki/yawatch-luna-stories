@@ -402,12 +402,12 @@ FRAMEPACK_DEFAULTS = {
     "frame_rate": 16.0,
 }
 
-# Défauts Wan2.1 I2V 14B — version NATIVE (UNETLoader fp16), pas GGUF.
+# Défauts Wan2.1 I2V 14B — version NATIVE (UNETLoader fp8_e4m3fn scaled), pas GGUF.
 # Calqué sur le graphe GGUF prouvé (wan21_gguf_..._success_001.json) mais le
 # chargeur GGUF est remplacé par le chargeur natif (VRAM 32 GB le permet) :
 # c'est la comparaison équitable que le GGUF quantifié (SSIM 0.50) ne permettait pas.
 WAN21_DEFAULTS = {
-    "unet_name": "wan2.1_i2v_480p_14B_fp16.safetensors",
+    "unet_name": "wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors",
     "weight_dtype": "default",
     "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
     "clip_vision_name": "clip_vision_h.safetensors",
