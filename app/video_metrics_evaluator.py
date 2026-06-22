@@ -204,12 +204,15 @@ def tracked_face_identity_ssim(video_path: Path, max_frames: int | None = None) 
     cap.release()
     if len(frames) < 2:
         return {"face_tracked_ssim_min": 1.0, "face_tracked_ssim_mean": 1.0,
-                "face_detect_rate": 0.0}
+                "face_detect_rate": 0.0, "face_tracked_sharpness": 0.0,
+                "face_tracked_luma_variation_pct": 0.0, "face_tracked_luma_flicker": 0.0}
 
     ref = None
     last_box = None
     detected = 0
     scores: list[float] = []
+    lumas: list[float] = []
+    sharps: list[float] = []
     for g in frames:
         dets = cascade.detectMultiScale(g, scaleFactor=1.1, minNeighbors=5,
                                         minSize=(60, 60))
@@ -223,18 +226,25 @@ def tracked_face_identity_ssim(video_path: Path, max_frames: int | None = None) 
         if crop.size == 0:
             continue
         crop = cv2.resize(crop, (256, 256), interpolation=cv2.INTER_AREA)
+        lumas.append(float(crop.mean()))                         # luminosité visage
+        sharps.append(float(cv2.Laplacian(crop, cv2.CV_64F).var()))  # netteté/matière
         if ref is None:
             ref = crop
             continue
         scores.append(_ssim_gray(ref, crop))
     rate = round(detected / max(1, len(frames)), 3)
+    la = np.asarray(lumas, dtype=np.float32)
+    luma_var = round(float((la.max() - la.min()) / (la.mean() or 1.0) * 100), 2) if la.size else 0.0
+    luma_flick = round(float(np.mean(np.abs(np.diff(la)))), 3) if la.size > 1 else 0.0
+    sharp = round(float(np.mean(sharps)), 2) if sharps else 0.0
+    quality = {"face_detect_rate": rate, "face_tracked_sharpness": sharp,
+               "face_tracked_luma_variation_pct": luma_var,
+               "face_tracked_luma_flicker": luma_flick}
     if not scores:
-        return {"face_tracked_ssim_min": 0.0, "face_tracked_ssim_mean": 0.0,
-                "face_detect_rate": rate}
+        return {"face_tracked_ssim_min": 0.0, "face_tracked_ssim_mean": 0.0, **quality}
     arr = np.asarray(scores, dtype=np.float32)
     return {"face_tracked_ssim_min": round(float(arr.min()), 4),
-            "face_tracked_ssim_mean": round(float(arr.mean()), 4),
-            "face_detect_rate": rate}
+            "face_tracked_ssim_mean": round(float(arr.mean()), 4), **quality}
 
 
 def _verdict(report: VideoMetricReport) -> dict[str, str]:

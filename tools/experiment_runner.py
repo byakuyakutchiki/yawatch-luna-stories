@@ -50,6 +50,8 @@ FIELDS = [
     # Capacité 2 — identité (rectangle fixe + visage SUIVI = mesure juste mobile)
     "ssim_face_min", "face_tracked_ssim_min", "face_tracked_ssim_mean",
     "face_detect_rate", "lighting_face_pct", "flicker_face",
+    # Métriques artistiques (action E) : matière + stabilité lumineuse (visage suivi)
+    "face_sharpness", "face_luma_variation_pct", "face_luma_flicker",
     # Capacité 1 — mouvement (brut + organique vs glissement)
     "flow_face", "flow_shoulders", "flow_hair", "flow_full",
     "translation_risk", "organic_score", "face_residual",
@@ -89,10 +91,14 @@ def measure_clip(mp4: str | Path, max_frames: int | None = 80) -> dict:
         "face_residual": om.face_residual,
         "background_lighting_pct": round(bg.luminance_peak_to_peak_pct, 4) if bg else "",
         "background_flicker": round(bg.flicker_mean_abs_delta, 4) if bg else "",
-        # Identité sur visage SUIVI (boîte détectée) — juste pour sujet mobile.
+        # Identité + qualité sur visage SUIVI (boîte détectée) — juste pour sujet mobile.
         "face_tracked_ssim_min": tracked["face_tracked_ssim_min"],
         "face_tracked_ssim_mean": tracked["face_tracked_ssim_mean"],
         "face_detect_rate": tracked["face_detect_rate"],
+        # Métriques artistiques (action E) : netteté/matière + stabilité lumineuse
+        "face_sharpness": tracked.get("face_tracked_sharpness", ""),
+        "face_luma_variation_pct": tracked.get("face_tracked_luma_variation_pct", ""),
+        "face_luma_flicker": tracked.get("face_tracked_luma_flicker", ""),
         "gate_passed": gate.passed,
         "duration_sec": round(report.duration_sec, 2),
     }
@@ -130,8 +136,9 @@ def _write_markdown(exp_dir: Path, rows: list[dict]) -> None:
     man = exp_dir / "manifest.json"
     if man.exists():
         q = json.loads(man.read_text(encoding="utf-8")).get("question", "")
-    cols = ["label", "ssim_face_min", "face_tracked_ssim_min", "face_detect_rate",
-            "flow_full", "organic_score", "gate_passed"]
+    cols = ["label", "face_tracked_ssim_min", "face_sharpness",
+            "face_luma_variation_pct", "face_luma_flicker", "flow_full",
+            "organic_score", "gate_passed"]
     lines = [f"# Expérience : {exp_dir.name}", "", f"**Question :** {q}", "",
              "| " + " | ".join(cols) + " |", "|" + "|".join(["---"] * len(cols)) + "|"]
     for r in rows:

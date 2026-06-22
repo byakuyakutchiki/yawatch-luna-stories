@@ -1,0 +1,4 @@
+{
+  "question": "Métriques artistiques (E) : netteté + stabilité lumineuse — Wan / stabilisé / faceswap / colormatch",
+  "metric": "face_sharpness & face_luma_variation_pct"
+}
