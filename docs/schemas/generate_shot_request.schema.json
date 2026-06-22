@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "yawatch-video-engine generate-shot request",
+  "type": "object",
+  "required": [
+    "shot_id",
+    "character_reference_image",
+    "dramatic_intention",
+    "shot_type"
+  ],
+  "properties": {
+    "project": { "type": "string", "default": "YAWatch-LUNA" },
+    "episode_id": { "type": ["string", "null"] },
+    "shot_id": { "type": "string" },
+    "character_reference_image": { "type": "string" },
+    "decor_image": { "type": ["string", "null"] },
+    "decor_description": { "type": ["string", "null"] },
+    "dramatic_intention": { "type": "string" },
+    "shot_type": {
+      "type": "string",
+      "enum": ["gros_plan", "plan_poitrine", "plan_large", "deplacement", "interaction_objet"]
+    },
+    "duration_sec": { "type": "number", "minimum": 2, "maximum": 12, "default": 5 },
+    "camera_motion": {
+      "type": "string",
+      "enum": ["static_hold", "slow_push_in", "slow_pull_back", "pan_left", "pan_right", "handheld_subtle", "dolly_lateral"],
+      "default": "slow_push_in"
+    },
+    "emotion": { "type": "string" },
+    "sound_need": {
+      "type": "object",
+      "properties": {
+        "mode": { "type": "string", "enum": ["silence", "ambiance", "bruitage", "voix_off", "dialogue"] },
+        "ambience_description": { "type": ["string", "null"] },
+        "foley": { "type": "array", "items": { "type": "string" } },
+        "voice_off_text": { "type": ["string", "null"] },
+        "dialogue_text": { "type": ["string", "null"] }
+      }
+    },
+    "engine_preference": { "type": "string", "enum": ["mock", "wan21", "framepack", "pose_to_video", "auto"] },
+    "pose_reference": { "type": ["string", "null"] },
+    "object_interaction": { "type": ["object", "null"] },
+    "continuity_notes": { "type": "array", "items": { "type": "string" } },
+    "fps": { "type": "integer", "minimum": 12, "maximum": 30 }
+  }
+}

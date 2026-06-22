@@ -1,0 +1,15 @@
+{
+  "project": "YAWatch-LUNA",
+  "episode_id": "S01E00",
+  "shot_id": "luna_fullbody_walk_window",
+  "character_reference_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png",
+  "decor_description": "bureau YAWatch de nuit, grande baie vitrée, lumiere bleue froide",
+  "dramatic_intention": "Luna walks slowly towards the window, stops, and looks over her left shoulder with a hesitant expression, her hand lightly touching the wall",
+  "shot_type": "deplacement",
+  "duration_sec": 5,
+  "camera_motion": "dolly_lateral",
+  "emotion": "contained hesitation",
+  "engine_preference": "wan21",
+  "continuity_notes": ["Luna adulte canonique", "pas de cyberpunk", "mouvement corps entier"],
+  "fps": 24
+}
