@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>YAWatch Video Engine</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#0d0f14;color:#e6e8ec;margin:0;padding:24px;max-width:780px;margin:auto}
+  h1{font-size:20px} h2{font-size:15px;color:#8ab4f8;margin-top:24px}
+  label{display:block;margin:10px 0 4px;font-size:13px;color:#aeb4bd}
+  input,select,textarea{width:100%;box-sizing:border-box;background:#161a22;border:1px solid #2a2f3a;color:#e6e8ec;border-radius:8px;padding:9px;font-size:14px}
+  textarea{min-height:64px}
+  button{margin-top:16px;background:#3b6cf6;color:#fff;border:0;border-radius:8px;padding:11px 18px;font-size:14px;cursor:pointer}
+  button:disabled{opacity:.5}
+  .row{display:flex;gap:12px}.row>div{flex:1}
+  #out{margin-top:18px;background:#161a22;border:1px solid #2a2f3a;border-radius:8px;padding:14px;font-size:13px;white-space:pre-wrap}
+  a{color:#8ab4f8} .muted{color:#6b7280;font-size:12px}
+</style>
+</head>
+<body>
+<h1>🎬 YAWatch Video Engine <span class="muted">— API de production (remplace Kling)</span></h1>
+
+<h2>Nouveau plan</h2>
+<label>Shot ID</label><input id="shot_id" value="plan_test_01"/>
+<label>Image de référence du personnage (chemin serveur)</label>
+<input id="img" value="assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png"/>
+<input type="file" id="file" accept="image/*"/>
+<span class="muted">…ou uploade une image (remplit le chemin ci-dessus)</span>
+<label>Intention / action dramatique</label>
+<textarea id="intent">Luna walks slowly towards the window, stops, looks over her left shoulder with a hesitant expression</textarea>
+<div class="row">
+  <div><label>Type de plan</label>
+    <select id="shot_type">
+      <option>plan_poitrine</option><option selected>deplacement</option>
+      <option>plan_large</option><option>gros_plan</option><option>interaction_objet</option>
+    </select></div>
+  <div><label>Moteur</label>
+    <select id="engine">
+      <option selected>mock</option><option>wan21</option><option>framepack</option>
+    </select></div>
+</div>
+<button id="go" onclick="generate()">Générer le plan</button>
+
+<div id="out"></div>
+
+<h2>Personnages / Scènes</h2>
+<div id="lib" class="muted"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const out = msg => $('out').textContent = msg;
+
+$('file').onchange = async e => {
+  const f = e.target.files[0]; if(!f) return;
+  out('Upload…'); const fd = new FormData(); fd.append('file', f);
+  const r = await fetch('/upload-image', {method:'POST', body:fd});
+  const j = await r.json(); $('img').value = j.path; out('Image uploadée: '+j.path);
+};
+
+async function generate(){
+  $('go').disabled = true; out('Création du job…');
+  const body = {
+    shot_id: $('shot_id').value,
+    character_reference_image: $('img').value,
+    dramatic_intention: $('intent').value,
+    shot_type: $('shot_type').value,
+    engine_preference: $('engine').value,
+    duration_sec: 5
+  };
+  try{
+    const r = await fetch('/generate', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    if(!r.ok){ out('Erreur '+r.status+': '+await r.text()); $('go').disabled=false; return; }
+    const j = await r.json(); out('Job '+j.job_id+' ('+j.queue+') — '+j.status+'\nSuivi…');
+    poll(j.job_id);
+  }catch(e){ out('Erreur: '+e); $('go').disabled=false; }
+}
+
+async function poll(id){
+  for(let i=0;i<600;i++){
+    await new Promise(s=>setTimeout(s,2000));
+    const j = await (await fetch('/status/'+id)).json();
+    out('Job '+id+' — statut: '+j.status+(j.artistic_score?(' | score '+j.artistic_score):'')+(j.error?('\nERREUR: '+j.error):''));
+    if(j.status==='done'){ out('✅ Terminé. score='+j.artistic_score+' gate='+j.gate_passed+'\n→ '+location.origin+'/download/'+id);
+      $('out').innerHTML += '<br><a href="/download/'+id+'">⬇️ Télécharger le MP4</a>'; break; }
+    if(j.status==='error'){ break; }
+  }
+  $('go').disabled = false;
+}
+
+(async ()=>{
+  const c = await (await fetch('/characters')).json();
+  const s = await (await fetch('/scenes')).json();
+  $('lib').textContent = `${c.length} personnage(s), ${s.length} scène(s) en base.`;
+})();
+</script>
+</body>
+</html>
