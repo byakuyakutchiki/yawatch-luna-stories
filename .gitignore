@@ -23,3 +23,6 @@ outputs/clips_local_tests/
 content/video_engine_runs/
 content/uploads/
 *.db
+
+# Dataset LoRA régénérable (tools/prepare_lora_dataset.py)
+dataset/

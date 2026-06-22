@@ -1,0 +1,12 @@
+# Dataset config musubi-tuner — LoRA Luna (images fixes -> identité Wan).
+# Généré par tools/prepare_lora_dataset.py (dataset/luna_lora/).
+[general]
+resolution = [768, 768]
+caption_extension = ".txt"
+batch_size = 1
+enable_bucket = true          # gère les ratios variés (portrait/paysage)
+bucket_no_upscale = false
+
+[[datasets]]
+image_directory = "/workspace/yawatch-luna-stories/dataset/luna_lora"
+num_repeats = 10              # 12 images x10 ≈ 120 vues/epoch (dataset un peu petit)
