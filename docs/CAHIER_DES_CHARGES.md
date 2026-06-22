@@ -16,6 +16,34 @@
 | Translation risk (cadre qui glisse) | ≤ 0.35 | ≤ 0.20 | `translation_risk` |
 | Score organique | ≥ 0.6 | ≥ 0.8 | `organic_score` |
 
+### Capacité 1.5 — Corps entier + vêtements + décors cohérents  (P1)
+Luna marche / se retourne / interagit ; ses vêtements suivent sans déformer ;
+le décor reste cohérent d'un plan à l'autre ; pas de cadre qui glisse.
+
+**Solution retenue — pipeline 3 étapes (à VALIDER, pas encore prouvée) :**
+| Étape | Outil | Objectif |
+|---|---|---|
+| 1 Pose guide | **Wan2.1 Fun-Control** (OpenPose/Depth/Canny) + séquence de poses | guider le mouvement corps entier |
+| 2 Perso + vêtements | **LoRA Luna** + Wan2.1 Fun-Control | Luna avec son visage/ses vêtements |
+| 3 Intégration décor | composition par masque + **UniLumos** (relighting) | placer Luna dans le décor, ajuster lumière/ombres |
+
+> Honnêteté : **Wan2.1 Fun-Control existe vraiment** et supporte OpenPose (je
+> l'avais sous-estimé en disant « ControlNet Wan pas mûr » — c'est CE variant le
+> bon chemin). **SteadyDancer / UniLumos = à vérifier** (dispo/VRAM/install pod).
+> Tout ceci est « à tester », décidé sur métriques, pas adopté d'avance.
+
+| Critère | Min | Idéal | Métrique |
+|---|---|---|---|
+| Mouvement localisé corps | ≥ 0.15 | ≥ 0.25 | `flow_shoulders` + `face_residual` |
+| Translation risk | ≤ 0.35 | ≤ 0.20 | `translation_risk` |
+| Décor stable (SSIM fond) | ≥ 0.70 | ≥ 0.85 | `background_ssim_mean` *(à brancher)* |
+| Vêtements cohérents | pas de déformation | couleur stable | `clothing_color_consistency` *(à ajouter)* |
+| Intégration lumière | pas d'artefact | relighting naturel | inspection humaine |
+
+**Prochaine action** : tester Wan2.1 Fun-Control sur un clip simple (rotation de
+buste) → si OK, l'intégrer dans `pose_control.py` + `i2v_adapter.py` → puis tester
+la composition décor (UniLumos/masque). Validation sur métriques ci-dessus.
+
 ### Capacité 2 — Personnages récurrents (identité stable)  (P1)
 | Critère | Min | Idéal | Métrique |
 |---|---|---|---|
