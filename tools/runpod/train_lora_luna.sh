@@ -1,55 +1,69 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Entraînement LoRA Luna sur Wan2.1 14B — via musubi-tuner (action B).
+# Entraînement LoRA Luna sur Wan2.1 via musubi-tuner (action B).
 # ----------------------------------------------------------------------------
-# ⚠️ BLEEDING-EDGE : LoRA vidéo Wan = outillage récent. Ce script suit le flux
-# documenté de musubi-tuner (kohya). À VALIDER/ajuster sur le pod (versions,
-# noms de flags). VRAM 14B tendu → fp8_base + block swap pour tenir en 32 Go.
-# Coût réaliste : download base Wan (~28 Go si absent) + entraînement plusieurs
-# heures → compter quelques € de pod, PAS « 1,50 € ».
+# CHAÎNE VALIDÉE le 22 juin sur t2v-1.3B (L4) : install -> dataset -> cache
+# latents -> cache text-encoder -> train -> .safetensors (84 Mo). 2 corrections
+# apprises (intégrées ici) :
+#   1) T5 = modèle Wan NATIF `models_t5_umt5-xxl-enc-bf16.pth` (PAS le umt5 Comfy
+#      fp8 : format de clés incompatible avec musubi).
+#   2) --mixed_precision DOIT matcher le dtype du DiT : DiT fp16 -> fp16.
 #
-# Pré-requis : modèles Wan de base présents (cf. provision.sh / volume persistant) :
-#   diffusion_models/wan2.1_t2v_14B_fp16 (ou i2v), vae/wan_2.1_vae,
-#   text_encoders/umt5_xxl, clip_vision/clip_vision_h.
+# TASK : t2v-1.3B = run de validation (cheap, rapide). t2v-14B / i2v-14B = run
+# de production (lourd : DiT ~14-28 Go, plusieurs heures, GPU costaud conseillé).
+# Pour le 14B : VRAM tendue -> tester --fp8_base + --blocks_to_swap (et ajuster
+# --mixed_precision en conséquence) ; à valider sur le run 14B.
 #
-# Usage (pod) :  bash tools/runpod/train_lora_luna.sh
+# Usage : TASK=t2v-1.3B bash tools/runpod/train_lora_luna.sh
 # ============================================================================
 set -euo pipefail
 PY=python
 REPO=/workspace/yawatch-luna-stories
-M=/workspace/ComfyUI/models
 MT=/workspace/musubi-tuner
+BASE=/workspace/wanbase
 OUT=/workspace/lora
-mkdir -p "$OUT"
+DS="$REPO/tools/runpod/luna_dataset.toml"
+TASK="${TASK:-t2v-1.3B}"
+HF=https://huggingface.co
+COMFY="$HF/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files"
+mkdir -p "$BASE" "$OUT"
+
+dl() { [ -f "$2" ] && [ "$(stat -c%s "$2")" -gt 100000000 ] && { echo "skip $(basename "$2")"; return; }; curl -fL --retry 3 -o "$2" "$1"; }
 
 echo "== 1. dataset =="
-cd "$REPO" && $PY tools/prepare_lora_dataset.py --size 768 --trigger lunaw
+cd "$REPO" && $PY tools/prepare_lora_dataset.py --size 768 --trigger lunaw | tail -2
 
 echo "== 2. musubi-tuner =="
-if [ ! -d "$MT/.git" ]; then git clone https://github.com/kohya-ss/musubi-tuner "$MT"; fi
-cd "$MT" && $PY -m pip install -q --break-system-packages -e . 2>&1 | tail -3 || true
+[ -d "$MT/.git" ] || git clone --depth 1 https://github.com/kohya-ss/musubi-tuner "$MT"
+cd "$MT" && $PY -m pip install -q --break-system-packages -e . 2>&1 | tail -2
 
-# Modèles de base (chemins à adapter à ce qui est sur le volume)
-DIT="$M/diffusion_models/wan2.1_t2v_14B_fp8_e4m3fn.safetensors"   # ou i2v selon la cible
-VAE="$M/vae/wan_2.1_vae.safetensors"
-T5="$M/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
-DS="$REPO/tools/runpod/luna_dataset.toml"
+echo "== 3. modèles de base ($TASK) =="
+# T5 Wan NATIF (commun à toutes les tâches) + VAE
+dl "$HF/Wan-AI/Wan2.1-T2V-1.3B/resolve/main/models_t5_umt5-xxl-enc-bf16.pth" "$BASE/t5.pth"
+dl "$COMFY/vae/wan_2.1_vae.safetensors" "$BASE/vae.safetensors"
+if [ "$TASK" = "t2v-1.3B" ]; then
+  dl "$COMFY/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors" "$BASE/dit.safetensors"; MP=fp16; EXTRA=""
+elif [ "$TASK" = "t2v-14B" ]; then
+  dl "$COMFY/diffusion_models/wan2.1_t2v_14B_fp16.safetensors" "$BASE/dit.safetensors"; MP=fp16; EXTRA="--blocks_to_swap 20"
+elif [ "$TASK" = "i2v-14B" ]; then
+  dl "$COMFY/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors" "$BASE/dit.safetensors"
+  dl "$COMFY/clip_vision/clip_vision_h.safetensors" "$BASE/clip.safetensors"; MP=fp16; EXTRA="--clip $BASE/clip.safetensors --blocks_to_swap 20"
+else echo "TASK inconnu: $TASK"; exit 1; fi
 
-echo "== 3. cache latents + text encoder =="
-$PY src/musubi_tuner/wan_cache_latents.py --dataset_config "$DS" --vae "$VAE"
-$PY src/musubi_tuner/wan_cache_text_encoder_outputs.py --dataset_config "$DS" --t5 "$T5" --batch_size 1
+echo "== 4. cache latents + text encoder =="
+cd "$MT"
+$PY src/musubi_tuner/wan_cache_latents.py --dataset_config "$DS" --vae "$BASE/vae.safetensors"
+$PY src/musubi_tuner/wan_cache_text_encoder_outputs.py --dataset_config "$DS" --t5 "$BASE/t5.pth" --batch_size 1
 
-echo "== 4. entraînement LoRA =="
-accelerate launch --num_processes 1 src/musubi_tuner/wan_train_network.py \
-  --task t2v-14B \
-  --dit "$DIT" --vae "$VAE" --t5 "$T5" \
+echo "== 5. entraînement LoRA ($TASK, mixed_precision=$MP) =="
+accelerate launch --num_processes 1 --mixed_precision "$MP" src/musubi_tuner/wan_train_network.py \
+  --task "$TASK" \
+  --dit "$BASE/dit.safetensors" --vae "$BASE/vae.safetensors" --t5 "$BASE/t5.pth" $EXTRA \
   --dataset_config "$DS" \
   --network_module networks.lora_wan --network_dim 32 --network_alpha 16 \
   --learning_rate 1e-4 --max_train_epochs 16 \
-  --mixed_precision bf16 --fp8_base --blocks_to_swap 20 \
-  --gradient_checkpointing --sdpa \
-  --optimizer_type adamw8bit \
-  --output_dir "$OUT" --output_name luna_lunaw \
-  --save_every_n_epochs 4 --seed 42
+  --mixed_precision "$MP" --gradient_checkpointing --sdpa \
+  --optimizer_type adamw \
+  --output_dir "$OUT" --output_name luna_lunaw --save_every_n_epochs 4 --seed 42
 
 echo "== TERMINÉ → $OUT/luna_lunaw.safetensors =="
