@@ -1,79 +1,92 @@
 {
-  "_source": "docs/TEASER_S01E00_PRODUCTION_PACK.md",
-  "_note": "Registre des 9 plans du teaser. Lu par le MotionDirector. Chemins relatifs au repo.",
-  "episode_id": "teaser_s01e00",
+  "_source": "assets/teaser/TEASER_IMAGE_SELECTION.md",
+  "_note": "Registre des 9 plans du teaser Luna-only. Lu par le MotionDirector. Les noms plan01.png a plan09.png determinent l'ordre exact.",
+  "episode_id": "teaser_s01e00_luna_only",
+  "asset_root": "assets/teaser",
   "plans": {
     "plan01": {
-      "character": "none",
-      "plan_type": "establishing",
-      "canonical_image": "assets/luna_stories_assets/09_decors_paris_la_defense/pack_01_yawatch_industries/yawatch_tour_la_defense_exterieur_jour_logo_01.png",
-      "image_stem": "yawatch_plan01_tour_la_defense",
-      "movement": "Pan vertical lent vers la tour, logo révélé",
-      "prompt_positive": "cinematic slow vertical pan up a premium glass tower at La Defense Paris, bright realistic daylight, corporate thriller mood, stable architecture, stable logo, no people appearing, film grain, high quality"
+      "character": "luna_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/teaser/plan01.png",
+      "image_stem": "plan01",
+      "output_name": "plan01.mp4",
+      "movement": "Luna marche lentement, regard determine",
+      "prompt_positive": "cinematic psychological thriller shot of adult Luna walking slowly with a determined gaze, premium Paris La Defense atmosphere, controlled body movement, subtle breathing, natural hair movement, realistic skin, stable identity, film grain, high quality"
     },
     "plan02": {
       "character": "luna_adulte",
       "plan_type": "portrait_adult",
-      "canonical_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png",
-      "image_stem": "yawatch_plan02_luna_adulte_portrait",
-      "movement": "Push-in très lent sur Luna",
-      "prompt_positive": "cinematic premium psychological thriller portrait of an adult woman in a Parisian office, slow imperceptible push-in, subtle natural breathing, restrained emotion, calm serious gaze, soft window daylight, realistic skin, shallow depth of field, film grain, high quality"
+      "canonical_image": "assets/teaser/plan02.png",
+      "image_stem": "plan02",
+      "output_name": "plan02.mp4",
+      "movement": "Luna s'arrete et regarde a droite",
+      "prompt_positive": "cinematic medium shot of adult Luna stopping and looking to the right off-screen, restrained suspicion, slow controlled movement, subtle shoulder shift, realistic office and Paris night depth, stable face identity, film grain, high quality"
     },
     "plan03": {
       "character": "luna_adulte",
       "plan_type": "portrait_adult",
-      "canonical_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_office_desk_01.png",
-      "image_stem": "yawatch_plan03_luna_bureau",
-      "movement": "Travelling latéral discret",
-      "prompt_positive": "cinematic discreet lateral travelling across an adult woman working at her desk in a bright Parisian office, subtle breathing, restrained emotion, soft daylight, realistic, film grain, high quality"
+      "canonical_image": "assets/teaser/plan03.png",
+      "image_stem": "plan03",
+      "output_name": "plan03.mp4",
+      "movement": "Respiration, micro-mouvements du visage",
+      "prompt_positive": "cinematic close-up portrait of adult Luna, very subtle breathing, tiny eye movement, controlled emotion, no smile, no exaggerated expression, stable face identity, realistic skin texture, shallow depth of field, film grain, high quality"
     },
     "plan04": {
       "character": "luna_adulte",
-      "plan_type": "hand_object",
-      "canonical_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_looking_at_turned_photo_01.png",
-      "image_stem": "yawatch_plan04_photo_retournee",
-      "movement": "Focus progressif sur le cadre retourné, tension",
-      "prompt_positive": "cinematic slow focus pull toward a turned family photo frame on an elegant desk, a hand near the frame, emotional tension, soft office light, shallow depth of field, no text, realistic, film grain"
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/teaser/plan04.png",
+      "image_stem": "plan04",
+      "output_name": "plan04.mp4",
+      "movement": "Luna se retourne, cheveux legerement en mouvement",
+      "prompt_positive": "cinematic shot of adult Luna turning back slowly, hair moving slightly as if touched by a soft indoor draft, worried restrained expression, subtle camera drift, stable identity, realistic night office lighting, film grain, high quality",
+      "asset_note": "Image source acceptable for test, but not a true wide turning shot. Replace later if a better Luna turning image exists."
     },
     "plan05": {
-      "character": "luna_enfant",
-      "plan_type": "portrait_child",
-      "canonical_image": "assets/luna_stories_assets/02_luna_enfant/luna_enfant_worried_night_01.png",
-      "image_stem": "yawatch_plan05_luna_enfant_nuit",
-      "movement": "Respiration lumineuse, ombre qui passe, peur",
-      "prompt_positive": "cinematic close shot of a worried child at night, very subtle breathing, a soft passing shadow, restrained fear, warm to cool light shift, stable child face, no exaggerated emotion, realistic, film grain"
+      "character": "luna_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/teaser/plan05.png",
+      "image_stem": "plan05",
+      "output_name": "plan05.mp4",
+      "movement": "Luna reste pensive, posture retenue",
+      "prompt_positive": "cinematic medium shot of adult Luna in a Paris La Defense office, pensive posture, restrained hands, very subtle breathing, slow push-in, emotional silence, stable face and hands, realistic daylight, film grain, high quality",
+      "asset_note": "Image source has desk posture rather than hands in pockets. Useful for first technical pass."
     },
     "plan06": {
-      "character": "luna_enfant",
-      "plan_type": "portrait_child",
-      "canonical_image": "assets/luna_stories_assets/02_luna_enfant/luna_enfant_comforted_with_doll_01.png",
-      "image_stem": "yawatch_plan06_luna_enfant_poupee",
-      "movement": "Push-in doux vers la poupée, réconfort",
-      "prompt_positive": "cinematic slow gentle push-in toward a small purple velvet doll held by a child, warm indoor light, emotional comfort scene, stable child face, preserved fabric texture of the doll, tender mood, no exaggerated motion, realistic, film grain"
+      "character": "luna_adulte",
+      "plan_type": "hand_object",
+      "canonical_image": "assets/teaser/plan06.png",
+      "image_stem": "plan06",
+      "output_name": "plan06.mp4",
+      "movement": "Clignement lent, hesitation",
+      "prompt_positive": "cinematic close shot of adult Luna hesitating while holding or looking at a turned photo frame, slow blink, subtle breath, contained emotional shock, stable hands and face, no visible family photo reveal, film grain, high quality"
     },
     "plan07": {
-      "character": "luna_doll",
-      "plan_type": "macro_object",
-      "canonical_image": "assets/luna_stories_assets/05_objets_symboliques_poupees/poupee_luna_gros_plan_yeux_mystere_01.png",
-      "image_stem": "yawatch_plan07_poupee_yeux",
-      "movement": "Macro très lente vers les yeux mystérieux",
-      "prompt_positive": "cinematic very slow macro push toward the sewn button eyes of a handmade purple velvet doll, soft warm light, mysterious mood, preserved fabric and stitching texture, never plastic, never robotic, realistic, film grain"
+      "character": "luna_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/teaser/plan07.png",
+      "image_stem": "plan07",
+      "output_name": "plan07.mp4",
+      "movement": "Luna marche vers la camera avec confiance",
+      "prompt_positive": "cinematic premium shot of adult Luna moving toward the camera with quiet confidence, executive office atmosphere, subtle forward motion, stable face, stable hair, controlled shoulders, no exaggerated smile, film grain, high quality"
     },
     "plan08": {
-      "character": "aby_adulte",
+      "character": "luna_adulte",
       "plan_type": "portrait_adult",
-      "canonical_image": "assets/luna_stories_assets/03_aby/aby_adulte_observing_luna_01.png",
-      "image_stem": "yawatch_plan08_aby_observe",
-      "movement": "Reflet ou léger mouvement latéral, révélation",
-      "prompt_positive": "cinematic slight lateral movement revealing an elegant cold blonde woman observing from the side, subtle reflection, restrained strategic expression, soft office light, realistic, film grain, high quality"
+      "canonical_image": "assets/teaser/plan08.png",
+      "image_stem": "plan08",
+      "output_name": "plan08.mp4",
+      "movement": "Luna s'arrete, regard intense",
+      "prompt_positive": "cinematic medium shot of adult Luna stopping with an intense strategic gaze, premium YAWatch office background, slow camera push, subtle breathing, strong human presence, stable identity, low flicker, film grain, high quality"
     },
     "plan09": {
-      "character": "aby_enfant",
-      "plan_type": "hand_object",
-      "canonical_image": "assets/luna_stories_assets/03_aby/aby_enfant_main_jeton_noir_maquette_01.png",
-      "image_stem": "yawatch_plan09_aby_jeton_noir",
-      "movement": "Focus pull sur le jeton, main qui dépose, puis noir",
-      "prompt_positive": "cinematic close-up, a child's hand slowly and deliberately deposits a black token on a miniature city model, focus pull from hand to token, then gradual fade to black, calm strategic mood, deliberate movement, no face distortion, realistic, film grain"
+      "character": "luna_adulte",
+      "plan_type": "portrait_adult",
+      "canonical_image": "assets/teaser/plan09.png",
+      "image_stem": "plan09",
+      "output_name": "plan09.mp4",
+      "movement": "Sourire tres leger, respiration profonde",
+      "prompt_positive": "cinematic close to medium shot of adult Luna with a barely perceptible relieved smile, deep controlled breath, emotional release without overacting, stable face identity, premium office night lighting, low flicker, film grain, high quality",
+      "asset_note": "Image source is premium but the smile is not visible. Replace later if a canonical slight-smile Luna image exists."
     }
   }
 }

@@ -79,12 +79,12 @@ def test_all_nine_teaser_plans_present(director):
 def test_prepare_job_uses_profile_values(director, target):
     """Le job hérite des valeurs du profil (pas de réglage à la main)."""
     job = director.prepare_job("plan06", target)
-    # plan06 = portrait_child : denoise 0.35, cfg 4.0, steps 18, ipadapter 0.85
-    assert job.denoise == 0.35
-    assert job.cfg == 4.0
-    assert job.steps == 18
+    # Nouveau teaser Luna-only : plan06 = hand_object, car Luna interagit avec le cadre/photo.
+    assert job.denoise == 0.45
+    assert job.cfg == 5.0
+    assert job.steps == 16
     assert job.use_ipadapter is True
-    assert job.ipadapter_weight == 0.85
+    assert job.ipadapter_weight == 0.5
 
 
 def test_prepare_job_character_plan_enables_ipadapter(director, target):
@@ -93,22 +93,19 @@ def test_prepare_job_character_plan_enables_ipadapter(director, target):
     assert job.ipadapter_image == job.image_path
 
 
-def test_prepare_job_establishing_disables_ipadapter(director, target):
-    """plan01 = décor sans perso → IPAdapter désactivé."""
+def test_prepare_job_luna_only_enables_ipadapter(director, target):
+    """Nouveau teaser : les 9 plans sont Luna adulte, donc IPAdapter actif."""
     job = director.prepare_job("plan01", target)
-    assert job.use_ipadapter is False
-    assert job.ipadapter_image == ""
+    assert job.character == "luna_adulte"
+    assert job.use_ipadapter is True
+    assert job.ipadapter_image == job.image_path
 
 
 def test_prepare_job_output_names_match_quality_gate(director, target):
     """Les noms de sortie doivent correspondre à ce que le Quality Gate attend."""
-    expected = {
-        "plan02": "plan02_luna_adulte_portrait.mp4",
-        "plan06": "plan06_luna_enfant_poupee.mp4",
-        "plan09": "plan09_aby_jeton_noir.mp4",
-    }
-    for plan_id, name in expected.items():
-        assert director.prepare_job(plan_id, target).output_name == name
+    for index in range(1, 10):
+        plan_id = f"plan{index:02d}"
+        assert director.prepare_job(plan_id, target).output_name == f"{plan_id}.mp4"
 
 
 def test_prepare_job_image_path_is_windows_target(director, target):
@@ -120,8 +117,8 @@ def test_prepare_job_image_path_is_windows_target(director, target):
 def test_prepare_job_carries_governance_traceability(director, target):
     job = director.prepare_job("plan09", target)
     assert job.plan_id == "plan09"
-    assert job.plan_type == "hand_object"
-    assert job.character == "aby_enfant"
+    assert job.plan_type == "portrait_adult"
+    assert job.character == "luna_adulte"
 
 
 def test_prepare_unknown_plan_raises(director, target):

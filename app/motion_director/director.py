@@ -174,10 +174,16 @@ class MotionDirector:
 
         image_path = target.staged_image(plan["image_stem"])
 
+        output_name = plan.get("output_name")
+        if not output_name:
+            output_name = (
+                f"{plan_id}_{plan['image_stem'].replace('yawatch_' + plan_id + '_', '')}.mp4"
+                if plan["image_stem"].startswith(f"yawatch_{plan_id}_")
+                else f"{plan_id}_{plan['image_stem']}.mp4"
+            )
+
         job = VideoJob(
-            output_name=f"{plan_id}_{plan['image_stem'].replace('yawatch_' + plan_id + '_', '')}.mp4"
-            if plan["image_stem"].startswith(f"yawatch_{plan_id}_")
-            else f"{plan_id}_{plan['image_stem']}.mp4",
+            output_name=output_name,
             deposit_dir=target.deposit_dir,
             image_path=image_path,
             prompt_positive=plan["prompt_positive"],
