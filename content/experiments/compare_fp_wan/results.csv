@@ -1,0 +1,3 @@
+timestamp,exp_id,question,metric,label,engine,varied_param,value,seed,duration_sec,ssim_face_min,lighting_face_pct,flicker_face,flow_face,flow_shoulders,flow_hair,flow_full,gate_passed,mp4
+2026-06-22T01:45Z,compare_fp_wan,FramePack vs Wan: lequel bouge le plus sans casser l'identite ?,flow_full vs ssim_face_min,plan02_luna_FRAMEPACK,,,,,9.08,0.9421,10.4531,0.1591,0.1161,0.0996,0.0907,0.0595,True,/home/ludo/Téléchargements/plan02_luna_FRAMEPACK.mp4
+2026-06-22T01:45Z,compare_fp_wan,FramePack vs Wan: lequel bouge le plus sans casser l'identite ?,flow_full vs ssim_face_min,plan02_luna_WAN,,,,,5.12,0.7731,11.6047,0.2935,0.2134,0.2679,0.1821,0.1423,False,/home/ludo/Téléchargements/plan02_luna_WAN.mp4
