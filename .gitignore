@@ -18,3 +18,8 @@ dist/
 build/
 .pytest_cache/
 outputs/clips_local_tests/
+
+# Sorties runtime (mock API, uploads, db)
+content/video_engine_runs/
+content/uploads/
+*.db
