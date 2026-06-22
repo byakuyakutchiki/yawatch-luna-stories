@@ -9,4 +9,4 @@ bucket_no_upscale = false
 
 [[datasets]]
 image_directory = "/workspace/yawatch-luna-stories/dataset/luna_lora"
-num_repeats = 10              # 12 images x10 ≈ 120 vues/epoch (dataset un peu petit)
+num_repeats = 4              # 52 echantillons x4 ≈ 200 vues/epoch
