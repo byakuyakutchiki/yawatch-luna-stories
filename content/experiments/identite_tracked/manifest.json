@@ -1,0 +1,4 @@
+{
+  "question": "Metrique visage suivi vs rectangle fixe — Wan / GFPGAN / face-swap",
+  "metric": "face_tracked_ssim_min"
+}

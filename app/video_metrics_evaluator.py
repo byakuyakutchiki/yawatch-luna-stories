@@ -182,6 +182,61 @@ def _identity_metrics(gray_frames: list[np.ndarray]) -> tuple[float, float]:
     return float(values.mean()), float(values.min())
 
 
+def tracked_face_identity_ssim(video_path: Path, max_frames: int | None = None) -> dict:
+    """SSIM d'identité sur le visage DÉTECTÉ (boîte qui suit la tête), pas un
+    rectangle fixe — mesure juste pour un sujet qui bouge.
+
+    Détection : Haar cascade (livrée avec OpenCV, CPU, zéro modèle à télécharger).
+    Si aucun visage détecté (profil, tête tournée) → on réutilise la dernière
+    boîte connue. `face_detect_rate` indique la fiabilité de la détection.
+    """
+    cap = cv2.VideoCapture(str(video_path))
+    cascade = cv2.CascadeClassifier(
+        cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+    frames: list[np.ndarray] = []
+    while True:
+        ok, fr = cap.read()
+        if not ok:
+            break
+        frames.append(cv2.cvtColor(fr, cv2.COLOR_BGR2GRAY))
+        if max_frames and len(frames) >= max_frames:
+            break
+    cap.release()
+    if len(frames) < 2:
+        return {"face_tracked_ssim_min": 1.0, "face_tracked_ssim_mean": 1.0,
+                "face_detect_rate": 0.0}
+
+    ref = None
+    last_box = None
+    detected = 0
+    scores: list[float] = []
+    for g in frames:
+        dets = cascade.detectMultiScale(g, scaleFactor=1.1, minNeighbors=5,
+                                        minSize=(60, 60))
+        if len(dets) > 0:
+            last_box = max(dets, key=lambda b: b[2] * b[3])
+            detected += 1
+        if last_box is None:
+            continue
+        x, y, w, h = last_box
+        crop = g[y:y + h, x:x + w]
+        if crop.size == 0:
+            continue
+        crop = cv2.resize(crop, (256, 256), interpolation=cv2.INTER_AREA)
+        if ref is None:
+            ref = crop
+            continue
+        scores.append(_ssim_gray(ref, crop))
+    rate = round(detected / max(1, len(frames)), 3)
+    if not scores:
+        return {"face_tracked_ssim_min": 0.0, "face_tracked_ssim_mean": 0.0,
+                "face_detect_rate": rate}
+    arr = np.asarray(scores, dtype=np.float32)
+    return {"face_tracked_ssim_min": round(float(arr.min()), 4),
+            "face_tracked_ssim_mean": round(float(arr.mean()), 4),
+            "face_detect_rate": rate}
+
+
 def _verdict(report: VideoMetricReport) -> dict[str, str]:
     face = next(region for region in report.regions if region.name == "face")
     shoulders = next(region for region in report.regions if region.name == "shoulders")

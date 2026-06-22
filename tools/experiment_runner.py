@@ -47,8 +47,9 @@ EXPERIMENTS_ROOT = _REPO / "content" / "experiments"
 FIELDS = [
     "timestamp", "exp_id", "question", "metric", "label",
     "engine", "varied_param", "value", "seed", "duration_sec",
-    # Capacité 2 — identité
-    "ssim_face_min", "lighting_face_pct", "flicker_face",
+    # Capacité 2 — identité (rectangle fixe + visage SUIVI = mesure juste mobile)
+    "ssim_face_min", "face_tracked_ssim_min", "face_tracked_ssim_mean",
+    "face_detect_rate", "lighting_face_pct", "flicker_face",
     # Capacité 1 — mouvement (brut + organique vs glissement)
     "flow_face", "flow_shoulders", "flow_hair", "flow_full",
     "translation_risk", "organic_score", "face_residual",
@@ -64,8 +65,10 @@ def measure_clip(mp4: str | Path, max_frames: int | None = 80) -> dict:
     from app.i2v_quality_gate import metrics_from_video_metric_report, evaluate_i2v_metrics
 
     from app.motion_metrics import compute_organic_motion
+    from app.video_metrics_evaluator import tracked_face_identity_ssim
 
     report = evaluate_video(Path(mp4), max_frames=max_frames)
+    tracked = tracked_face_identity_ssim(Path(mp4), max_frames=max_frames)
     gate_metrics = metrics_from_video_metric_report(report)
     gate = evaluate_i2v_metrics(mp4, gate_metrics)
     flow = {r.name: r.optical_flow_mean for r in report.regions}
@@ -86,6 +89,10 @@ def measure_clip(mp4: str | Path, max_frames: int | None = 80) -> dict:
         "face_residual": om.face_residual,
         "background_lighting_pct": round(bg.luminance_peak_to_peak_pct, 4) if bg else "",
         "background_flicker": round(bg.flicker_mean_abs_delta, 4) if bg else "",
+        # Identité sur visage SUIVI (boîte détectée) — juste pour sujet mobile.
+        "face_tracked_ssim_min": tracked["face_tracked_ssim_min"],
+        "face_tracked_ssim_mean": tracked["face_tracked_ssim_mean"],
+        "face_detect_rate": tracked["face_detect_rate"],
         "gate_passed": gate.passed,
         "duration_sec": round(report.duration_sec, 2),
     }
@@ -123,8 +130,8 @@ def _write_markdown(exp_dir: Path, rows: list[dict]) -> None:
     man = exp_dir / "manifest.json"
     if man.exists():
         q = json.loads(man.read_text(encoding="utf-8")).get("question", "")
-    cols = ["label", "ssim_face_min", "lighting_face_pct", "flicker_face",
-            "flow_full", "translation_risk", "organic_score", "gate_passed"]
+    cols = ["label", "ssim_face_min", "face_tracked_ssim_min", "face_detect_rate",
+            "flow_full", "organic_score", "gate_passed"]
     lines = [f"# Expérience : {exp_dir.name}", "", f"**Question :** {q}", "",
              "| " + " | ".join(cols) + " |", "|" + "|".join(["---"] * len(cols)) + "|"]
     for r in rows:
