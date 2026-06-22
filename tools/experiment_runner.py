@@ -198,6 +198,44 @@ def cmd_experiment(args) -> int:
     return 0
 
 
+def cmd_restore(args) -> int:
+    """Mesure un clip, restaure le visage (étage 2), re-mesure, logue avant/après."""
+    from app.yawatch_video_engine.face_restore import restore_video_faces
+    exp_dir = _exp_dir(args.exp_id)
+    _write_manifest(exp_dir, args.question, args.metric)
+    src = Path(args.clip)
+    out = exp_dir / "clips" / f"{src.stem}_restored_{args.backend}.mp4"
+    rows = []
+
+    before = measure_clip(src, max_frames=args.max_frames)
+    print(f"[avant] SSIM={before['ssim_face_min']} flicker={before['flicker_face']} "
+          f"flow_full={before['flow_full']} gate={'PASS' if before['gate_passed'] else 'FAIL'}")
+    rows.append({"timestamp": _now(args.timestamp), "exp_id": args.exp_id,
+                 "question": args.question, "metric": args.metric, "label": f"{src.stem}__avant",
+                 "engine": "", "varied_param": "restore", "value": "none", "seed": "",
+                 "mp4": str(src), **before})
+
+    restore_video_faces(src, out, backend=args.backend, fidelity=args.fidelity)
+
+    after = measure_clip(out, max_frames=args.max_frames)
+    print(f"[après] SSIM={after['ssim_face_min']} flicker={after['flicker_face']} "
+          f"flow_full={after['flow_full']} gate={'PASS' if after['gate_passed'] else 'FAIL'}")
+    rows.append({"timestamp": _now(args.timestamp), "exp_id": args.exp_id,
+                 "question": args.question, "metric": args.metric,
+                 "label": f"{src.stem}__apres_{args.backend}",
+                 "engine": "", "varied_param": "restore", "value": args.backend, "seed": "",
+                 "mp4": str(out), **after})
+
+    d_ssim = round(after["ssim_face_min"] - before["ssim_face_min"], 4)
+    d_flick = round(after["flicker_face"] - before["flicker_face"], 4)
+    d_flow = round(after["flow_full"] - before["flow_full"], 4)
+    print(f"\nΔ SSIM={d_ssim:+}  Δ flicker={d_flick:+}  Δ mouvement={d_flow:+}")
+    print("→ restauration UTILE si Δ SSIM > 0 sans casser flicker ni mouvement")
+    _append_rows(exp_dir, rows)
+    print(f"→ tableau : {exp_dir/'results.md'}")
+    return 0
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description="Boucle de mesure I2V YAWatch-LUNA")
     p.add_argument("--timestamp", default=None, help="horodatage (sinon 'unstamped')")
@@ -228,6 +266,16 @@ def main() -> int:
     e.add_argument("--comfy-root", default="/workspace/ComfyUI")
     e.add_argument("--python-exe", default="/usr/local/bin/python")
     e.set_defaults(func=cmd_experiment)
+
+    r = sub.add_parser("restore", help="restaurer le visage d'un clip (étage 2) + mesurer avant/après")
+    r.add_argument("--question", required=True)
+    r.add_argument("--metric", required=True)
+    r.add_argument("--exp-id", required=True)
+    r.add_argument("--clip", required=True)
+    r.add_argument("--backend", default="gfpgan", choices=["gfpgan", "codeformer"])
+    r.add_argument("--fidelity", type=float, default=0.7)
+    r.add_argument("--max-frames", type=int, default=80)
+    r.set_defaults(func=cmd_restore)
 
     args = p.parse_args()
     return args.func(args)

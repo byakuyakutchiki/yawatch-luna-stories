@@ -89,6 +89,16 @@ fi
 "$PY" -m pip install --break-system-packages -q sqlalchemy alembic tqdm blake3 \
   opencv-python-headless numpy
 
+# Restauration de visage (étage 2 « Kling maison ») : GFPGAN + facexlib + basicsr.
+log "Deps restauration visage (gfpgan)"
+"$PY" -m pip install --break-system-packages -q gfpgan facexlib basicsr || \
+  echo "  ⚠️ install gfpgan partielle — voir log"
+# Patch connu : basicsr importe torchvision.transforms.functional_tensor (retiré
+# dans torchvision >= 0.17). On corrige l'import si le fichier existe.
+DEG=$("$PY" -c "import basicsr,os;print(os.path.join(os.path.dirname(basicsr.__file__),'data','degradations.py'))" 2>/dev/null)
+[ -f "$DEG" ] && sed -i 's/from torchvision.transforms.functional_tensor/from torchvision.transforms.functional/' "$DEG" \
+  && echo "  [patch] basicsr functional_tensor corrigé"
+
 # --- 3. Custom nodes (FramePack + VideoHelperSuite) -------------------------
 # Wan NATIF n'a besoin d'AUCUN custom node (WanImageToVideo/UNETLoader = core).
 log "Custom nodes"
