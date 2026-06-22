@@ -4,6 +4,27 @@
 > (`docs/I2V_ENGINE_TESTS/WAN_FACESWAP_COLORMATCH_AUDIT_2026_06_22/AUDIT_REPORT.md`).
 > Branche : `feat/frontend-queue`.
 
+## ⏩ MISE À JOUR 23 juin — état réel (lire en premier)
+
+Avancées depuis l'audit (toutes mesurées + commitées) :
+
+| Action | État | Preuve |
+|---|---|---|
+| **A. Stabilité lumineuse** | ✅ **FAIT** | `tools/stabilize_exposure.py` : variation luma visage 15.6→**12%** (≤15% Kling), flicker 0.47→0.29, **netteté préservée** 18.0→18.1. Gain luma global lissé (≠ colormatch). Commit `74d9443`. |
+| **E. Métriques artistiques** | ✅ **FAIT** | netteté (Laplacien) + variation/flicker luma sur **visage suivi** branchés dans `experiment_runner.py`. Confirme l'audit : face-swap effondre la netteté 42→13. Commit `93532d2`. |
+| **D. Colormatch** | ✅ **ABANDONNÉ** | confirmé FAIL par les métriques. |
+| **B. LoRA Luna** | 🟡 **LoRA PRODUIT, à TESTER** | chaîne musubi-tuner validée (t2v-1.3B) puis **i2v-14B → `luna_lora_e4.safetensors` (320M, epoch 4)**. Script `tools/runpod/train_lora_luna.sh` + gotchas i2v. Commits `e2c7223`, `a4afd59`. |
+
+**➡️ SEULE CHOSE QUI RESTE pour valider l'identité : TESTER le LoRA** (nécessite un pod GPU) :
+générer un clip i2v Luna **AVEC** `luna_lora_e4.safetensors` **vs SANS**, depuis la même image de départ, avec mouvement (tête qui tourne), puis mesurer via `experiment_runner.py` : SSIM visage suivi + netteté. Test plus propre en **ComfyUI** (nœud LoraLoaderModelOnly) qu'en CLI musubi.
+- ✅ si identité ↑ sans casser netteté/mouvement → approche LoRA validée → industrialiser (1 LoRA / perso).
+- ⚠️ sinon → ré-entraîner avec parades anti-hang (`--max_data_loader_n_workers 1` + `--save_every_n_steps`, déjà dans le script) jusqu'à epoch 16, ou densifier le dataset.
+
+Pipeline cible désormais : **Wan i2v + LoRA Luna → stabilisation expo (A) → Quality Gate / mesure**.
+
+---
+### (Contexte d'origine — audit Codex, conservé pour référence)
+
 ## Verdict de l'audit (Codex, 22 juin) — à respecter
 
 **Ne PAS lancer le batch 9 plans avec le pipeline actuel.** Mesuré, avec référence Kling :
