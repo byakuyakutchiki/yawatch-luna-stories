@@ -44,11 +44,48 @@ def _load_gfpgan(fidelity: float):
     )
 
 
+def _load_faceswap(reference_image: str):
+    """Face-swap RÉFÉRENCÉ (insightface inswapper) vers le visage canonique.
+
+    Contrairement à GFPGAN, ça RÉ-ANCRE l'identité vers une image de référence
+    (le Luna canonique) → c'est le bon outil quand l'I2V fait dériver le visage.
+    Modèle : inswapper_128.onnx (chemin via INSWAPPER_PATH).
+    """
+    import cv2
+    import insightface
+    from insightface.app import FaceAnalysis
+    if not reference_image:
+        raise ValueError("backend 'faceswap' exige --reference (image canonique).")
+    providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
+    app = FaceAnalysis(name="buffalo_l", providers=providers)
+    app.prepare(ctx_id=0, det_size=(640, 640))
+    model_path = os.environ.get(
+        "INSWAPPER_PATH", os.path.expanduser("~/.insightface/inswapper_128.onnx"))
+    swapper = insightface.model_zoo.get_model(model_path, providers=providers)
+    ref = cv2.imread(str(reference_image))
+    if ref is None:
+        raise RuntimeError(f"Image de référence illisible : {reference_image}")
+    ref_faces = app.get(ref)
+    if not ref_faces:
+        raise RuntimeError(f"Aucun visage détecté dans la référence : {reference_image}")
+    ref_face = max(ref_faces, key=lambda f: (f.bbox[2] - f.bbox[0]) * (f.bbox[3] - f.bbox[1]))
+
+    def restore(frame_bgr):
+        out = frame_bgr
+        for f in app.get(frame_bgr):
+            out = swapper.get(out, f, ref_face, paste_back=True)
+        return out
+    return restore
+
+
 def restore_video_faces(input_mp4: str | Path, output_mp4: str | Path,
-                        backend: str = "gfpgan", fidelity: float = 0.7) -> Path:
+                        backend: str = "gfpgan", fidelity: float = 0.7,
+                        reference_image: str | None = None) -> Path:
     """Restaure les visages frame par frame et réassemble la vidéo.
 
+    backend : gfpgan (restauration) | codeformer | faceswap (ré-ancrage identité).
     fidelity : 0 = restauration agressive, 1 = fidèle à la source (CodeFormer).
+    reference_image : visage canonique (obligatoire pour 'faceswap').
     Retourne le chemin du MP4 restauré (mêmes dimensions/fps que la source).
     """
     import cv2  # lazy
@@ -63,9 +100,11 @@ def restore_video_faces(input_mp4: str | Path, output_mp4: str | Path,
             return out if out is not None else frame_bgr
     elif backend == "codeformer":
         restore = _load_codeformer(fidelity)
+    elif backend == "faceswap":
+        restore = _load_faceswap(reference_image)
     else:
         raise ValueError(f"Backend de restauration inconnu : {backend!r} "
-                         "(attendu 'gfpgan' ou 'codeformer').")
+                         "(attendu 'gfpgan', 'codeformer' ou 'faceswap').")
 
     cap = cv2.VideoCapture(str(input_mp4))
     if not cap.isOpened():

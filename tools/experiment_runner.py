@@ -230,7 +230,8 @@ def cmd_restore(args) -> int:
                  "engine": "", "varied_param": "restore", "value": "none", "seed": "",
                  "mp4": str(src), **before})
 
-    restore_video_faces(src, out, backend=args.backend, fidelity=args.fidelity)
+    restore_video_faces(src, out, backend=args.backend, fidelity=args.fidelity,
+                        reference_image=getattr(args, "reference", None))
 
     after = measure_clip(out, max_frames=args.max_frames)
     print(f"[après] SSIM={after['ssim_face_min']} flicker={after['flicker_face']} "
@@ -287,7 +288,8 @@ def main() -> int:
     r.add_argument("--metric", required=True)
     r.add_argument("--exp-id", required=True)
     r.add_argument("--clip", required=True)
-    r.add_argument("--backend", default="gfpgan", choices=["gfpgan", "codeformer"])
+    r.add_argument("--backend", default="gfpgan", choices=["gfpgan", "codeformer", "faceswap"])
+    r.add_argument("--reference", default=None, help="image canonique (backend faceswap)")
     r.add_argument("--fidelity", type=float, default=0.7)
     r.add_argument("--max-frames", type=int, default=80)
     r.set_defaults(func=cmd_restore)
