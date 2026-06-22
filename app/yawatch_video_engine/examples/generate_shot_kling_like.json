@@ -1,0 +1,32 @@
+{
+  "project": "YAWatch-LUNA",
+  "episode_id": "S01E00",
+  "shot_id": "plan02_luna_kling_like_local_mvp",
+  "character_reference_image": "assets/luna_stories_assets/01_luna_adulte/luna_adulte_neutral_9x16_01.png",
+  "decor_image": "assets/luna_stories_assets/08_visuels_cles/ep01_ecran_iris_workspace_visio_participants_01.jpg",
+  "decor_description": "bureau YAWatch de nuit a La Defense, ecran Iris Workspace, lumiere bleue froide et lampe chaude",
+  "dramatic_intention": "Luna sent qu'une information familiale cachee est sur le point de remonter, mais elle garde le controle.",
+  "shot_type": "plan_poitrine",
+  "duration_sec": 5,
+  "camera_motion": "slow_push_in",
+  "emotion": "contained tension",
+  "sound_need": {
+    "mode": "ambiance",
+    "ambience_description": "bureau nocturne calme, souffle electrique leger, ville lointaine",
+    "foley": ["main sur cadre photo", "leger bruit de verre"],
+    "voice_off_text": null,
+    "dialogue_text": null
+  },
+  "engine_preference": "mock",
+  "object_interaction": {
+    "object": "cadre photo retourne",
+    "continuity_rule": "le contenu familial reste illisible"
+  },
+  "continuity_notes": [
+    "Luna adulte doit rester canonique",
+    "aucun sourire",
+    "pas de cyberpunk",
+    "presence humaine plus importante que zoom photo"
+  ],
+  "fps": 24
+}
